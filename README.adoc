@@ -1,0 +1,10 @@
+= Asciidoctor Maven Plugin: Example Project
+
+An example project that demonstrates the use of the Asciidoctor Maven Plugin.
+
+== How to build the project
+
+ $ mvn process-resources
+
+That's it.
+Seriously.

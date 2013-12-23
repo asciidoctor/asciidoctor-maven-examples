@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.asciidoctor</groupId>
+    <artifactId>asciidoctor-maven-example</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Asciidoctor Maven Example</name>
+    <description>An example of the Asciidoctor Maven plugin</description>
+
+    <build>
+        <defaultGoal>process-resources</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>copy-asciidoc-resources</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/asciidoc</directory>
+                                    <includes>
+                                        <include>**/*.jpg</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                            <outputDirectory>target/generated-docs</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>0.1.4-SNAPSHOT</version>
+                <configuration>
+                    <sourceDirectory>src/main/asciidoc</sourceDirectory>
+                    <baseDir>${project.basedir}</baseDir>
+                    <eruby>erubis</eruby>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-html-doc</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>html5</backend>
+                            <sourceHighlighter>coderay</sourceHighlighter>
+                            <!--
+                            <embedAssets>true</embedAssets>
+                            -->
+                            <attributes>
+                                <!-- replace toc2 / toc-position with toc=left after upgrade to 1.5.0 -->
+                                <toc2>true</toc2>
+                                <toc-position>left</toc-position>
+                                <icons>font</icons>
+                                <sectanchors>true</sectanchors>
+                                <idprefix/>
+                                <idseparator>-</idseparator>
+                                <docinfo1>true</docinfo1>
+                                <linkcss>true</linkcss>
+                                <imagesdir>./images</imagesdir>
+                                <!-- set imagesdir to absolute path when using embedAssets -->
+                                <!--
+                                <imagesdir>${project.basedir}/src/main/asciidoc/images</imagesdir>
+                                -->
+                                <publish-url>http://example.org</publish-url>
+                                <sourcedir>${project.build.sourceDirectory}</sourcedir>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                    <!--
+                    <execution>
+                        <id>generate-docbook</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>docbook</backend>
+                            <doctype>book</doctype>
+                            <attributes>
+                              <toc>true</toc>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                    -->
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

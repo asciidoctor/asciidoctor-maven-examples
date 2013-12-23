@@ -1,0 +1,50 @@
+= Example Manual
+Doc Writer <doc.writer@example.org>
+v1.0
+:example-caption!:
+
+This is a user manual for an example project.
+
+== Introduction
+
+//[yell]
+This project does something.
+We just haven't decided what that is yet.
+
+== Source Code
+
+[source,java]
+.Java code from project
+----
+include::{sourcedir}/example/StringUtils.java[tags=contains,indent=0]
+----
+
+ $ gradle asciidoctor
+
+== Images
+
+[.thumb]
+image::sunset.jpg[]
+
+== Attributes
+
+.Built-in
+--
+docdir:: {docdir}
+docfile:: {docfile}
+//projectdir:: {projectdir}
+//rootdir:: {rootdir}
+--
+
+.Custom
+sourcedir:: {sourcedir}
+Publish URL:: {publish-url}
+
+== Includes
+
+.include::src/main/asciidoc/subdir/_b.adoc[]
+====
+include::src/main/asciidoc/subdir/_b.adoc[]
+====
+
+WARNING: Includes can be tricky!
