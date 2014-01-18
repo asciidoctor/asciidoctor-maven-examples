@@ -32,6 +32,7 @@ image::sunset.jpg[]
 --
 docdir:: {docdir}
 docfile:: {docfile}
+imagesdir:: {imagesdir}
 //projectdir:: {projectdir}
 //rootdir:: {rootdir}
 --
