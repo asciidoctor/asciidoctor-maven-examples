@@ -58,10 +58,57 @@
                             <backend>html5</backend>
                             <sourceHighlighter>coderay</sourceHighlighter>
                             <!--
-                            <embedAssets>true</embedAssets>
+                            Scenarios for linking vs embedding assets:
+
+                            Link to both stylesheets and images::
+
+                              - don't set embedAssets option
+                              - set linkcss attribute to true
+                              - set imagesdir attribute to path relative to AsciiDoc source file
+
+                              <attributes>
+                                  <linkcss>true</linkcss>
+                                  <imagesdir>./images</imagesdir>
+                              </attributes>
+
+                            Embed stylesheets and images::
+                            
+                              - set embedAssets option to true
+                              - don't set linkcss attribute
+                              - set imagesdir attribute to path relative to project root
+
+                              <embedAssets>true</embedAssets>
+                              <attributes>
+                                  <imagesdir>src/main/asciidoc/images</imagesdir>
+                              </attributes>
+
+                            Link to stylesheets but embed images::
+                            
+                              - set embedAssets option to true
+                              - set linkcss attribute to true
+                              - set imagesdir attribute to path relative to project root
+
+                              <embedAssets>true</embedAssets>
+                              <attributes>
+                                  <linkcss>true</linkcss>
+                                  <imagesdir>src/main/asciidoc/images</imagesdir>
+                              </attributes>
+
+                            Embed stylesheets but link images (default)::
+                            
+                              - don't set embedAssets option
+                              - don't set linkcss attribute
+                              - set imagesdir attribute to path relative to AsciiDoc source file
+
+                              <attributes>
+                                  <imagesdir>./images</imagesdir>
+                              </attributes>
+
+                            IMPORTANT: When you enable image embedding, you must qualify the path the the imagesdir, as show above.
                             -->
                             <attributes>
-                                <!-- replace toc2 / toc-position with toc=left after upgrade to 1.5.0 -->
+                                <imagesdir>./images</imagesdir>
+                                <!-- TODO: replace toc2 / toc-position with toc=left after upgrade to 1.5.0 -->
                                 <toc2>true</toc2>
                                 <toc-position>left</toc-position>
                                 <icons>font</icons>
@@ -69,12 +116,6 @@
                                 <idprefix/>
                                 <idseparator>-</idseparator>
                                 <docinfo1>true</docinfo1>
-                                <linkcss>true</linkcss>
-                                <imagesdir>./images</imagesdir>
-                                <!-- set imagesdir to absolute path when using embedAssets -->
-                                <!--
-                                <imagesdir>${project.basedir}/src/main/asciidoc/images</imagesdir>
-                                -->
                                 <publish-url>http://example.org</publish-url>
                                 <sourcedir>${project.build.sourceDirectory}</sourcedir>
                             </attributes>
