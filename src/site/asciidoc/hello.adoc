@@ -1,0 +1,6 @@
+= Hello!
+//:icons: font
+
+This file was converted from AsciiDoc to HTML by the Asciidoctor Maven Site Plugin.
+
+TIP: Use the include directive to keep your content DRY!
