@@ -41,11 +41,13 @@
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>0.1.4-SNAPSHOT</version>
+                <version>1.5.0-SNAPSHOT</version>
                 <configuration>
                     <sourceDirectory>src/main/asciidoc</sourceDirectory>
+                    <!-- If you set baseDir to ${project.basedir}, non-nested includes are resolved relative to project -->
+                    <!--
                     <baseDir>${project.basedir}</baseDir>
-                    <eruby>erubis</eruby>
+                    -->
                 </configuration>
                 <executions>
                     <execution>
@@ -104,16 +106,14 @@
                                   <imagesdir>./images</imagesdir>
                               </attributes>
 
-                            IMPORTANT: When you enable image embedding, you must qualify the path the the imagesdir, as show above.
+                            IMPORTANT: When you enable image embedding, you must qualify the path the the imagesdir, as shown above.
                             -->
                             <attributes>
                                 <imagesdir>./images</imagesdir>
-                                <!-- TODO: replace toc2 / toc-position with toc=left after upgrade to 1.5.0 -->
-                                <toc2>true</toc2>
-                                <toc-position>left</toc-position>
+                                <toc>left</toc>
                                 <icons>font</icons>
                                 <sectanchors>true</sectanchors>
-                                <idprefix/>
+                                <idprefix></idprefix>
                                 <idseparator>-</idseparator>
                                 <docinfo1>true</docinfo1>
                                 <publish-url>http://example.org</publish-url>
