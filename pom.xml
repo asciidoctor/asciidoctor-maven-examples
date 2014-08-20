@@ -64,6 +64,15 @@
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
                 <version>1.5.0-SNAPSHOT</version>
+                <!--
+                <dependencies>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj</artifactId>
+                        <version>1.5.1-SNAPSHOT</version>
+                    </dependency>
+                </dependencies>
+                -->
                 <configuration>
                     <sourceDirectory>src/main/asciidoc</sourceDirectory>
                     <gemPath>${project.build.directory}/gems-provided</gemPath>
@@ -166,6 +175,10 @@
                     -->
                 </executions>
             </plugin>
+            <!--
+            NOTE: Use the maven-resources-plugin if there are assets outside the AsciiDoc source folder
+                  that need to be copied to the generated-docs. The Maven plugin automatically copies
+                  non-AsciiDoc files in the AsciiDoc source folder to generated-docs.
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -180,21 +193,19 @@
                         <configuration>
                             <resources>
                                 <resource>
-                                    <directory>src/main/asciidoc</directory>
+                                    <directory>src/main/resources</directory>
                                     <includes>
                                         <include>**/*.jpg</include>
                                         <include>**/*.png</include>
                                     </includes>
                                 </resource>
                             </resources>
-                            <!--
                             <outputDirectory>target/generated-docs</outputDirectory>
-                            -->
-                            <outputDirectory>target/docs</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
