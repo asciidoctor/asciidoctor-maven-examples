@@ -9,41 +9,68 @@
     <name>Asciidoctor Maven Example</name>
     <description>An example of the Asciidoctor Maven plugin</description>
 
+    <repositories>
+        <repository>
+            <id>rubygems-proxy-releases</id>
+            <name>RubyGems.org Proxy (Releases)</name>
+            <url>http://rubygems-proxy.torquebox.org/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>rubygems</groupId>
+            <artifactId>asciidoctor-diagram</artifactId>
+            <version>1.2.0</version>
+            <type>gem</type>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>rubygems</groupId>
+                    <artifactId>asciidoctor</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
     <build>
         <defaultGoal>process-resources</defaultGoal>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.6</version>
+                <groupId>de.saumya.mojo</groupId>
+                <artifactId>gem-maven-plugin</artifactId>
+                <version>1.0.5</version>
+                <configuration>
+                    <!-- align with AsciidoctorJ -->
+                    <jrubyVersion>1.7.9</jrubyVersion>
+                    <gemHome>${project.build.directory}/gems</gemHome>
+                    <gemPath>${project.build.directory}/gems</gemPath>
+                </configuration>
                 <executions>
                     <execution>
-                        <id>copy-asciidoc-resources</id>
-                        <phase>generate-resources</phase>
                         <goals>
-                            <goal>copy-resources</goal>
+                            <goal>initialize</goal>
                         </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/asciidoc</directory>
-                                    <includes>
-                                        <include>**/*.jpg</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                            <outputDirectory>target/generated-docs</outputDirectory>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
                 <version>1.5.0-SNAPSHOT</version>
                 <configuration>
                     <sourceDirectory>src/main/asciidoc</sourceDirectory>
+                    <gemPath>${project.build.directory}/gems-provided</gemPath>
+                    <!-- QUESTION can the Maven plugin handle fetching and installing the additional gems too? -->
+                    <requires>
+                        <require>asciidoctor-diagram</require>
+                    </requires>
                     <!-- If you set baseDir to ${project.basedir}, non-nested includes are resolved relative to project -->
                     <!--
                     <baseDir>${project.basedir}</baseDir>
@@ -137,6 +164,35 @@
                         </configuration>
                     </execution>
                     -->
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>copy-asciidoc-resources</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/asciidoc</directory>
+                                    <includes>
+                                        <include>**/*.jpg</include>
+                                        <include>**/*.png</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                            <!--
+                            <outputDirectory>target/generated-docs</outputDirectory>
+                            -->
+                            <outputDirectory>target/docs</outputDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
