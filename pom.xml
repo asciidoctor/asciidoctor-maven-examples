@@ -149,7 +149,7 @@
                                 <toc>left</toc>
                                 <icons>font</icons>
                                 <sectanchors>true</sectanchors>
-                                <idprefix></idprefix>
+                                <idprefix/>
                                 <idseparator>-</idseparator>
                                 <docinfo1>true</docinfo1>
                                 <publish-url>http://example.org</publish-url>
