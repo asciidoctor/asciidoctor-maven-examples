@@ -7,7 +7,7 @@
     <artifactId>asciidoctor-maven-example</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>Asciidoctor Maven Example</name>
-    <description>An example of the Asciidoctor Maven plugin</description>
+    <description>An example project that demonstrates how to process AsciiDoc using the Asciidoctor Maven plugin.</description>
 
     <repositories>
         <repository>
