@@ -27,7 +27,7 @@
         <dependency>
             <groupId>rubygems</groupId>
             <artifactId>asciidoctor-pdf</artifactId>
-            <version>1.5.0.alpha.3</version>
+            <version>1.5.0.alpha.4</version>
             <type>gem</type>
             <scope>provided</scope>
             <exclusions>
