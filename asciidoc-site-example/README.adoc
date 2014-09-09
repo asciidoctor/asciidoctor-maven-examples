@@ -1,0 +1,11 @@
+= Asciidoctor Maven Plugin: AsciiDoc Site Example
+
+An example project that demonstrates how to process AsciiDoc in a Maven site using the Asciidoctor Maven plugin.
+
+== Usage
+
+Build the site by invoking the `site:site` goal:
+
+ $ mvn site:site
+
+Open the file _target/site/hello.html_ to see the output generated from the AsciiDoc source _src/site/asciidoc/hello.adoc_.

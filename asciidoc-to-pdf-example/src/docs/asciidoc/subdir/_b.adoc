@@ -1,0 +1,8 @@
+content from _src/docs/asciidoc/subdir/_b.adoc_.
+
+// WARNING due to a bug, this nested example block won't appear when using the pdf backend
+.include::_c.adoc[]
+[example]
+--
+include::_c.adoc[]
+--

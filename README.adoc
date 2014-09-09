@@ -1,10 +1,41 @@
-= Asciidoctor Maven Plugin: Example Project
+= Asciidoctor Maven Plugin: Examples
 
-An example project that demonstrates the use of the Asciidoctor Maven Plugin.
+This repository contains a collection of sample projects that demonstrate numerous ways to use the Asciidoctor Maven plugin in a Maven project.
 
-== How to build the project
+== Getting the examples
 
- $ mvn process-resources
+Clone the example repository using git:
 
-That's it.
-Seriously.
+ $ git clone https://github.com/asciidoctor/asciidoctor-maven-examples
+
+Refer to the README file in each individual project to learn how to run it.
+
+== Example catalog
+
+link:asciidoc-to-html-example/README.adoc[asciidoc-to-html-example] (aka “The Quickstart”)::
+Demonstrates how to convert AsciiDoc to HTML5 using the Asciidoctor Maven plugin.
+
+link:asciidoc-site-example/README.adoc[asciidoc-site-example]::
+Demonstrates how to process AsciiDoc in a Maven site using the Asciidoctor Maven plugin.
+
+link:docbook-pipeline-docbkx-example/README.adoc[docbook-pipeline-docbkx-example]::
+Demonstrates how to convert AsciiDoc to DocBook and feed it to the DocBook pipeline to generate a PDF using the Asciidoctor and Docbkx Maven plugins.
+
+link:docbook-pipeline-jdocbook-example/README.adoc[docbook-pipeline-jdocbook-example]::
+Demonstrates how to convert AsciiDoc to DocBook and feed it to the DocBook pipeline to generate a PDF using the Asciidoctor and jDocBook Maven plugins.
+
+link:asciidoctor-diagram-example/README.adoc[asciidoctor-diagram-example]::
+Demonstrates how to integrate Asciidoctor Diagram with the Asciidoctor Maven plugin.
+
+link:asciidoctor-diagram-example/README.adoc[asciidoctor-diagram-example]::
+Demonstrates how to integrate Asciidoctor Diagram with the Asciidoctor Maven plugin.
+
+link:asciidoc-to-pdf-example/README.adoc[asciidoc-to-pdf-example]::
+Demonstrates how to convert AsciiDoc to PDF using Asciidoctor PDF with the Asciidoctor Maven plugin.
+
+== Copyright and Licensing
+
+Copyright (C) 2014 The Asciidoctor Project.
+Free use of this software is granted under the terms of the MIT License.
+
+See the link:LICENSE.adoc[] file for details.

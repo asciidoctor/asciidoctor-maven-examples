@@ -1,0 +1,11 @@
+= Asciidoctor Maven Plugin: Docbook Pipeline (jDocBook) Example
+
+An example project that demonstrates how to convert AsciiDoc to DocBook and feed it to the DocBook pipeline to generate a PDF using the Asciidoctor, jDocBook and Pressgang Maven plugins.
+
+== Usage
+
+Convert the AsciiDoc to DocBook and feed it to the DocBook toolchain by invoking the `process-resources` goal (configured as the default goal):
+
+ $ mvn
+
+Open the file _target/docbook/publish/en-US/pdf/example-manual.pdf_ in your PDF viewer to see the generated PDF.

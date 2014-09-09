@@ -1,0 +1,6 @@
+= Hello, AsciiDoc!
+//:icons: font
+
+This file was converted from AsciiDoc to HTML by the Maven Site module of the Asciidoctor Maven Plugin.
+
+TIP: Use the include directive to keep your content DRY!

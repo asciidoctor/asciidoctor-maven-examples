@@ -1,0 +1,11 @@
+= WORKLOG
+
+== TODO
+
+* need at least a minimal asciidoc-docbook.xsl in docbook pipeline to support AsciiDoc directives
+  - include example of page break and thematic break
+* list examples in master README.adoc
+
+* asciidoctor-extension-example (custom extension drawn from project)
+* asciidoclet-example
+* kitchensink-example?

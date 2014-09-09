@@ -1,6 +1,6 @@
 = Example Manual
 Doc Writer <doc.writer@example.org>
-v1.0, 2014-08-18
+v1.0, 2014-09-09
 :example-caption!:
 ifndef::imagesdir[:imagesdir: images]
 ifndef::sourcedir[:sourcedir: ../java]
@@ -9,24 +9,10 @@ This is a user manual for an example project.
 
 == Introduction
 
-//[yell]
 This project does something.
 We just haven't decided what that is yet.
 
-== Source Code
-
-[source,java]
-.Java code from project
-----
-include::{sourcedir}/example/StringUtils.java[tags=contains,indent=0]
-----
-
- $ mvn process-resources
-
-== Images
-
-[.thumb]
-image::sunset.jpg[]
+== Diagrams
 
 [ditaa,asciidoctor-diagram-process]
 ....
@@ -48,6 +34,15 @@ image::sunset.jpg[]
      +-----------------------------------+
 ....
 
+[plantuml,auth-protocol]
+....
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+....
+
 == Attributes
 
 .Built-in
@@ -56,18 +51,3 @@ safe-mode-name:: {safe-mode-name}
 docdir:: {docdir}
 docfile:: {docfile}
 imagesdir:: {imagesdir}
-//projectdir:: {projectdir}
-//rootdir:: {rootdir}
-
-.Custom
-sourcedir:: {sourcedir}
-Publish URL:: {publish-url}
-
-== Includes
-
-.include::subdir/_b.adoc[]
-====
-include::subdir/_b.adoc[]
-====
-
-WARNING: Includes can be tricky!
