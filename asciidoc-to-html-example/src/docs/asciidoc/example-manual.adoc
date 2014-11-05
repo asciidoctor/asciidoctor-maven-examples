@@ -1,6 +1,7 @@
 = Example Manual
 Doc Writer <doc.writer@example.org>
-v1.0, 2014-09-09
+2014-09-09
+:revnumber: {project-version}
 :example-caption!:
 ifndef::imagesdir[:imagesdir: images]
 ifndef::sourcedir[:sourcedir: ../java]
@@ -39,6 +40,7 @@ docfile:: {docfile}
 imagesdir:: {imagesdir}
 
 .Custom
+project-version:: {project-version}
 sourcedir:: {sourcedir}
 endpoint-url:: {endpoint-url}
 
