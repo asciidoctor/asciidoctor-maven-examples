@@ -7,6 +7,13 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>Asciidoctor Diagram Maven example</name>
     <description>An example project that demonstrates how to integrate Asciidoctor Diagram with the Asciidoctor Maven plugin.</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <asciidoctor.maven.plugin.version>1.5.0</asciidoctor.maven.plugin.version>
+        <jruby.version>1.7.17</jruby.version>
+    </properties>
+
     <repositories>
         <repository>
             <id>rubygems-proxy-releases</id>
@@ -59,7 +66,7 @@
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>1.5.0</version>
+                <version>${asciidoctor.maven.plugin.version}</version>
                 <!-- Uncomment the following element to override the version of AsciidoctorJ -->
                 <!--
                 <dependencies>

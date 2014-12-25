@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>org.asciidoctor.maven</groupId>
+    <artifactId>asciidoc-asciidoctor-maven-examples</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    
+    <name>AsciiDoc Maven Examples</name>
+    <description>A set of example projects that show different use cases of AsciiDoc integration with maven.</description>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <modules>
+      <module>asciidoc-site-example</module>
+      <module>asciidoc-to-html-example</module>
+      <module>asciidoc-to-pdf-example</module>
+      <module>asciidoctor-diagram-example</module>
+      <module>docbook-pipeline-docbkx-example</module>
+      <module>docbook-pipeline-jdocbook-example</module>
+    </modules>
+   
+</project>
