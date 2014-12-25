@@ -10,7 +10,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <asciidoctor.maven.plugin.version>1.5.0</asciidoctor.maven.plugin.version>
+        <asciidoctor.maven.plugin.version>1.5.2</asciidoctor.maven.plugin.version>
         <jruby.version>1.7.17</jruby.version>
     </properties>
 
@@ -88,7 +88,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>generate-html-doc</id>
+                        <id>generate-pdf-doc</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>process-asciidoc</goal>
