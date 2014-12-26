@@ -9,3 +9,12 @@ Convert the AsciiDoc to HTML5 by invoking the `process-resources` goal (configur
  $ mvn
 
 Open the file _target/generated-docs/example-manual.html_ in your browser to see the generated HTML file containing the generated diagram images.
+
+[NOTE]
+====
+Asciidoctor Diagram bundles both the ditaa and PlantUML libraries and will use them to generate diagrams. In order to generate diagrams using Graphviz, you must install it separately (meaning the _dot_ command must be available on your PATH).
+
+Visit link:http://www.graphviz.org/[Graphviz' site] for details on how to install the _dot_ command tool.
+====
+
+For more examples and information about Asciidoctor Diagrams see link:http://asciidoctor.org/news/2014/02/18/plain-text-diagrams-in-asciidoctor/[]
