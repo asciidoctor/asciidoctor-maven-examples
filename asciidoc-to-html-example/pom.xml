@@ -7,13 +7,20 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>AsciiDoc to HTML Maven Example</name>
     <description>An example project that demonstrates how to convert AsciiDoc to HTML5 using the Asciidoctor Maven plugin.</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <asciidoctor.maven.plugin.version>1.5.2</asciidoctor.maven.plugin.version>
+        <jruby.version>1.7.17</jruby.version>
+    </properties>
+
     <build>
         <defaultGoal>process-resources</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>1.5.0</version>
+                <version>${asciidoctor.maven.plugin.version}</version>
                 <!-- Uncomment the following element to override the version of AsciidoctorJ -->
                 <dependencies>
                     <dependency>

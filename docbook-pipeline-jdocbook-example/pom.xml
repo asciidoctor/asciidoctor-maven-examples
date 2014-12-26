@@ -7,6 +7,13 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>DocBook Pipeline (jDocBook) Maven Example</name>
     <description>An example project that demonstrates how to convert AsciiDoc to DocBook and feed it to the DocBook pipeline to generate a PDF using the Asciidoctor and jDocBook Maven plugins.</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <asciidoctor.maven.plugin.version>1.5.2</asciidoctor.maven.plugin.version>
+        <jruby.version>1.7.17</jruby.version>
+    </properties>
+
     <repositories>
         <repository>
             <id>jboss-public-repository-group</id>
@@ -26,7 +33,7 @@
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>1.5.0</version>
+                <version>${asciidoctor.maven.plugin.version}</version>
                 <!-- Uncomment the following element to override the version of AsciidoctorJ -->
                 <!--
                 <dependencies>

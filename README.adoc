@@ -33,6 +33,27 @@ Demonstrates how to convert AsciiDoc to PDF using Asciidoctor PDF with the Ascii
 link:asciidoc-site-example/README.adoc[asciidoc-site-example]::
 Demonstrates how to process AsciiDoc in a Maven site using the Asciidoctor Maven plugin.
 
+== Updating Asciidoctor Maven plugin version
+
+In case it is required to test a specific version of the plugin (e.g. local SNAPSHOT version), a tool has been included to update the version in all examples.
+To change the plugin’s version follow the next steps:
+
+. Set the desired version in the _<asciidoctor.maven.plugin.version>_ property in the _pom.xml_ file located at the root (asciidoctor-maven-examples folder). For instance:
+
+[source,xml,indent=2]
+----
+<asciidoctor.maven.plugin.version>1.5.2</asciidoctor.maven.plugin.version>
+----
+
+[start=2]
+. Execute the _validate_ maven goal with the _update-properties_ profile:
+
+[source,indent=2]
+----
+$ mvn validate -Pupdate-properties
+----
+
+
 == Copyright and Licensing
 
 Copyright (C) 2014 The Asciidoctor Project.
