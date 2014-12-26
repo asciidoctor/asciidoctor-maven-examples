@@ -22,6 +22,7 @@
                 <artifactId>asciidoctor-maven-plugin</artifactId>
                 <version>${asciidoctor.maven.plugin.version}</version>
                 <!-- Uncomment the following element to override the version of AsciidoctorJ -->
+                <!--
                 <dependencies>
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
@@ -29,6 +30,7 @@
                         <version>1.5.2-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
+                -->
                 <configuration>
                     <sourceDirectory>src/docs/asciidoc</sourceDirectory>
                     <!-- If you set baseDir to ${project.basedir}, top-level includes are resolved relative to the project root -->
