@@ -24,9 +24,6 @@ Demonstrates how to convert AsciiDoc to DocBook and feed it to the DocBook pipel
 link:asciidoctor-diagram-example/README.adoc[asciidoctor-diagram-example]::
 Demonstrates how to integrate Asciidoctor Diagram with the Asciidoctor Maven plugin.
 
-link:asciidoctor-diagram-example/README.adoc[asciidoctor-diagram-example]::
-Demonstrates how to integrate Asciidoctor Diagram with the Asciidoctor Maven plugin.
-
 link:asciidoc-to-pdf-example/README.adoc[asciidoc-to-pdf-example]::
 Demonstrates how to convert AsciiDoc to PDF using Asciidoctor PDF with the Asciidoctor Maven plugin.
 
