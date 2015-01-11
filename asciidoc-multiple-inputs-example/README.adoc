@@ -1,0 +1,92 @@
+= Asciidoctor Maven Plugin: AsciiDoc Multiple Input Documents Maven Example
+
+An example project that demonstrates how to convert multiple input AsciiDoc documents to HTML5 using the
+Asciidoctor Maven plugin.
+
+== Usage
+
+Convert the AsciiDoc to PDF and HTML5 by invoking the `process-resources` goal (configured as the default goal):
+
+ $ mvn
+
+Open the files _target/generated-docs/example-manual.html_ and _target/generated-docs/example-technical-doc.html_ in
+your browser to see the generated HTML file.
+
+== How does it work?
+
+By defining multiple execution blocks, you can configure different input documents, output formats or various other
+configuration parameters.
+
+In the example, we define a first execution block as follows:
+
+[source,xml]
+----
+<execution>
+ <id>asciidoc-usermanual-to-pdf</id> <1>
+ <phase>generate-resources</phase>
+ <goals>
+     <goal>process-asciidoc</goal>
+ </goals>
+ <configuration>
+     <sourceDirectory>src/docs/asciidoc/user-manual</sourceDirectory> <2>
+     <backend>pdf</backend> <3>
+     <!-- WARNING callout bullets don't yet work with CodeRay -->
+     <sourceHighlighter>coderay</sourceHighlighter>
+     <attributes>
+         <pagenums/>
+         <toc/>
+         <idprefix/>
+         <idseparator>-</idseparator>
+     </attributes>
+ </configuration>
+</execution>
+----
+<1> Define a unique id for your execution block
+<2> Define the source directory where the asciidoc source document for the manual is located
+<3> Select `pdf` as the output format
+
+[NOTE]
+====
+You also need to add a dependency on `asciidoctorj-pdf` to make export to PDF work:
+[source,xml]
+----
+<dependency>
+  <groupId>org.asciidoctor</groupId>
+  <artifactId>asciidoctorj-pdf</artifactId>
+  <version>1.5.0-alpha.6</version>
+</dependency>
+----
+====
+
+The second execution block defines how to create the technical documentation in HTML:
+
+[source,xml]
+----
+<execution>
+    <id>asciidoc-techdocs-to-html</id> <1>
+    <phase>generate-resources</phase>
+    <goals>
+        <goal>process-asciidoc</goal>
+    </goals>
+    <configuration>
+        <sourceDirectory>src/docs/asciidoc/technical-docs</sourceDirectory> <2>
+        <backend>html5</backend> <3>
+        <sourceHighlighter>coderay</sourceHighlighter>
+        <attributes>
+            <imagesdir>./images</imagesdir>
+            <toc>left</toc>
+            <icons>font</icons>
+            <sectanchors>true</sectanchors>
+            <!-- set the idprefix to blank -->
+            <idprefix/>
+            <idseparator>-</idseparator>
+            <docinfo1>true</docinfo1>
+        </attributes>
+    </configuration>
+</execution>
+----
+<1> Define a unique id for your execution block. Make sure it is different from the other execution block(s)
+<2> Define the source directory where the asciidoc source document for the technical docs is located
+<3> Select `html5` as the output format
+
+You can of course define as many execution blocks as wanted.
