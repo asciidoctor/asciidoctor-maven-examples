@@ -18,9 +18,9 @@
     </properties>
 
     <modules>
-        <module>asciidoc-site-example</module>
+        <module>asciidoc-maven-site-example</module>
         <module>asciidoc-to-html-example</module>
-        <module>asciidoc-to-pdf-example</module>
+        <module>asciidoctor-pdf-example</module>
         <module>asciidoctor-diagram-example</module>
         <module>docbook-pipeline-docbkx-example</module>
         <module>docbook-pipeline-jdocbook-example</module>
