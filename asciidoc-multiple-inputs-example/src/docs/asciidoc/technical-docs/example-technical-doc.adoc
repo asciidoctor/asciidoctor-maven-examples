@@ -1,0 +1,19 @@
+= Example Technical Documentation
+Doc Writer <doc.writer@example.org>
+2014-09-09
+:revnumber: {project-version}
+:example-caption!:
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../java]
+
+This is the technical documentation for an example project.
+
+This documentation is about version {project-version}.
+
+== Chapter 1
+
+This is the first chapter of the example technical documentation
+
+== Chapter 2
+
+This is the second chapter of the example technical documentation
