@@ -67,7 +67,7 @@
                             <doctype>book</doctype>
                             <outputDirectory>${project.build.directory}/docbook/source/en-US</outputDirectory> 
                             <attributes>
-                                <imagesdir>${project.build.directory}/docbook/source/en-US/images</imagesdir>
+                                <imagesdir>images</imagesdir>
                             </attributes>
                         </configuration>
                     </execution>
@@ -126,6 +126,12 @@
                 <configuration>
                     <sourceDirectory>${project.build.directory}/docbook/source</sourceDirectory>
                     <sourceDocumentName>example-manual.xml</sourceDocumentName>
+                    <imageResource>
+                        <directory>${project.basedir}/src/docs/asciidoc</directory>
+                        <includes>
+                            <include>images/**</include>
+                        </includes>
+                    </imageResource>
                     <masterTranslation>en-US</masterTranslation>
                     <formats>
                         <format>

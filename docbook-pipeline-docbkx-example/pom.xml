@@ -53,7 +53,7 @@
                             <backend>docbook</backend>
                             <doctype>book</doctype>
                             <attributes>
-                                <imagesdir>${project.build.directory}/generated-docs/images</imagesdir>
+                                <imagesdir>images</imagesdir>
                             </attributes>
                         </configuration>
                     </execution>
@@ -129,8 +129,8 @@
                     <sourceDirectory>${project.build.directory}/generated-docs</sourceDirectory>
                     <targetDirectory>${project.build.directory}/generated-docs</targetDirectory>
                     <includes>example-manual.xml</includes>
-                    <!-- FIXME imgSrcPath may not be right -->
-                    <imgSrcPath>${project.build.directory}/generated-docs/images</imgSrcPath>
+                    <!-- NOTE imgSrcPath is handled by AsciiDoc settings -->
+                    <imgSrcPath></imgSrcPath>
                     <!-- FIXME highlightSource not working! -->
                     <highlightSource>1</highlightSource>
                 </configuration>
