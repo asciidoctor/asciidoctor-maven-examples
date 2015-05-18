@@ -84,6 +84,15 @@
                     <requires>
                         <require>asciidoctor-diagram</require>
                     </requires>
+                    <attributes>
+						<!-- Example below shows how to specify in this pom instead of System's PATH, the location of dot command of Graphviz, required by PlantUML libraries -->
+						<!-- Windows:
+							<graphvizdot>C:\Program Files (x86)\Graphviz2.38\bin\dot.exe</graphvizdot>
+						-->
+						<!-- *nix :
+							<graphvizdot>/usr/local/bin/dot</graphvizdot>
+						-->
+					</attributes>
                 </configuration>
                 <executions>
                     <execution>
