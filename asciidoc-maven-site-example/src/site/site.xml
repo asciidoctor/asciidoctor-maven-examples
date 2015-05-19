@@ -1,0 +1,27 @@
+<project>
+
+	<!-- If you want to pretty this up include the fluido skin -->
+	<!--
+	<skin>
+		<groupId>org.apache.maven.skins</groupId>
+		<artifactId>maven-fluido-skin</artifactId>
+		<version>1.4</version>
+	</skin>
+
+	<custom>
+		<fluidoSkin>
+			<topBarEnabled>true</topBarEnabled>
+			<sideBarEnabled>true</sideBarEnabled>
+		</fluidoSkin>
+	</custom>
+	-->
+	
+	<body>
+		<menu ref="reports" inherit="top"/>
+		<menu ref="modules"/> 
+		<menu name="asciidoctor">
+			<item href="hello.html" name="Hello" />
+		</menu>    
+	</body>
+
+</project>
