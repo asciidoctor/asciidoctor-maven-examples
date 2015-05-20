@@ -3,6 +3,7 @@
 
 This file was converted from AsciiDoc to HTML by the Maven Site module of the Asciidoctor Maven Plugin.
 
-image::images/torvalds-asciidoctor-quote.png[asciidoctor quote]
+image::images/256px-Ghostscript_Tiger.svg.png[Ghostscript Tiger]
+_By Ghostscript authors (GPL Ghostscript SVN: tiger.eps) [GPL (http://www.gnu.org/licenses/gpl.html)], via Wikimedia Commons_
 
 TIP: Use the include directive to keep your content DRY!
