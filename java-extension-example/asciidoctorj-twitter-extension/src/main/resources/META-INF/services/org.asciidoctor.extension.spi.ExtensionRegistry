@@ -1,0 +1,2 @@
+# File: src/main/resources/META-INF/services/org.asciidoctor.extension.spi.ExtensionRegistry
+org.asciidoctorj.twitter.extension.TwitterMacroExtension
