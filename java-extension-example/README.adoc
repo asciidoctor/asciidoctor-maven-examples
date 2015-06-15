@@ -1,0 +1,29 @@
+= Asciidoctor Maven Plugin: Java Extension Example
+
+An example project that demonstrates how to create an extension for Asciidoctorj (written in Java) and how to use it in an other documentation Maven module.
+
+== Description
+
+=== asciidoctorj-twitter-extension
+
+A maven plugin containing a the code that adds a `twitter` macro to asciidoctor.
+
+With this extension you can write:
+
+----
+Contact: twitter:mojavelinux[] (project lead lead of the asciidoctor project)
+----
+
+=== asciidoctor-with-extension-example
+
+An example project (very similar to `asciidoc-to-html-example`) that demonstrates how to use the `asciidoctorj-twitter-extension`.
+
+It convert some AsciiDoc code using the `twitter` macro to HTML5.
+
+== Usage
+
+Convert the AsciiDoc to HTML5 by invoking the `compile` goal (configured as the default goal) on this aggregator module (`java-extension-example`):
+
+ $ mvn
+
+Open the file _asciidoctor-with-extension-example/target/generated-docs/example-manual.html_ in your browser to see the generated HTML file.

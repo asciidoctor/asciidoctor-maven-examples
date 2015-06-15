@@ -34,6 +34,10 @@ link:asciidoc-multiple-inputs-example/README.adoc[asciidoc-multiple-inputs-examp
 An example project that demonstrates how to convert multiple input AsciiDoc documents to HTML5 and PDF using the
 Asciidoctor Maven plugin.
 
+link:java-extension-example/README.adoc[java-extension-example]::
+An example project that demonstrates how to create an extension for Asciidoctorj (written in Java) and how to use it in an other documentation Maven module.
+
+
 == Updating Asciidoctor Maven plugin version
 
 In case it is required to test a specific version of the plugin (e.g. local SNAPSHOT version), a tool has been included to update the version in all examples.

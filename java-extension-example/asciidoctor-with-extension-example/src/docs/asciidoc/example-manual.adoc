@@ -1,0 +1,8 @@
+= Example Manual
+Doc Writer <doc.writer@example.org>
+2015-06-12
+:revnumber: {project-version}
+
+Writing an AsciiDoctor extension using Java is _easy_! Ask twitter:mrhaki[] about it.
+
+This is a user manual for an empty project.
