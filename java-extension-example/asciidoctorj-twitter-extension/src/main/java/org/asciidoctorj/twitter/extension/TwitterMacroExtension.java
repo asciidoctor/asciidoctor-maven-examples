@@ -6,10 +6,9 @@ import org.asciidoctor.extension.spi.ExtensionRegistry;
 
 public class TwitterMacroExtension implements ExtensionRegistry {
 
-	public void register(Asciidoctor asciidoctor) {
-		JavaExtensionRegistry javaExtensionRegistry = asciidoctor
-				.javaExtensionRegistry();
+    public void register(Asciidoctor asciidoctor) {
+        JavaExtensionRegistry javaExtensionRegistry = asciidoctor.javaExtensionRegistry();
 
-		javaExtensionRegistry.inlineMacro("twitter", TwitterMacro.class);
-	}
+        javaExtensionRegistry.inlineMacro("twitter", TwitterMacro.class);
+    }
 }

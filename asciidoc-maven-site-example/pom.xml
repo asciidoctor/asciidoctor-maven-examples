@@ -10,9 +10,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>	
-        <asciidoctor.maven.plugin.version>1.5.2</asciidoctor.maven.plugin.version>
-        <jruby.version>1.7.17</jruby.version>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <asciidoctor.maven.plugin.version>1.5.2.1</asciidoctor.maven.plugin.version>
+        <jruby.version>1.7.20.1</jruby.version>
     </properties>
 
     <build>
@@ -26,6 +26,12 @@
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctor-maven-plugin</artifactId>
                         <version>${asciidoctor.maven.plugin.version}</version>
+                    </dependency>
+                    <!-- Comment this section to use the default jruby artifact provided by the plugin -->
+                    <dependency>
+                        <groupId>org.jruby</groupId>
+                        <artifactId>jruby-complete</artifactId>
+                        <version>${jruby.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -42,7 +48,7 @@
             <plugin>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>2.8</version>
-            </plugin>	
+            </plugin>
         </plugins>
     </reporting>
 

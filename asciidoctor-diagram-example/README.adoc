@@ -30,10 +30,10 @@ Example:
     <artifactId>asciidoctor-maven-plugin</artifactId>
     ...
     <configuration>
-		<attributes>
-			<graphvizdot>/PATH/TO/Graphviz/bin/dot</graphvizdot>
-		</attributes>
-		...
+        <attributes>
+            <graphvizdot>/PATH/TO/Graphviz/bin/dot</graphvizdot>
+        </attributes>
+        ...
 ----
 
 == References

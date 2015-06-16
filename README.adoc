@@ -12,7 +12,7 @@ Refer to the README file in each individual project to learn how to run it.
 
 == Example catalog
 
-link:asciidoc-to-html-example/README.adoc[asciidoc-to-html-example] (aka “The Quickstart”)::
+link:asciidoc-to-html-example/README.adoc[asciidoc-to-html-example] (aka "`The Quickstart`")::
 Demonstrates how to convert AsciiDoc to HTML5 using the Asciidoctor Maven plugin.
 
 link:docbook-pipeline-docbkx-example/README.adoc[docbook-pipeline-docbkx-example]::
@@ -37,11 +37,27 @@ Asciidoctor Maven plugin.
 link:java-extension-example/README.adoc[java-extension-example]::
 An example project that demonstrates how to create an extension for Asciidoctorj (written in Java) and how to use it in an other documentation Maven module.
 
+== On JRuby dependency
+
+Asciidoctor Maven plugin relies on https://github.com/asciidoctor/asciidoctor[asciidoctor] project to do the actual rendering. This is a Ruby implementation integrated thanks to the http://jruby.org/[JRuby] project, which is a required dependency to run the plugin. The maven plugin provides a default version of the `jruby-complete` artifact to ease its configuration. However, it can be overwritten just adding a custom version in the plugin's dependency section as seen in the following example:
+```
+    <plugin>
+        <groupId>org.asciidoctor</groupId>
+        <artifactId>asciidoctor-maven-plugin</artifactId>
+        <version>${asciidoctor.maven.plugin.version}</version>
+        <dependencies>
+            <dependency>
+                <groupId>org.jruby</groupId>
+                <artifactId>jruby-complete</artifactId>
+                <version>${jruby.version}</version>
+            </dependency>
+         <dependencies>
+```  
 
 == Updating Asciidoctor Maven plugin version
 
 In case it is required to test a specific version of the plugin (e.g. local SNAPSHOT version), a tool has been included to update the version in all examples.
-To change the plugin’s version follow the next steps:
+To change the plugin's version follow the next steps:
 
 . Set the desired version in the _<asciidoctor.maven.plugin.version>_ property in the _pom.xml_ file located at the root (asciidoctor-maven-examples folder). For instance:
 
