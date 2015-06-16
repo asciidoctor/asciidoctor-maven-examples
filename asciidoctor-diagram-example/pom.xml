@@ -48,7 +48,7 @@
             <plugin>
                 <groupId>de.saumya.mojo</groupId>
                 <artifactId>gem-maven-plugin</artifactId>
-                <version>1.0.5</version>
+                <version>1.0.10</version>
                 <configuration>
                     <!-- align JRuby version with AsciidoctorJ to avoid redundant downloading -->
                     <jrubyVersion>1.7.9</jrubyVersion>
