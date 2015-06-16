@@ -28,13 +28,13 @@
                         <version>1.5.0-alpha.7</version>
                     </dependency>
                     <!-- Comment this section to use the default jruby artifact provided by the plugin -->
-                	<dependency>
-			            <groupId>org.jruby</groupId>
-			            <artifactId>jruby-complete</artifactId>
-			            <version>${jruby.version}</version>
-			        </dependency>
-                	<!-- Uncomment the following element to override the version of AsciidoctorJ -->
-                	<!--
+                    <dependency>
+                        <groupId>org.jruby</groupId>
+                        <artifactId>jruby-complete</artifactId>
+                        <version>${jruby.version}</version>
+                    </dependency>
+                    <!-- Uncomment the following element to override the version of AsciidoctorJ -->
+                    <!--
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj</artifactId>
