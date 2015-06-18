@@ -25,7 +25,12 @@
         <module>asciidoc-multiple-inputs-example</module>
         <module>docbook-pipeline-docbkx-example</module>
         <module>docbook-pipeline-jdocbook-example</module>
+        <module>java-extension-example</module>
     </modules>
+
+    <build>
+        <defaultGoal>compile</defaultGoal>
+    </build>
 
     <profiles>
         <profile>
