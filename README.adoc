@@ -37,6 +37,19 @@ Asciidoctor Maven plugin.
 link:java-extension-example/README.adoc[java-extension-example]::
 An example project that demonstrates how to create an extension for Asciidoctorj (written in Java) and how to use it in an other documentation Maven module.
 
+== Root pom.xml
+
+The root `pom.xml` (aggregate build) is provided to allow you to run all the example projects at once using a single invocation of Maven.
+It also drives the continuous integration (CI) build.
+The root `pom.xml` does not contain any shared build configuration so that each of the projects can be used independently.
+This makes the examples suitable as independent references and as a starting point for your own project.
+
+=== Usage
+
+Invoke the `compile` goal (configured as the default goal) on this folder (`asciidoctor-maven-example`):
+
+ $ mvn
+
 == On JRuby dependency
 
 Asciidoctor Maven plugin relies on https://github.com/asciidoctor/asciidoctor[asciidoctor] project to do the actual rendering. This is a Ruby implementation integrated thanks to the http://jruby.org/[JRuby] project, which is a required dependency to run the plugin. The maven plugin provides a default version of the `jruby-complete` artifact to ease its configuration. However, it can be overwritten just adding a custom version in the plugin's dependency section as seen in the following example:
