@@ -25,7 +25,7 @@
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj-pdf</artifactId>
-                        <version>1.5.0-alpha.7</version>
+                        <version>1.5.0-alpha.8</version>
                     </dependency>
                     <!-- Comment this section to use the default jruby artifact provided by the plugin -->
                     <dependency>
@@ -60,11 +60,7 @@
                             <backend>pdf</backend>
                             <sourceHighlighter>coderay</sourceHighlighter>
                             <attributes>
-                                <!--
-                                WARNING: The font necessary to support font-based icons is missing in AsciidoctorJ PDF 1.5.0-alpha.7.
-                                See https://github.com/asciidoctor/asciidoctorj/issues/330 for details.
                                 <icons>font</icons>
-                                -->
                                 <pagenums/>
                                 <toc/>
                                 <idprefix/>

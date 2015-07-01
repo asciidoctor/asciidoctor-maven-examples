@@ -19,6 +19,7 @@ We just haven't decided what that is yet.
 ----
 include::{sourcedir}/example/StringUtils.java[tags=contains,indent=0]
 ----
+<1> return statement
 
 This page was built by the following command:
 
