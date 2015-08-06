@@ -25,7 +25,7 @@
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj-pdf</artifactId>
-                        <version>1.5.0-alpha.8</version>
+                        <version>1.5.0-alpha.9</version>
                     </dependency>
                     <!-- Comment this section to use the default jruby artifact provided by the plugin -->
                     <dependency>
@@ -62,6 +62,8 @@
                         <configuration>
                             <sourceDirectory>src/docs/asciidoc/user-manual</sourceDirectory>
                             <backend>pdf</backend>
+                            <!-- Since 1.5.0-alpha.9, PDF back-end can also use 'rouge' which provides more coverage
+                            for other languages like scala -->
                             <sourceHighlighter>coderay</sourceHighlighter>
                             <attributes>
                                 <pagenums/>

@@ -25,7 +25,7 @@
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj-pdf</artifactId>
-                        <version>1.5.0-alpha.8</version>
+                        <version>1.5.0-alpha.9</version>
                     </dependency>
                     <!-- Comment this section to use the default jruby artifact provided by the plugin -->
                     <dependency>
@@ -58,7 +58,9 @@
                         </goals>
                         <configuration>
                             <backend>pdf</backend>
-                            <sourceHighlighter>coderay</sourceHighlighter>
+                            <!-- Since 1.5.0-alpha.9 PDF back-end can use 'rouge' as well as 'coderay'
+                            source highlighting -->
+                            <sourceHighlighter>rouge</sourceHighlighter>
                             <attributes>
                                 <icons>font</icons>
                                 <pagenums/>
