@@ -50,3 +50,11 @@ include::subdir/_b.adoc[]
 ====
 
 WARNING: Includes can be tricky!
+
+== Source Code and Syntax Highlighting
+
+This section shows some code highlighting examples.
+
+include::subdir/_code_examples.adoc[]
+
+
