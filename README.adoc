@@ -38,6 +38,9 @@ Asciidoctor Maven plugin.
 link:java-extension-example/README.adoc[java-extension-example]::
 An example project that demonstrates how to create an extension for Asciidoctorj (written in Java) and how to use it in an other documentation Maven module.
 
+link:asciidoc-to-revealjs-example/README.adoc[asciidoc-to-revealjs-example]::
+Demonstrates how to convert AsciiDoc to reveal.js using Asciidoctor revealjs with the Asciidoctor Maven plugin.
+
 == Root pom.xml
 
 The root `pom.xml` (aggregate build) is provided to allow you to run all the example projects at once using a single invocation of Maven.
