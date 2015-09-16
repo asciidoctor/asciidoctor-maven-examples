@@ -4,7 +4,7 @@ Doc Writer <doc.writer@example.org>
 :revnumber: {project-version}
 :example-caption!:
 ifndef::imagesdir[:imagesdir: images]
-ifndef::sourcedir[:sourcedir: ../java]
+ifndef::sourcedir[:sourcedir: ../../../main/java]
 
 This is the technical documentation for an example project.
 
