@@ -12,7 +12,8 @@
         <project.slides.directory>${project.build.directory}/generated-slides</project.slides.directory>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <asciidoctor.maven.plugin.version>1.5.2.1</asciidoctor.maven.plugin.version>
-        <jruby.version>1.7.20.1</jruby.version>
+        <asciidoctorj.version>1.5.3.2</asciidoctorj.version>
+        <jruby.version>9.0.4.0</jruby.version>
         <revealjs.version>3.1.0</revealjs.version>
         <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
     </properties>
@@ -64,14 +65,12 @@
                         <artifactId>jruby-complete</artifactId>
                         <version>${jruby.version}</version>
                     </dependency>
-                    <!-- Uncomment the following element to override the version of AsciidoctorJ -->
-                    <!--
+                    <!-- Comment this section to use the default AsciidoctorJ artifact provided by the plugin -->
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj</artifactId>
-                        <version>1.5.3-SNAPSHOT</version>
+                        <version>${asciidoctorj.version}</version>
                     </dependency>
-                    -->
                 </dependencies>
                 <configuration>
                     <sourceDirectory>src/docs/asciidoc</sourceDirectory>
