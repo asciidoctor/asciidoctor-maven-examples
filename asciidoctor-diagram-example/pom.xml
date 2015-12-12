@@ -12,59 +12,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <asciidoctor.maven.plugin.version>1.5.2.1</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>1.5.3.2</asciidoctorj.version>
+        <asciidoctorj.diagram.version>1.3.1</asciidoctorj.diagram.version>
         <jruby.version>1.7.21</jruby.version><!-- downgrade of JRuby see: https://github.com/asciidoctor/asciidoctorj/issues/409 -->
-        <rubygems.asciidoctor.diagram.version>1.3.1</rubygems.asciidoctor.diagram.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>rubygems-proxy-releases</id>
-            <name>RubyGems.org Proxy (Releases)</name>
-            <url>http://rubygems-proxy.torquebox.org/releases</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    <dependencies>
-        <dependency>
-            <groupId>rubygems</groupId>
-            <artifactId>asciidoctor-diagram</artifactId>
-            <version>${rubygems.asciidoctor.diagram.version}</version>
-            <type>gem</type>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>rubygems</groupId>
-                    <artifactId>asciidoctor</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-    </dependencies>
     <build>
         <defaultGoal>process-resources</defaultGoal>
         <plugins>
-            <plugin>
-                <groupId>de.saumya.mojo</groupId>
-                <artifactId>gem-maven-plugin</artifactId>
-                <version>1.0.10</version>
-                <configuration>
-                    <!-- align JRuby version with AsciidoctorJ to avoid redundant downloading -->
-                    <jrubyVersion>${jruby.version}</jrubyVersion>
-                    <gemHome>${project.build.directory}/gems</gemHome>
-                    <gemPath>${project.build.directory}/gems</gemPath>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>initialize</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -82,11 +36,14 @@
                         <artifactId>asciidoctorj</artifactId>
                         <version>${asciidoctorj.version}</version>
                     </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram</artifactId>
+                        <version>${asciidoctorj.diagram.version}</version>
+                    </dependency>
                 </dependencies>
                 <configuration>
                     <sourceDirectory>src/docs/asciidoc</sourceDirectory>
-                    <!-- The gem-maven-plugin appends the scope (e.g., provided) to the gemPath defined in the plugin configuration -->
-                    <gemPath>${project.build.directory}/gems-provided</gemPath>
                     <requires>
                         <require>asciidoctor-diagram</require>
                     </requires>
