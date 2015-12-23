@@ -25,7 +25,7 @@ if (replacements.size() > 0) {
 }
 
 /* child pom's update */
-root.eachDir { folder ->
+root.eachDirRecurse { folder ->
     folder.listFiles({it.name == 'pom.xml'} as FileFilter).each { File pom ->
         // println "[INFO] Parsing ${pom.absolutePath}"
         File copy = new File(pom.absolutePath+'-TEMP')
