@@ -12,7 +12,7 @@
         <project.slides.directory>${project.build.directory}/generated-slides</project.slides.directory>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <asciidoctor.maven.plugin.version>1.5.3</asciidoctor.maven.plugin.version>
-        <asciidoctorj.version>1.5.3.2</asciidoctorj.version>
+        <asciidoctorj.version>1.5.4</asciidoctorj.version>
         <jruby.version>9.0.4.0</jruby.version>
         <revealjs.version>3.1.0</revealjs.version>
         <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
