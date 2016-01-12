@@ -18,7 +18,7 @@
         <asciidoctorj.version>1.5.4</asciidoctorj.version>
         <asciidoctorj.diagram.version>1.3.1</asciidoctorj.diagram.version>
         <asciidoctorj.pdf.version>1.5.0-alpha.11</asciidoctorj.pdf.version>
-        <jruby.version>9.0.4.0</jruby.version>
+        <jruby.version>1.7.21</jruby.version>
         <rubygems.prawn.version>2.0.2</rubygems.prawn.version>
     </properties>
 

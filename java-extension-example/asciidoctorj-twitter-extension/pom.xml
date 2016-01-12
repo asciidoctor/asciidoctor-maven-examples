@@ -7,11 +7,17 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>Asciidoctorj twitter extension</name>
     <description>An extension for asciidoctorj providing a twitter macro available as Maven plugin.</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <asciidoctorj.version>1.5.4</asciidoctorj.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.asciidoctor</groupId>
             <artifactId>asciidoctorj</artifactId>
-            <version>1.5.2</version>
+            <version>${asciidoctorj.version}</version>
         </dependency>
     </dependencies>
     <build>
