@@ -13,7 +13,7 @@
         <asciidoctor.maven.plugin.version>1.5.3</asciidoctor.maven.plugin.version>
         <asciidoctorj.pdf.version>1.5.0-alpha.11</asciidoctorj.pdf.version>
         <asciidoctorj.version>1.5.4</asciidoctorj.version>
-        <jruby.version>9.0.4.0</jruby.version>
+        <jruby.version>1.7.21</jruby.version>
         <rubygems.prawn.version>2.0.2</rubygems.prawn.version>
     </properties>
 
