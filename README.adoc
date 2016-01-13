@@ -76,7 +76,18 @@ Asciidoctor Maven plugin relies on https://github.com/asciidoctor/asciidoctor[as
 == Updating Asciidoctor Maven plugin version
 
 In case it is required to test a specific version of the plugin (e.g. local SNAPSHOT version), a tool has been included to update the version in all examples.
-To change the plugin's version follow the next steps:
+Properties can be updated in two ways.
+
+* First, define the new versions using the `versions` system property, this will update in examples as well as in the parent.
+The following example shows how to update two properties.
+
+[source,indent=2]
+----
+$ mvn validate -Pupdate-properties -Dversions=asciidoctor.maven.plugin.version=1.6.0-SNAPSHOT,asciidoctorj.pdf.version=1.5.0-alpha.12
+----
+
+* Secondly, copying the properties values from the parent pom to the example projects.
+For example, to change the plugin's version follow the next steps:
 
 . Set the desired version in the _<asciidoctor.maven.plugin.version>_ property in the _pom.xml_ file located at the root (asciidoctor-maven-examples folder). For instance:
 
