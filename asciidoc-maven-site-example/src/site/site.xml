@@ -1,11 +1,10 @@
 <project>
-
     <body>
         <menu ref="reports" inherit="top"/>
         <menu ref="modules"/> 
         <menu name="Asciidoctor Example">
             <item href="hello.html" name="Hello" />
+            <item href="article.html" name="Article" />
         </menu>    
     </body>
-
 </project>

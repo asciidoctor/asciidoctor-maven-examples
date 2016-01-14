@@ -1,0 +1,39 @@
+= AsciiDoc is Writing Zen
+Doc Writer <doc.writer@example.com>
+//Junior Writer <junior.writer@example.com>
+v1.0, 2014-08-08
+//:toc:
+:icons: font
+:source-highlighter: coderay
+:sectanchors:
+//:compat-mode:
+
+_Zen_ in the *art* of writing `plain text` with http://asciidoc.org[AsciiDoc].
+
+[TIP]
+Use http://asciidoctor.org[Asciidoctor] for the best AsciiDoc experience.footnote:[Not to mention the best looking output!]
+Then icon:twitter[role=aqua] about it!
+
+toc::[]
+
+== Sample Section
+
+[square]
+* item 1
+* item 2
+
+[source,ruby]
+----
+puts "Hello, World!"
+----
+
+[caption=]
+.Ruby platforms
+|===
+|Name |Language
+
+|MRI |C
+|JRuby |Java
+|Opal |JavaScript
+|Rubinius |Ruby
+|===
