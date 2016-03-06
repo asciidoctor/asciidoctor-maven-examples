@@ -1,11 +1,13 @@
 = Asciidoctor Maven Plugin: Asciidoc to reveal.js Example
 
-An example project that demonstrates how to convert AsciiDoc to reveal.js with the Asciidoctor Maven plugin.
+An example project that demonstrates how to convert AsciiDoc to reveal.js slides with the Asciidoctor Maven plugin.
+
+The AsciiDoc source of the demo presentation can be found in _src/docs/asciidoc/slides.adoc_.
 
 == Usage
 
-Convert the AsciiDoc to HTML5 by invoking the `process-resources` goal (configured as the default goal):
+Convert the AsciiDoc to HTML slides by invoking the `process-resources` goal (configured as the default goal):
 
  $ mvn
 
-Open the file _target/generated-slides/example-manual.html_ in your browser to see the generated HTML file containing the generated diagram images.
+Open the file _target/generated-slides/slides.html_ in your browser to see the generated HTML file containing the reveal.js presentation deck.
