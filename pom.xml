@@ -15,23 +15,24 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <asciidoctor.maven.plugin.version>1.5.3</asciidoctor.maven.plugin.version>
         <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
-        <asciidoctorj.version>1.5.4</asciidoctorj.version>
-        <asciidoctorj.diagram.version>1.3.1</asciidoctorj.diagram.version>
+        <asciidoctorj.version>1.5.4.1</asciidoctorj.version>
+        <asciidoctorj.diagram.version>1.5.0</asciidoctorj.diagram.version>
         <asciidoctorj.pdf.version>1.5.0-alpha.11</asciidoctorj.pdf.version>
-        <jruby.version>1.7.21</jruby.version>
+        <jruby.version>1.7.25</jruby.version>
         <rubygems.prawn.version>2.0.2</rubygems.prawn.version>
     </properties>
 
     <modules>
         <module>asciidoc-maven-site-example</module>
         <module>asciidoc-to-html-example</module>
+        <module>asciidoc-to-revealjs-example</module>
         <module>asciidoctor-pdf-example</module>
         <module>asciidoctor-pdf-with-theme-example</module>
         <module>asciidoctor-diagram-example</module>
         <module>asciidoc-multiple-inputs-example</module>
         <module>docbook-pipeline-docbkx-example</module>
         <module>docbook-pipeline-jdocbook-example</module>
-        <module>java-extension-example</module>
+        <!--<module>java-extension-example</module>-->
     </modules>
 
     <build>
