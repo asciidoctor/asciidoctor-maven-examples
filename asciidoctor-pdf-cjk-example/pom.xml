@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.asciidoctor.maven</groupId>
+    <artifactId>asciidoctor-pdf-cjk-example</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Asciidoctor PDF CJK Maven example</name>
+    <description>An example project that demonstrates how to convert AsciiDoc to PDF using CJK extensions to properly
+        show CJK (Chinese, Japanese and Korean) characters.
+    </description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <asciidoctor.maven.plugin.version>1.5.3</asciidoctor.maven.plugin.version>
+        <asciidoctorj.version>1.5.4.1</asciidoctorj.version>
+        <asciidoctorj.pdf.version>1.5.0-alpha.11</asciidoctorj.pdf.version>
+        <jruby.version>1.7.25</jruby.version>
+        <pdf.cjk.version>0.1.3</pdf.cjk.version>
+        <pdf.cjk.kaigen.version>0.1.1</pdf.cjk.kaigen.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>rubygems-release</id>
+            <url>http://rubygems-proxy.torquebox.org/releases</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>rubygems</groupId>
+            <artifactId>asciidoctor-pdf-cjk</artifactId>
+            <version>${pdf.cjk.version}</version>
+            <type>gem</type>
+            <!-- avoid downloading gems included in AsciidoctorJ -->
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>rubygems</groupId>
+                    <artifactId>asciidoctor</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>rubygems</groupId>
+                    <artifactId>asciidoctor-pdf</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>rubygems</groupId>
+            <artifactId>asciidoctor-pdf-cjk-kai_gen_gothic</artifactId>
+            <version>${pdf.cjk.kaigen.version}</version>
+            <type>gem</type>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>process-resources</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>de.saumya.mojo</groupId>
+                <artifactId>gem-maven-plugin</artifactId>
+                <version>1.1.5</version>
+                <configuration>
+                    <skip>true</skip>
+                    <!-- Align JRuby version with AsciidoctorJ to avoid redundant downloading -->
+                    <jrubyVersion>${jruby.version}</jrubyVersion>
+                    <gemHome>${project.build.directory}/gems</gemHome>
+                    <gemPath>${project.build.directory}/gems</gemPath>
+                </configuration>
+                <executions>
+                    <!-- Install required gems in target directory -->
+                    <execution>
+                        <id>install-gems</id>
+                        <goals>
+                            <goal>initialize</goal>
+                        </goals>
+                        <phase>initialize</phase>
+                    </execution>
+                    <!-- Download KaiGen Gothic fonts in target directory -->
+                    <execution>
+                        <id>install-themes</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>initialize</phase>
+                        <configuration>
+                            <!-- <execArgs>installer/asciidoctor-pdf-cjk-kai_gen_gothic-install</execArgs> -->
+                            <execArgs>${project.build.directory}/gems-provided/gems/asciidoctor-pdf-cjk-kai_gen_gothic-${pdf.cjk.kaigen.version}/exe/asciidoctor-pdf-cjk-kai_gen_gothic-install</execArgs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>${asciidoctor.maven.plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-pdf</artifactId>
+                        <version>${asciidoctorj.pdf.version}</version>
+                    </dependency>
+                    <!-- Comment this section to use the default jruby artifact provided by the plugin -->
+                    <dependency>
+                        <groupId>org.jruby</groupId>
+                        <artifactId>jruby-complete</artifactId>
+                        <version>${jruby.version}</version>
+                    </dependency>
+                    <!-- Comment this section to use the default AsciidoctorJ artifact provided by the plugin -->
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj</artifactId>
+                        <version>${asciidoctorj.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <!-- The gem-maven-plugin appends the scope (e.g., provided) to the gemPath defined in the plugin configuration -->
+                    <gemPath>${project.build.directory}/gems-provided</gemPath>
+                    <!-- Set Ruby extensions as required gems -->
+                    <requires>
+                        <require>asciidoctor-pdf-cjk</require>
+                        <require>asciidoctor-pdf-cjk-kai_gen_gothic</require>
+                    </requires>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-pdf-cjk-zh_CN-doc</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>pdf</backend>
+                            <sourceDirectory>src/docs/asciidoc</sourceDirectory>
+                            <sourceDocumentName>README-zh_CN.adoc</sourceDocumentName>
+                            <sourceHighlighter>coderay</sourceHighlighter>
+                            <attributes>
+                                <allow-uri-read/>
+                                <icons>font</icons>
+                                <pagenums/>
+                                <toc/>
+                                <idprefix/>
+                                <idseparator>-</idseparator>
+                                <!-- Set KaiGen Gothic Chinese theme -->
+                                <pdf-style>KaiGenGothicCN</pdf-style>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-pdf-cjk-JP-doc</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>pdf</backend>
+                            <sourceDirectory>src/docs/asciidoc</sourceDirectory>
+                            <sourceDocumentName>README-jp.adoc</sourceDocumentName>
+                            <sourceHighlighter>coderay</sourceHighlighter>
+                            <attributes>
+                                <allow-uri-read/>
+                                <icons>font</icons>
+                                <pagenums/>
+                                <toc/>
+                                <idprefix/>
+                                <idseparator>-</idseparator>
+                                <!-- Set KaiGen Gothic Japanese theme -->
+                                <pdf-style>KaiGenGothicJP</pdf-style>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
