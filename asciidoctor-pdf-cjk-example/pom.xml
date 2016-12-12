@@ -89,7 +89,7 @@
                         </goals>
                         <phase>initialize</phase>
                         <configuration>
-                            <!-- <execArgs>installer/asciidoctor-pdf-cjk-kai_gen_gothic-install</execArgs> -->
+                            <!-- Run post-installation script to download fonts -->
                             <execArgs>${project.build.directory}/gems-provided/gems/asciidoctor-pdf-cjk-kai_gen_gothic-${pdf.cjk.kaigen.version}/exe/asciidoctor-pdf-cjk-kai_gen_gothic-install</execArgs>
                         </configuration>
                     </execution>
@@ -139,7 +139,7 @@
                             <backend>pdf</backend>
                             <sourceDirectory>src/docs/asciidoc</sourceDirectory>
                             <sourceDocumentName>README-zh_CN.adoc</sourceDocumentName>
-                            <sourceHighlighter>coderay</sourceHighlighter>
+                            <sourceHighlighter>rouge</sourceHighlighter>
                             <attributes>
                                 <allow-uri-read/>
                                 <icons>font</icons>
@@ -162,7 +162,7 @@
                             <backend>pdf</backend>
                             <sourceDirectory>src/docs/asciidoc</sourceDirectory>
                             <sourceDocumentName>README-jp.adoc</sourceDocumentName>
-                            <sourceHighlighter>coderay</sourceHighlighter>
+                            <sourceHighlighter>rouge</sourceHighlighter>
                             <attributes>
                                 <allow-uri-read/>
                                 <icons>font</icons>
