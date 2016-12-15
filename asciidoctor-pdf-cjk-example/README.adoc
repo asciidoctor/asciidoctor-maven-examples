@@ -1,0 +1,31 @@
+= Asciidoctor Maven Plugin: AsciiDoc to PDF CJK Example
+:cn-example-file: README-zh_CN
+:jp-example-file: README-jp
+
+An example project that demonstrates how to convert AsciiDoc to PDF using CJK extensions to properly show CJK (Chinese, Japanese and Korean) characters.
+
+== Usage
+
+Convert the AsciiDoc to PDF using Asciidoctor PDF by invoking the `process-resources` goal (configured as the default goal):
+
+ $ mvn
+
+Open the generated files _target/generated-docs/{cn-example-file}.pdf_ and _target/generated-docs/{jp-example-file}.pdf_ in your PDF viewer to see the generated PDFs.
+
+The examples used are the Chinese and Japanese translations of the Asciidoctor README document (all found link:https://github.com/asciidoctor/asciidoctor/[here]). Contributed respectively by link:https://github.com/diguage[diguage] and link:https://github.com/Mizuho32[Mizuho32].
+
+== Used Asciidoctor extensions
+
+This project uses two Ruby extensions by link:https://github.com/chloerei[Rei] (link:https://twitter.com/chloerei[@chloerei]):
+
+link:https://github.com/chloerei/asciidoctor-pdf-cjk[Asciidoctor PDF CJK]::
+Fixes line wraps formatting inserting zero-width spaces (ZWSP) before CJ characters.
+
+link:https://github.com/chloerei/asciidoctor-pdf-cjk-kai_gen_gothic[KaiGen Gothic Asciidoctor Theme]::
+Contains style improvements as well as a much wider set of Hanzi and Kanji characters not found in the default fonts.
+
+[NOTE]
+====
+`KaiGen Gothic Asciidoctor Theme` extension downloads 183 MB in required TTF fonts on every build into the target directory.
+It would be advisable to cache those files in a real project.
+====
