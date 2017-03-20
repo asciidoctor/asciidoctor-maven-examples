@@ -28,4 +28,18 @@ Contains style improvements as well as a much wider set of Hanzi and Kanji chara
 ====
 `KaiGen Gothic Asciidoctor Theme` extension downloads 183 MB in required TTF fonts on every build into the target directory.
 It would be advisable to cache those files in a real project.
+////
+Use this in `asciidoctor-pdf-cjk-example/target/gems-provided/gems/asciidoctor-pdf-cjk-kai_gen_gothic-0.1.1/exe/asciidoctor-pdf-cjk-kai_gen_gothic-install` to cache files.
+
+Dir.chdir(FontsDir) do
+  Fonts.each_with_index do |name, index|
+    puts "[#{index + 1}/#{Fonts.count}] Downloading #{name}"
+    unless File.exist?(name)
+      File.open(name, 'wb') do |file|
+        file.write open("https://github.com/chloerei/asciidoctor-pdf-cjk-kai_gen_gothic/releases/download/v0.1.0-fonts/#{name}").read
+      end
+    end
+  end
+end
+////
 ====

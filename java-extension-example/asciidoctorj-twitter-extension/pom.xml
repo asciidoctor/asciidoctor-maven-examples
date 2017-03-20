@@ -10,7 +10,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <asciidoctorj.version>1.5.4.1</asciidoctorj.version>
+        <asciidoctorj.version>1.5.5</asciidoctorj.version>
     </properties>
 
     <dependencies>
