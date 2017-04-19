@@ -1,0 +1,110 @@
+= Example Manual
+Doc Writer <doc.writer@example.org>
+2014-09-09
+:revnumber: {project-version}
+:example-caption!:
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/java]
+:deckjs_transition: fade
+:navigation:
+:menu:
+:goto:
+
+
+== Introduction
+
+* This is a user manual for an example project.
+* This project does something.
+* We just haven't decided what that is yet.
+
+== Source Code
+
+[source,java]
+.Java code from project
+----
+include::{sourcedir}/example/StringUtils.java[tags=contains,indent=0]
+----
+
+This page was built by the following command:
+
+ $ mvn
+
+== Including documents from subdir
+
+.include::subdir/_b.adoc[]
+
+include::subdir/_b.adoc[]
+
+== Images
+
+[.thumb]
+image::sunset.jpg[scaledwidth=75%]
+
+== Diagrams (1)
+
+You can make http://asciidoctor.org/docs/asciidoctor-diagram/[diagrams in Asciidoctor]
+
+For example, the following:
+
+.Basic ditaa block
+[source]
+----
+[ditaa]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....
+----
+
+== Diagrams (2)
+
+...produces
+
+.Basic ditaa block output
+[ditaa]
+----
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |  Diagram    |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /----------------\
+ |        | --+ Asciidoctor +--> |                |
+ |  Text  |   +-------------+    |Beautiful output|
+ |Document|   |   !magic!   |    |                |
+ |     {d}|   |             |    |                |
+ +---+----+   +-------------+    \----------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+----
+
+
+== Attributes
+
+.Built-in
+asciidoctor-version:: {asciidoctor-version}
+safe-mode-name:: {safe-mode-name}
+docdir:: {docdir}
+docfile:: {docfile}
+imagesdir:: {imagesdir}
+
+.Custom
+project-version:: {project-version}
+sourcedir:: {sourcedir}

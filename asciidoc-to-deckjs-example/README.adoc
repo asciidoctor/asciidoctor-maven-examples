@@ -1,0 +1,14 @@
+= Asciidoctor Maven Plugin: Asciidoc to deck.js Example
+
+An example project that demonstrates how to convert AsciiDoc to deck.js with the Asciidoctor Maven plugin.
+
+== Usage
+
+Convert the AsciiDoc to HTML5 by invoking the `process-resources` goal (configured as the default goal):
+
+ $ mvn
+
+Open the file _target/generated-slides/example-manual.html_ in your browser to see the generated HTML file containing the generated diagram images.
+
+== References
+This example is using Asciidoctor Diagram; for more examples and information about Asciidoctor Diagrams see link:http://asciidoctor.org/news/2014/02/18/plain-text-diagrams-in-asciidoctor/[] and link:https://github.com/kubamarchwicki/asciidoctor-maven-examples/tree/master/asciidoctor-diagram-example[Asciidoctor Diagram Maven example]
