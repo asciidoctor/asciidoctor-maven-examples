@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <asciidoctor.maven.plugin.version>1.5.5</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>1.5.5</asciidoctorj.version>
-        <asciidoctorj.pdf.version>1.5.0-alpha.14</asciidoctorj.pdf.version>
+        <asciidoctorj.pdf.version>1.5.0-alpha.15</asciidoctorj.pdf.version>
         <jruby.version>9.1.8.0</jruby.version>
         <pdf.cjk.version>0.1.3</pdf.cjk.version>
         <pdf.cjk.kaigen.version>0.1.1</pdf.cjk.kaigen.version>
