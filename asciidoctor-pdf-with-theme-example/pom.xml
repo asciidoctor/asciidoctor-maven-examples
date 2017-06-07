@@ -59,7 +59,7 @@
                         <configuration>
                             <backend>pdf</backend>
                             <outputDirectory>${project.build.directory}/generated-docs-default-theme</outputDirectory>
-                            <sourceHighlighter>rouge</sourceHighlighter>
+                            <sourceHighlighter>coderay</sourceHighlighter>
                             <doctype>book</doctype>
                             <attributes>
                                 <icons>font</icons>
@@ -79,7 +79,7 @@
                         <configuration>
                             <backend>pdf</backend>
                             <outputDirectory>${project.build.directory}/generated-docs-custom-theme</outputDirectory>
-                            <sourceHighlighter>rouge</sourceHighlighter>
+                            <sourceHighlighter>coderay</sourceHighlighter>
                             <doctype>book</doctype>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>

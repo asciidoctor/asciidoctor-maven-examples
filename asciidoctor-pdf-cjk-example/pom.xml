@@ -139,7 +139,7 @@
                             <backend>pdf</backend>
                             <sourceDirectory>src/docs/asciidoc</sourceDirectory>
                             <sourceDocumentName>README-zh_CN.adoc</sourceDocumentName>
-                            <sourceHighlighter>rouge</sourceHighlighter>
+                            <sourceHighlighter>coderay</sourceHighlighter>
                             <attributes>
                                 <allow-uri-read/>
                                 <icons>font</icons>
@@ -162,7 +162,7 @@
                             <backend>pdf</backend>
                             <sourceDirectory>src/docs/asciidoc</sourceDirectory>
                             <sourceDocumentName>README-jp.adoc</sourceDocumentName>
-                            <sourceHighlighter>rouge</sourceHighlighter>
+                            <sourceHighlighter>coderay</sourceHighlighter>
                             <attributes>
                                 <allow-uri-read/>
                                 <icons>font</icons>
