@@ -14,7 +14,7 @@
         <asciidoctor.maven.plugin.version>1.5.5</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>1.5.6</asciidoctorj.version>
         <jruby.version>1.7.26</jruby.version>
-        <revealjs.version>3.1.0</revealjs.version>
+        <revealjs.version>3.5.0</revealjs.version>
         <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
     </properties>
 
