@@ -1,9 +1,8 @@
-= Example Manual
-Doc Writer <doc.writer@example.org>
-v1.0, 2014-09-09
-:example-caption!:
+= Chapter 1
 ifndef::imagesdir[:imagesdir: images]
 ifndef::sourcedir[:sourcedir: ../../main/java]
+
+== Overview
 
 This is a user manual for an example project.
 
