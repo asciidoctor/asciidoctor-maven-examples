@@ -1,0 +1,60 @@
+= Example Manual
+Doc Writer <doc.writer@example.org>
+v1.0, 2014-09-09
+:example-caption!:
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/java]
+
+This is a user manual for an example project.
+
+== Introduction
+
+This project does something.
+We just haven't decided what that is yet.
+
+== Source Code
+
+[source,java]
+.Java code from project
+----
+include::{sourcedir}/example/StringUtils.java[tags=contains,indent=0]
+----
+<1> return statement
+
+This page was built by the following command:
+
+ $ mvn
+
+== Images
+
+[.thumb]
+image::sunset.jpg[scaledwidth=75%]
+
+== Attributes
+
+.Built-in
+asciidoctor-version:: {asciidoctor-version}
+safe-mode-name:: {safe-mode-name}
+docdir:: {docdir}
+docfile:: {docfile}
+imagesdir:: {imagesdir}
+
+.Custom
+sourcedir:: {sourcedir}
+
+== Includes
+
+.include::subdir/_b.adoc[]
+====
+include::subdir/_b.adoc[]
+====
+
+WARNING: Includes can be tricky!
+
+== Source Code and Syntax Highlighting
+
+This section shows some code highlighting examples.
+
+include::subdir/_code_examples.adoc[]
+
+

@@ -1,0 +1,17 @@
+= Asciidoctor Maven EPUB3 example
+Doc Writer <doc.writer@example.org>
+v1.0, 2018-01-03
+:doctype: book
+:creator: {author}
+:producer: Asciidoctor
+:keywords: Asciidoctor, samples, e-book, EPUB3, KF8, MOBI, Asciidoctor.js
+:copyright: CC-BY-SA 3.0
+ifndef::imagesdir[:imagesdir: images]
+:front-cover-image: image:sunset.jpg[Front cover,500,332]
+ifndef::ebook-format[:leveloffset: -1]
+ifndef::source-highlighter[:source-highlighter: coderay]
+// add following line if you want to create a .mobi file
+// :ebook-format: kf8
+
+include::example-manual.adoc[]
+
