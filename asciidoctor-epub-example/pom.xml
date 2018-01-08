@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.asciidoctor.maven</groupId>
     <artifactId>asciidoctor-epub-example</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>Asciidoctor EPUB Maven example</name>
-    <description>An example project that demonstrates how to convert AsciiDoc to EPUB with the Asciidoctor Maven plugin.</description>
+    <description>An example project that demonstrates how to convert AsciiDoc to EPUB and mobi with Asciidoctor
+        Maven plugin.
+    </description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <asciidoctor.maven.plugin.version>1.5.6</asciidoctor.maven.plugin.version>
         <asciidoctorj.epub.version>1.5.0-alpha.7</asciidoctorj.epub.version>
         <asciidoctorj.version>1.5.6</asciidoctorj.version>
-        <jruby.version>1.7.26</jruby.version>
+
+        <!-- for a correct kf8 generation, you'll need at least jRuby >= 9.1.8.0 -->
+        <jruby.version>9.1.15.0</jruby.version>
+
+        <!-- provide full path to kindlegen application if you need the fallback solution -->
+        <path.to.kindlegen>/absolute/path/to/kindlegen</path.to.kindlegen>
     </properties>
 
     <build>
@@ -49,7 +56,7 @@
                     </attributes>
                 </configuration>
                 <executions>
-                    <!-- shows conversion for an .adoc file which contains special epub directives -->
+                    <!-- shows how to create an epub file -->
                     <execution>
                         <id>generate-spine-epub</id>
                         <phase>generate-resources</phase>
@@ -63,12 +70,18 @@
                         </configuration>
                     </execution>
 
-                    <!-- shows conversion to kindle format -->
-                    <!-- however, currently fails in execution (mobi file still gets generated) -->
-                    <!-- the only difference between epub and mobi generation is to set the attribute 'ebook-format' to kf8 -->
-                    <!-- per default, this attribute is set to 'epub3' -->
 
-                    <!--
+                    <!-- for converting asciidoc to a mobi format, asciidoc performs 2 steps. -->
+                    <!-- first, it generates a xxxx-kf8.epub file, which is then, in the second step, processed in order
+                         to create xxxx.mobi file. -->
+
+                    <!-- general information: epub and mobi generation differs only in the attribute 'ebook-format',
+                         which is set to 'epub3' for epub and to kf8 in order to generate a special annotated epub3
+                         document which is suitable for kindlegen -->
+
+                    <!-- per default, this attribute is set to 'epub3'. -->
+                    <!-- you can set this attribute either in the corresponding .adoc file, or provide it like showed
+                         in this execution block below -->
                     <execution>
                         <id>generate-spine-kf8</id>
                         <phase>generate-resources</phase>
@@ -82,6 +95,33 @@
                             <attributes>
                                 <ebook-format>kf8</ebook-format>
                             </attributes>
+                        </configuration>
+                    </execution>
+
+
+                    <!-- attention: if there are problems calling kindlegen (see discussion here https://github.com/asciidoctor/asciidoctor-maven-examples/pull/68) -->
+                    <!-- then you can call kindlegen directly via maven like showed below -->
+                    <!---
+
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-mobi-file</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <workingDirectory>${project.build.directory}/generated-docs/</workingDirectory>
+                            <executable>${path.to.kindlegen}</executable>
+                            <arguments>
+                                <argument>spine.epub</argument>
+                            </arguments>
                         </configuration>
                     </execution>
                     -->
