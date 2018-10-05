@@ -56,6 +56,12 @@ include::subdir/_b.adoc[]
 [.thumb]
 image::sunset.jpg[scaledwidth=75%]
 
+== Images as background
+
+image::sunset.jpg[background, size=cover]
+
+Try setting an animated GIF.
+
 == Attributes
 
 Press the down arrow key to see the next sub-slide.
