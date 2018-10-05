@@ -11,11 +11,11 @@
     <properties>
         <project.slides.directory>${project.build.directory}/generated-slides</project.slides.directory>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
-        <asciidoctor.maven.plugin.version>1.5.6</asciidoctor.maven.plugin.version>
-        <asciidoctorj.version>1.5.6</asciidoctorj.version>
-        <jruby.version>1.7.26</jruby.version>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <asciidoctor.maven.plugin.version>1.5.7.1</asciidoctor.maven.plugin.version>
+        <asciidoctorj.version>1.5.7</asciidoctorj.version>
+        <jruby.version>9.1.17.0</jruby.version>
         <revealjs.version>3.5.0</revealjs.version>
         <!-- Use 'master' as version and remove the 'v' prefixing the download url to use the current snapshot version  -->
         <asciidoctor-revealjs.version>1.0.4</asciidoctor-revealjs.version>

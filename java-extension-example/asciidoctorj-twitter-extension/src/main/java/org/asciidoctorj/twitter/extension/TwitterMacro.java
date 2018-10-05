@@ -14,7 +14,7 @@ public class TwitterMacro extends InlineMacroProcessor {
     }
 
     @Override
-    protected Object process(AbstractBlock parent, String twitterHandle, Map<String, Object> attributes) {
+    public Object process(AbstractBlock parent, String twitterHandle, Map<String, Object> attributes) {
 
         String twitterLink;
         String twitterLinkText;
