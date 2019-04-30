@@ -33,9 +33,9 @@ public class TwitterMacro extends InlineMacroProcessor {
         options.put("target", twitterLink);
 
         // Create the 'anchor' node:
-        ContentNode inlineTwitterLink = createPhraseNode(contentNode, "anchor", twitterLinkText, attributes, options);
+        PhraseNode inlineTwitterLink = createPhraseNode(contentNode, "anchor", twitterLinkText, attributes, options);
 
         // Convert to String value:
-        return ((PhraseNode) inlineTwitterLink).convert();
+        return inlineTwitterLink.convert();
     }
 }
