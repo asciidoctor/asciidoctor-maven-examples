@@ -1,20 +1,20 @@
 package org.asciidoctorj.twitter.extension;
 
+import org.asciidoctor.ast.ContentNode;
+import org.asciidoctor.ast.PhraseNode;
+import org.asciidoctor.extension.InlineMacroProcessor;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import org.asciidoctor.ast.AbstractBlock;
-import org.asciidoctor.ast.Inline;
-import org.asciidoctor.extension.InlineMacroProcessor;
-
 public class TwitterMacro extends InlineMacroProcessor {
 
-    public TwitterMacro(String macroName, Map<String, Object> config) {
-        super(macroName, config);
+    public TwitterMacro(String macroName) {
+        super(macroName);
     }
 
     @Override
-    public Object process(AbstractBlock parent, String twitterHandle, Map<String, Object> attributes) {
+    public Object process(ContentNode contentNode, String twitterHandle, Map<String, Object> attributes) {
 
         String twitterLink;
         String twitterLinkText;
@@ -28,14 +28,14 @@ public class TwitterMacro extends InlineMacroProcessor {
         }
 
         // Define options for an 'anchor' element:
-        Map<String, Object> options = new HashMap<String, Object>();
+        Map<String, Object> options = new HashMap<>();
         options.put("type", ":link");
         options.put("target", twitterLink);
 
         // Create the 'anchor' node:
-        Inline inlineTwitterLink = createInline(parent, "anchor", twitterLinkText, attributes, options);
+        ContentNode inlineTwitterLink = createPhraseNode(contentNode, "anchor", twitterLinkText, attributes, options);
 
         // Convert to String value:
-        return inlineTwitterLink.convert();
+        return ((PhraseNode) inlineTwitterLink).convert();
     }
 }
