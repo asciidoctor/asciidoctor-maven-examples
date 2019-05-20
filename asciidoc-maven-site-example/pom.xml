@@ -21,7 +21,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.4</version>
+                <version>3.7.1</version>
                 <configuration>
                     <!-- disable generateReports if you don't want to include the built-in reports -->
                     <generateReports>true</generateReports>
