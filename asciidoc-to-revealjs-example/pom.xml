@@ -87,7 +87,7 @@
                         </goals>
                         <configuration>
                             <outputDirectory>${project.slides.directory}</outputDirectory>
-                            <backend>revealjs</backend>
+                            <backend>revealjs:html</backend>
                             <templateDir>${project.build.directory}/asciidoctor-reveal.js-${asciidoctor-revealjs.version}/templates</templateDir>
                             <sourceHighlighter>coderay</sourceHighlighter>
                             <attributes>
