@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.asciidoctor.maven</groupId>
     <artifactId>asciidoc-to-revealjs-example</artifactId>
@@ -16,18 +16,35 @@
         <asciidoctor.maven.plugin.version>2.0.0-RC.1</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>2.0.0</asciidoctorj.version>
         <jruby.version>9.2.7.0</jruby.version>
-        <revealjs.version>3.5.0</revealjs.version>
+        <revealjs.version>3.8.0</revealjs.version>
         <!-- Use 'master' as version and remove the 'v' prefixing the download url to use the current snapshot version  -->
         <asciidoctor-revealjs.version>2.0.0</asciidoctor-revealjs.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>rubygems</groupId>
             <artifactId>asciidoctor-revealjs</artifactId>
             <version>2.0.0</version>
             <type>gem</type>
+            <!-- Avoid downloading gems included in AsciidoctorJ -->
+            <exclusions>
+                <exclusion>
+                    <groupId>rubygems</groupId>
+                    <artifactId>asciidoctor</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>rubygems</groupId>
+                    <artifactId>thread_safe</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>rubygems</groupId>
+                    <artifactId>concurrent-ruby</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
+
     <build>
         <defaultGoal>process-resources</defaultGoal>
         <plugins>
@@ -56,7 +73,6 @@
                 <artifactId>gem-maven-plugin</artifactId>
                 <version>1.1.5</version>
                 <configuration>
-
                     <jrubyVersion>${jruby.version}</jrubyVersion>
                     <gemHome>${project.build.directory}/gems</gemHome>
                     <gemPath>${project.build.directory}/gems</gemPath>
@@ -71,7 +87,6 @@
                         <phase>initialize</phase>
                     </execution>
                 </executions>
-
             </plugin>
             <plugin>
                 <groupId>org.asciidoctor</groupId>
@@ -130,10 +145,12 @@
             </plugin>
         </plugins>
     </build>
+
     <repositories>
         <repository>
             <id>rubygems-releases</id>
             <url>http://rubygems-proxy.torquebox.org/releases</url>
         </repository>
     </repositories>
+
 </project>
