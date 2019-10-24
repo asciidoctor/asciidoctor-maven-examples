@@ -6,8 +6,9 @@
     <artifactId>asciidoctor-pdf-cjk-example</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>Asciidoctor PDF CJK Maven example</name>
-    <description>An example project that demonstrates how to convert AsciiDoc to PDF using CJK extensions to properly
-        show CJK (Chinese, Japanese and Korean) characters.
+    <description>
+        An example project that demonstrates how to convert AsciiDoc to PDF using CJK resources
+        (https://github.com/chloerei/asciidoctor-pdf-cjk) to properly show CJK (Chinese, Japanese and Korean) characters.
     </description>
 
     <properties>
@@ -15,89 +16,197 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <asciidoctor.maven.plugin.version>2.0.0-RC.1</asciidoctor.maven.plugin.version>
-        <asciidoctorj.version>2.0.0</asciidoctorj.version>
-        <asciidoctorj.pdf.version>1.5.0-alpha.18</asciidoctorj.pdf.version>
-        <jruby.version>9.2.7.0</jruby.version>
+        <asciidoctorj.version>2.1.0</asciidoctorj.version>
+        <asciidoctorj.pdf.version>1.5.0-beta.6</asciidoctorj.pdf.version>
+        <jruby.version>9.2.8.0</jruby.version>
         <pdf.cjk.version>0.1.3</pdf.cjk.version>
         <pdf.cjk.kaigen.version>0.1.1</pdf.cjk.kaigen.version>
+        <pdf.cjk.kaigen.fonts.download.uri>https://github.com/chloerei/asciidoctor-pdf-cjk-kai_gen_gothic/releases/download/v0.1.0-fonts</pdf.cjk.kaigen.fonts.download.uri>
+        <pdf.cjk.kaigen.themes.download.uri>https://raw.githubusercontent.com/chloerei/asciidoctor-pdf-cjk-kai_gen_gothic/master/data/themes</pdf.cjk.kaigen.themes.download.uri>
+        <pdf.cjk.kaigen.download.dir>${project.build.directory}/downloaded-resources</pdf.cjk.kaigen.download.dir>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>rubygems-release</id>
-            <url>http://rubygems-proxy.torquebox.org/releases</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>rubygems</groupId>
-            <artifactId>asciidoctor-pdf-cjk</artifactId>
-            <version>${pdf.cjk.version}</version>
-            <type>gem</type>
-            <!-- avoid downloading gems included in AsciidoctorJ -->
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>rubygems</groupId>
-                    <artifactId>asciidoctor</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>rubygems</groupId>
-                    <artifactId>asciidoctor-pdf</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>rubygems</groupId>
-            <artifactId>asciidoctor-pdf-cjk-kai_gen_gothic</artifactId>
-            <version>${pdf.cjk.kaigen.version}</version>
-            <type>gem</type>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 
     <build>
         <defaultGoal>process-resources</defaultGoal>
         <plugins>
             <plugin>
-                <groupId>de.saumya.mojo</groupId>
-                <artifactId>gem-maven-plugin</artifactId>
-                <version>1.1.5</version>
-                <configuration>
-                    <skip>true</skip>
-                    <!-- Align JRuby version with AsciidoctorJ to avoid redundant downloading -->
-                    <jrubyVersion>${jruby.version}</jrubyVersion>
-                    <gemHome>${project.build.directory}/gems</gemHome>
-                    <gemPath>${project.build.directory}/gems</gemPath>
-                </configuration>
+                <groupId>com.googlecode.maven-download-plugin</groupId>
+                <artifactId>download-maven-plugin</artifactId>
+                <version>1.3.0</version>
                 <executions>
-                    <!-- Install required gems in target directory -->
+                    <!-- Chinese theme & fonts -->
                     <execution>
-                        <id>install-gems</id>
-                        <goals>
-                            <goal>initialize</goal>
-                        </goals>
+                        <id>install-theme-KaiGenGothicCN</id>
                         <phase>initialize</phase>
-                    </execution>
-                    <!-- Download KaiGen Gothic fonts in target directory -->
-                    <execution>
-                        <id>install-themes</id>
                         <goals>
-                            <goal>exec</goal>
+                            <goal>wget</goal>
                         </goals>
-                        <phase>initialize</phase>
                         <configuration>
-                            <!-- Run post-installation script to download fonts -->
-                            <execArgs>${project.build.directory}/gems-provided/gems/asciidoctor-pdf-cjk-kai_gen_gothic-${pdf.cjk.kaigen.version}/exe/asciidoctor-pdf-cjk-kai_gen_gothic-install</execArgs>
+                            <url>${pdf.cjk.kaigen.themes.download.uri}/KaiGenGothicCN-theme.yml</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/themes</outputDirectory>
+                            <md5>8f40b658f32767456efba0267eb13c81</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-KaiGenGothicCN-Bold-Italic</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/KaiGenGothicCN-Bold-Italic.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>131053dc1e9b83c04a1604e9b8fbd2ff</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-KaiGenGothicCN-Bold</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/KaiGenGothicCN-Bold.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>151442028333ac1fe314eed4c5fdb39a</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-KaiGenGothicCN-Regular-Italic</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/KaiGenGothicCN-Regular-Italic.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>9747163e814b7b6301e32b3838a0f8c8</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-KaiGenGothicCN-Regular</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/KaiGenGothicCN-Regular.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>1dbdd22db9a1748e38e31698a5d9130a</md5>
+                        </configuration>
+                    </execution>
+                    <!-- Japanese theme & fonts -->
+                    <execution>
+                        <id>install-theme-KaiGenGothicJP</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.themes.download.uri}/KaiGenGothicJP-theme.yml</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/themes</outputDirectory>
+                            <md5>33ae321471a2fc6e312b8744fdf6fbc0</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-KaiGenGothicJP-Bold-Italic</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/KaiGenGothicJP-Bold-Italic.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>527bad63e68f4765933241949d760bd7</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-KaiGenGothicJP-Bold</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/KaiGenGothicJP-Bold.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>65b2313bd3e3ff54ded1c5875245b8e3</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-KaiGenGothicJP-Regular-Italic</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/KaiGenGothicJP-Regular-Italic.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>2aea70e601c0304f1337319b63b06b7a</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-KaiGenGothicJP-Regular</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/KaiGenGothicJP-Regular.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>a623c6aaf9ba3c992ecd10698586da62</md5>
+                        </configuration>
+                    </execution>
+                    <!-- RobotoMono Fonts -->
+                    <execution>
+                        <id>install-font-RobotoMono-Bold-Italic</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/RobotoMono-BoldItalic.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>28c34883fca976c0d408c1a0a8596ece</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-RobotoMono-Bold</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/RobotoMono-Bold.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>cf661842dcc7e1cc63147893ea8f47e8</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-RobotoMono-Italic</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/RobotoMono-Italic.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>7b4c715c7e2b43e8f001c601f4fecbb0</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-RobotoMono-Regular</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf.cjk.kaigen.fonts.download.uri}/RobotoMono-Regular.ttf</url>
+                            <outputDirectory>${pdf.cjk.kaigen.download.dir}/fonts</outputDirectory>
+                            <md5>e2642a6882ef2432ee9ac442691a4384</md5>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -121,15 +230,6 @@
                         <version>${asciidoctorj.version}</version>
                     </dependency>
                 </dependencies>
-                <configuration>
-                    <!-- The gem-maven-plugin appends the scope (e.g., provided) to the gemPath defined in the plugin configuration -->
-                    <gemPath>${project.build.directory}/gems-provided</gemPath>
-                    <!-- Set Ruby extensions as required gems -->
-                    <requires>
-                        <require>asciidoctor-pdf-cjk</require>
-                        <require>asciidoctor-pdf-cjk-kai_gen_gothic</require>
-                    </requires>
-                </configuration>
                 <executions>
                     <execution>
                         <id>generate-pdf-cjk-zh_CN-doc</id>
@@ -149,8 +249,12 @@
                                 <toc/>
                                 <idprefix/>
                                 <idseparator>-</idseparator>
+                                <!-- Fixes line wraps formatting inserting zero-width spaces (ZWSP) before CJ characters -->
+                                <scripts>cjk</scripts>
                                 <!-- Set KaiGen Gothic Chinese theme -->
                                 <pdf-style>KaiGenGothicCN</pdf-style>
+                                <pdf-stylesdir>${pdf.cjk.kaigen.download.dir}/themes</pdf-stylesdir>
+                                <pdf-fontsdir>${pdf.cjk.kaigen.download.dir}/fonts</pdf-fontsdir>
                             </attributes>
                         </configuration>
                     </execution>
@@ -172,8 +276,12 @@
                                 <toc/>
                                 <idprefix/>
                                 <idseparator>-</idseparator>
+                                <!-- Fixes line wraps formatting inserting zero-width spaces (ZWSP) before CJ characters -->
+                                <scripts>cjk</scripts>
                                 <!-- Set KaiGen Gothic Japanese theme -->
                                 <pdf-style>KaiGenGothicJP</pdf-style>
+                                <pdf-stylesdir>${pdf.cjk.kaigen.download.dir}/themes</pdf-stylesdir>
+                                <pdf-fontsdir>${pdf.cjk.kaigen.download.dir}/fonts</pdf-fontsdir>
                             </attributes>
                         </configuration>
                     </execution>
