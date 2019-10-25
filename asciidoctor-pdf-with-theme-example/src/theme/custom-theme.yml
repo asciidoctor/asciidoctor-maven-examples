@@ -1,7 +1,8 @@
 title_page:
   align: left
-  background_image: cover.png
-
+  logo:
+    image: image:cover.png[]
+    top: 0%
 page:
   layout: portrait
   margin: [0.75in, 1in, 0.75in, 1in]
@@ -10,7 +11,6 @@ base:
   font_color: #333333
   line_height_length: 17
   line_height: $base_line_height_length / $base_font_size
-vertical_rhythm: $base_line_height_length
 heading:
   font_color: #FF8000
   font_size: 17
