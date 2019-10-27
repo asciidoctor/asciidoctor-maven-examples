@@ -82,6 +82,7 @@
                             <backend>pdf</backend>
                             <outputDirectory>${project.build.directory}/generated-docs-custom-theme</outputDirectory>
                             <sourceHighlighter>coderay</sourceHighlighter>
+                            <!-- Use `book` docType to enable title page generation -->
                             <doctype>book</doctype>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
