@@ -13,9 +13,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <asciidoctor.maven.plugin.version>2.0.0-RC.1</asciidoctor.maven.plugin.version>
-        <asciidoctorj.pdf.version>1.5.0-alpha.18</asciidoctorj.pdf.version>
-        <asciidoctorj.version>2.0.0</asciidoctorj.version>
-        <jruby.version>9.2.7.0</jruby.version>
+        <asciidoctorj.pdf.version>1.5.0-beta.6</asciidoctorj.pdf.version>
+        <asciidoctorj.version>2.1.0</asciidoctorj.version>
+        <jruby.version>9.2.8.0</jruby.version>
     </properties>
 
     <build>
@@ -82,6 +82,7 @@
                             <backend>pdf</backend>
                             <outputDirectory>${project.build.directory}/generated-docs-custom-theme</outputDirectory>
                             <sourceHighlighter>coderay</sourceHighlighter>
+                            <!-- Use `book` docType to enable title page generation -->
                             <doctype>book</doctype>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
