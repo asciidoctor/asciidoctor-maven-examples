@@ -25,7 +25,7 @@
         <dependency>
             <groupId>rubygems</groupId>
             <artifactId>asciidoctor-revealjs</artifactId>
-            <version>2.0.0</version>
+            <version>3.0.0</version>
             <type>gem</type>
             <!-- Avoid downloading gems included in AsciidoctorJ -->
             <exclusions>
@@ -47,11 +47,18 @@
 
     <build>
         <defaultGoal>process-resources</defaultGoal>
+        <extensions>
+            <extension> <!-- this allows us to download gems -->
+                <groupId>org.torquebox.mojo</groupId>
+                <artifactId>mavengem-wagon</artifactId>
+                <version>1.0.3</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <groupId>com.googlecode.maven-download-plugin</groupId>
                 <artifactId>download-maven-plugin</artifactId>
-                <version>1.3.0</version>
+                <version>1.4.2</version>
                 <executions>
                     <execution>
                         <id>install-revealjs</id>
@@ -71,7 +78,7 @@
             <plugin>
                 <groupId>de.saumya.mojo</groupId>
                 <artifactId>gem-maven-plugin</artifactId>
-                <version>1.1.5</version>
+                <version>1.1.8</version>
                 <configuration>
                     <jrubyVersion>${jruby.version}</jrubyVersion>
                     <gemHome>${project.build.directory}/gems</gemHome>
@@ -148,8 +155,8 @@
 
     <repositories>
         <repository>
-            <id>rubygems-releases</id>
-            <url>http://rubygems-proxy.torquebox.org/releases</url>
+            <id>mavengems</id>
+            <url>mavengem:http://rubygems.org</url>
         </repository>
     </repositories>
 
