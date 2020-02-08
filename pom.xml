@@ -16,8 +16,9 @@
         <asciidoctor.maven.plugin.version>2.0.0-RC.1</asciidoctor.maven.plugin.version>
         <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
         <asciidoctorj.version>2.2.0</asciidoctorj.version>
-        <asciidoctorj.diagram.version>2.0.0</asciidoctorj.diagram.version>
+        <asciidoctorj.diagram.version>2.0.1</asciidoctorj.diagram.version>
         <asciidoctorj.pdf.version>1.5.0-beta.8</asciidoctorj.pdf.version>
+        <asciidoctorj.epub.version>1.5.0-alpha.13</asciidoctorj.epub.version>
         <jruby.version>9.2.9.0</jruby.version>
     </properties>
 
