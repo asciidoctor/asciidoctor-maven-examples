@@ -3,6 +3,7 @@ Doc Writer <doc.writer@example.org>
 2014-09-09
 :revnumber: {project-version}
 :example-caption!:
+:icons: font
 ifndef::imagesdir[:imagesdir: images]
 ifndef::sourcedir[:sourcedir: ../../../main/java]
 
