@@ -14,6 +14,7 @@ ifndef::source-highlighter[:source-highlighter: coderay]
 //:ebook-format: kf8
 
 include::example-manual.adoc[]
-include::chapter2.adoc[]
-include::chapter3.adoc[]
 
+include::chapter2.adoc[]
+
+include::chapter3.adoc[]
