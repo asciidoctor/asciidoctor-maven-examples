@@ -10,6 +10,7 @@ ifndef::imagesdir[:imagesdir: images]
 :front-cover-image: image:cover.png[Front cover,1050,1600]
 ifndef::ebook-format[:leveloffset: -1]
 ifndef::source-highlighter[:source-highlighter: coderay]
+:leveloffset: +1
 //add following line if you want to create a .mobi file (or set it in pom.xml)
 //:ebook-format: kf8
 
