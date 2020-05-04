@@ -1,4 +1,4 @@
-= Asciidoctor Maven Plugin: AsciiDoc to EPUB Example
+:leveloffset: +1= Asciidoctor Maven Plugin: AsciiDoc to EPUB Example
 :kindlegen-download-url: https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765211
 
 An example project that demonstrates how to convert AsciiDoc to EPUB using Asciidoctor EPUB3 with the Asciidoctor Maven plugin.
@@ -7,7 +7,7 @@ An example project that demonstrates how to convert AsciiDoc to EPUB using Ascii
 
 === EPUB
 
-This examples requires providing the path to `kindlegen` in the `KINDLEGEN` environment variable (you have to download it for your OS from amazon here: {kindlegen-download-url})).
+This example requires providing the path to `kindlegen` in the `KINDLEGEN` environment variable (you have to download it for your OS from amazon here: {kindlegen-download-url}).
 
 Once done, convert the AsciiDoc to EPUB using https://github.com/asciidoctor/asciidoctor-epub3/[Asciidoctor EPUB3] by invoking the `process-resources` goal (configured as the default goal):
 
@@ -19,5 +19,3 @@ Open the file _target/generated-docs/spine.epub_ in your epub viewer to see the 
 
 There is a second process available to generate a kindle document, you can enable a second execution block in the pom.xml.
 If _kindlegen_ is in your path a mobi file should be generated.
-Currently however the maven plugin exits with an error _((Errno::ECHILD) No child processes))_.
-
