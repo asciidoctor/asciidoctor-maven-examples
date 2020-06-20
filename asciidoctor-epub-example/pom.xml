@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <asciidoctor.maven.plugin.version>2.0.0-RC.1</asciidoctor.maven.plugin.version>
+        <asciidoctor.maven.plugin.version>2.0.0</asciidoctor.maven.plugin.version>
         <asciidoctorj.epub.version>1.5.0-alpha.16</asciidoctorj.epub.version>
         <asciidoctorj.version>2.3.0</asciidoctorj.version>
         <!-- for a correct kf8 generation, you'll need at least jRuby >= 9.1.8.0 -->
@@ -65,7 +65,6 @@
                         </goals>
                         <configuration>
                             <backend>epub3</backend>
-                            <sourceHighlighter>coderay</sourceHighlighter>
                             <sourceDocumentName>spine.adoc</sourceDocumentName>
                         </configuration>
                     </execution>
@@ -90,9 +89,9 @@
                         </goals>
                         <configuration>
                             <backend>epub3</backend>
-                            <sourceHighlighter>coderay</sourceHighlighter>
                             <sourceDocumentName>spine.adoc</sourceDocumentName>
                             <attributes>
+                                <source-highlighter>coderay</source-highlighter>
                                 <ebook-format>kf8</ebook-format>
                             </attributes>
                         </configuration>
