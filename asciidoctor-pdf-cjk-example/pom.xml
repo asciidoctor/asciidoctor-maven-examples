@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <asciidoctor.maven.plugin.version>2.0.0-RC.1</asciidoctor.maven.plugin.version>
+        <asciidoctor.maven.plugin.version>2.0.0</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>2.3.0</asciidoctorj.version>
         <asciidoctorj.pdf.version>1.5.3</asciidoctorj.pdf.version>
         <jruby.version>9.2.11.1</jruby.version>
@@ -241,8 +241,8 @@
                             <backend>pdf</backend>
                             <sourceDirectory>src/docs/asciidoc</sourceDirectory>
                             <sourceDocumentName>README-zh_CN.adoc</sourceDocumentName>
-                            <sourceHighlighter>coderay</sourceHighlighter>
                             <attributes>
+                                <source-highlighter>coderay</source-highlighter>
                                 <allow-uri-read/>
                                 <icons>font</icons>
                                 <pagenums/>
@@ -268,8 +268,8 @@
                             <backend>pdf</backend>
                             <sourceDirectory>src/docs/asciidoc</sourceDirectory>
                             <sourceDocumentName>README-jp.adoc</sourceDocumentName>
-                            <sourceHighlighter>coderay</sourceHighlighter>
                             <attributes>
+                                <source-highlighter>coderay</source-highlighter>
                                 <allow-uri-read/>
                                 <icons>font</icons>
                                 <pagenums/>
