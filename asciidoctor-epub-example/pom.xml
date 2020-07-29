@@ -15,7 +15,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <asciidoctor.maven.plugin.version>2.0.0</asciidoctor.maven.plugin.version>
-        <asciidoctorj.epub.version>1.5.0-alpha.16</asciidoctorj.epub.version>
+        <asciidoctorj.epub.version>1.5.0-alpha.18</asciidoctorj.epub.version>
         <asciidoctorj.version>2.3.0</asciidoctorj.version>
         <!-- for a correct kf8 generation, you'll need at least jRuby >= 9.1.8.0 -->
         <jruby.version>9.2.11.1</jruby.version>
@@ -54,6 +54,14 @@
                     <attributes>
                         <sourcedir>${project.build.sourceDirectory}</sourcedir>
                     </attributes>
+                    <resources>
+                        <resource>
+                            <directory>.</directory>
+                            <excludes>
+                                <exclude>**/**</exclude>
+                            </excludes>
+                        </resource>
+                    </resources>
                 </configuration>
                 <executions>
                     <!-- shows how to create an epub file -->
