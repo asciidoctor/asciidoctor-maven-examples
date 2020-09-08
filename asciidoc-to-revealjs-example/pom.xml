@@ -16,7 +16,7 @@
         <asciidoctor.maven.plugin.version>2.0.0</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>2.4.0</asciidoctorj.version>
         <jruby.version>9.2.9.0</jruby.version>
-        <revealjs.version>3.8.0</revealjs.version>
+        <revealjs.version>3.9.2</revealjs.version>
         <!-- Use 'master' as version and remove the 'v' prefixing the download url to use the current snapshot version  -->
         <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
     </properties>
@@ -25,7 +25,7 @@
         <dependency>
             <groupId>rubygems</groupId>
             <artifactId>asciidoctor-revealjs</artifactId>
-            <version>3.0.0</version>
+            <version>4.0.1</version>
             <type>gem</type>
             <!-- Avoid downloading gems included in AsciidoctorJ -->
             <exclusions>
