@@ -13,7 +13,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <asciidoctor.maven.plugin.version>2.1.0</asciidoctor.maven.plugin.version>
-        <asciidoctorj.version>2.4.1</asciidoctorj.version>
+        <asciidoctorj.version>2.4.2</asciidoctorj.version>
         <jruby.version>9.2.13.0</jruby.version>
     </properties>
 
