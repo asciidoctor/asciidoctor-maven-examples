@@ -8,12 +8,14 @@
     <name>AsciiDoc Maven Site Example</name>
     <description>An example project that demonstrates how to process AsciiDoc in a Maven site using the Asciidoctor Maven plugin.</description>
 
+    <!-- All Maven properties are injected as Asciidoctor attributes.
+         Reference them with the same name replacing dots by dashes (e.g. {jruby-version}). -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <asciidoctor.maven.plugin.version>1.5.6</asciidoctor.maven.plugin.version>
-        <asciidoctorj.version>1.5.6</asciidoctorj.version>
-        <jruby.version>1.7.26</jruby.version>
+        <asciidoctor.maven.plugin.version>2.1.0</asciidoctor.maven.plugin.version>
+        <asciidoctorj.version>2.4.2</asciidoctorj.version>
+        <jruby.version>9.2.13.0</jruby.version>
     </properties>
 
     <build>
@@ -21,9 +23,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.4</version>
+                <version>3.7.1</version>
                 <configuration>
-                    <!-- disable generateReports if you don't want to include the built-in reports -->
+                    <!-- Disable generateReports if you don't want to include the built-in reports -->
                     <generateReports>true</generateReports>
                     <generateSitemap>true</generateSitemap>
                     <relativizeDecorationLinks>false</relativizeDecorationLinks>
@@ -31,7 +33,7 @@
                     <inputEncoding>UTF-8</inputEncoding>
                     <outputEncoding>UTF-8</outputEncoding>
                     <asciidoc>
-                        <!-- optional site-wide AsciiDoc attributes -->
+                        <!-- Optional site-wide AsciiDoc attributes -->
                         <attributes>
                             <icons>font</icons>
                             <source-highlighter>coderay</source-highlighter>

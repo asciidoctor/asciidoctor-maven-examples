@@ -1,0 +1,11 @@
+== Attributes
+
+.Built-in
+asciidoctor-version:: {asciidoctor-version}
+safe-mode-name:: {safe-mode-name}
+docdir:: {docdir}
+
+.Maven properties
+asciidoctor.maven.plugin.version:: {asciidoctor-maven-plugin-version}
+asciidoctorj.version:: {asciidoctorj-version}
+jruby.version:: {jruby-version}

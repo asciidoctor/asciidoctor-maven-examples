@@ -10,12 +10,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
-        <asciidoctor.maven.plugin.version>1.5.6</asciidoctor.maven.plugin.version>
-        <asciidoctorj.pdf.version>1.5.0-alpha.16</asciidoctorj.pdf.version>
-        <asciidoctorj.version>1.5.6</asciidoctorj.version>
-        <jruby.version>9.1.8.0</jruby.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <asciidoctor.maven.plugin.version>2.1.0</asciidoctor.maven.plugin.version>
+        <asciidoctorj.pdf.version>1.5.3</asciidoctorj.pdf.version>
+        <asciidoctorj.version>2.4.2</asciidoctorj.version>
+        <jruby.version>9.2.13.0</jruby.version>
     </properties>
 
     <build>
@@ -61,9 +61,9 @@
                         <configuration>
                             <backend>pdf</backend>
                             <outputDirectory>${project.build.directory}/generated-docs-default-theme</outputDirectory>
-                            <sourceHighlighter>coderay</sourceHighlighter>
                             <doctype>book</doctype>
                             <attributes>
+                                <source-highlighter>coderay</source-highlighter>
                                 <icons>font</icons>
                                 <pagenums/>
                                 <toc/>
@@ -81,11 +81,12 @@
                         <configuration>
                             <backend>pdf</backend>
                             <outputDirectory>${project.build.directory}/generated-docs-custom-theme</outputDirectory>
-                            <sourceHighlighter>coderay</sourceHighlighter>
+                            <!-- Use `book` docType to enable title page generation -->
                             <doctype>book</doctype>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
                                 <pdf-style>custom</pdf-style>
+                                <source-highlighter>coderay</source-highlighter>
                                 <icons>font</icons>
                                 <pagenums/>
                                 <toc/>

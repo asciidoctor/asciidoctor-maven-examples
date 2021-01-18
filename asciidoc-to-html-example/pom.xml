@@ -10,11 +10,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
-        <asciidoctor.maven.plugin.version>1.5.6</asciidoctor.maven.plugin.version>
-        <asciidoctorj.version>1.5.6</asciidoctorj.version>
-        <jruby.version>1.7.26</jruby.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <asciidoctor.maven.plugin.version>2.1.0</asciidoctor.maven.plugin.version>
+        <asciidoctorj.version>2.4.2</asciidoctorj.version>
+        <jruby.version>9.2.13.0</jruby.version>
     </properties>
 
     <build>
@@ -60,7 +60,6 @@
                         </goals>
                         <configuration>
                             <backend>html5</backend>
-                            <sourceHighlighter>coderay</sourceHighlighter>
                             <!--
                             Scenarios for linking vs embedding assets:
 
@@ -111,6 +110,7 @@
                             IMPORTANT: When you enable image embedding, you must qualify the path the the imagesdir, as shown above.
                             -->
                             <attributes>
+                                <source-highlighter>coderay</source-highlighter>
                                 <imagesdir>./images</imagesdir>
                                 <toc>left</toc>
                                 <icons>font</icons>

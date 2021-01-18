@@ -10,12 +10,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
-        <asciidoctor.maven.plugin.version>1.5.6</asciidoctor.maven.plugin.version>
-        <asciidoctorj.pdf.version>1.5.0-alpha.16</asciidoctorj.pdf.version>
-        <asciidoctorj.version>1.5.6</asciidoctorj.version>
-        <jruby.version>1.7.26</jruby.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <asciidoctor.maven.plugin.version>2.1.0</asciidoctor.maven.plugin.version>
+        <asciidoctorj.pdf.version>1.5.3</asciidoctorj.pdf.version>
+        <asciidoctorj.version>2.4.2</asciidoctorj.version>
+        <jruby.version>9.2.13.0</jruby.version>
     </properties>
 
     <build>
@@ -66,8 +66,8 @@
                             <backend>pdf</backend>
                             <!-- Since 1.5.0-alpha.9, PDF back-end can also use 'rouge' which provides more coverage
                             for other languages like scala -->
-                            <sourceHighlighter>coderay</sourceHighlighter>
                             <attributes>
+                                <source-highlighter>coderay</source-highlighter>
                                 <pagenums/>
                                 <toc/>
                                 <idprefix/>
@@ -84,8 +84,8 @@
                         <configuration>
                             <sourceDirectory>src/docs/asciidoc/technical-docs</sourceDirectory>
                             <backend>html5</backend>
-                            <sourceHighlighter>coderay</sourceHighlighter>
                             <attributes>
+                                <source-highlighter>coderay</source-highlighter>
                                 <imagesdir>./images</imagesdir>
                                 <toc>left</toc>
                                 <icons>font</icons>

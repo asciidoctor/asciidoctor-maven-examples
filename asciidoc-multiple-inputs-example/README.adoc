@@ -28,12 +28,12 @@ In the example, we define a first execution block as follows:
      <goal>process-asciidoc</goal>
  </goals>
  <configuration>
-     <sourceDirectory>src/docs/asciidoc/user-manual</sourceDirectory> <2>
-     <backend>pdf</backend> <3>
+     <sourceDirectory>src/docs/asciidoc/user-manual</sourceDirectory> <!--2-->
+     <backend>pdf</backend> <!--3-->
      <!-- Since 1.5.0-alpha.9, PDF back-end can also use 'rouge' which provides more coverage
      for other languages like scala -->
-     <sourceHighlighter>coderay</sourceHighlighter>
      <attributes>
+        <source-highlighter>coderay</source-highlighter>
          <pagenums/>
          <toc/>
          <idprefix/>
@@ -70,10 +70,10 @@ The second execution block defines how to create the technical documentation in 
         <goal>process-asciidoc</goal>
     </goals>
     <configuration>
-        <sourceDirectory>src/docs/asciidoc/technical-docs</sourceDirectory> <2>
-        <backend>html5</backend> <3>
-        <sourceHighlighter>coderay</sourceHighlighter>
+        <sourceDirectory>src/docs/asciidoc/technical-docs</sourceDirectory> <!--2-->
+        <backend>html5</backend> <!--3-->
         <attributes>
+            <source-highlighter>coderay</source-highlighter>
             <imagesdir>./images</imagesdir>
             <toc>left</toc>
             <icons>font</icons>
