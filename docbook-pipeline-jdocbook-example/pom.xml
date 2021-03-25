@@ -13,7 +13,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <asciidoctor.maven.plugin.version>2.1.0</asciidoctor.maven.plugin.version>
-        <asciidoctorj.version>2.4.2</asciidoctorj.version>
+        <asciidoctorj.version>2.4.3</asciidoctorj.version>
         <jruby.version>9.2.13.0</jruby.version>
     </properties>
 
@@ -58,7 +58,7 @@
                     <baseDir>${project.basedir}</baseDir>
                     -->
                     <attributes>
-                        <endpoint-url>http://example.org</endpoint-url> 
+                        <endpoint-url>http://example.org</endpoint-url>
                         <sourcedir>${project.build.sourceDirectory}</sourcedir>
                     </attributes>
                 </configuration>
@@ -72,7 +72,7 @@
                         <configuration>
                             <backend>docbook</backend>
                             <doctype>book</doctype>
-                            <outputDirectory>${project.build.directory}/docbook/source/en-US</outputDirectory> 
+                            <outputDirectory>${project.build.directory}/docbook/source/en-US</outputDirectory>
                             <attributes>
                                 <imagesdir>images</imagesdir>
                             </attributes>
