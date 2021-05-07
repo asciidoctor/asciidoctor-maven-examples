@@ -15,11 +15,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <asciidoctor.maven.plugin.version>2.1.0</asciidoctor.maven.plugin.version>
         <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
-        <asciidoctorj.version>2.4.3</asciidoctorj.version>
+        <asciidoctorj.version>2.5.1</asciidoctorj.version>
         <asciidoctorj.diagram.version>2.1.2</asciidoctorj.diagram.version>
         <asciidoctorj.pdf.version>1.5.4</asciidoctorj.pdf.version>
         <asciidoctorj.epub.version>1.5.0-alpha.18</asciidoctorj.epub.version>
-        <jruby.version>9.2.13.0</jruby.version>
+        <jruby.version>9.2.17.0</jruby.version>
     </properties>
 
     <modules>
