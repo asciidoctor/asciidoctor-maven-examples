@@ -96,7 +96,7 @@ For example, to change the plugin's version follow the next steps:
 
 [source,xml,indent=2]
 ----
-<asciidoctor.maven.plugin.version>1.6.0-SNAPSHOT</asciidoctor.maven.plugin.version>
+<asciidoctor.maven.plugin.version>2.2.1</asciidoctor.maven.plugin.version>
 ----
 
 [start=2]
