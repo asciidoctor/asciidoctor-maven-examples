@@ -59,7 +59,7 @@ Invoke the `compile` goal (configured as the default goal) on this folder (`asci
 
 == On JRuby dependency
 
-Asciidoctor Maven plugin relies on https://github.com/asciidoctor/asciidoctor[asciidoctor] project to do the actual rendering. This is a Ruby implementation integrated thanks to the http://jruby.org/[JRuby] project, which is a required dependency to run the plugin. The maven plugin provides a default version of the `jruby-complete` artifact to ease its configuration. However, it can be overwritten just adding a custom version in the plugin's dependency section as seen in the following example:
+Asciidoctor Maven plugin relies on https://github.com/asciidoctor/asciidoctor[asciidoctor] project to do the actual rendering. This is a Ruby implementation integrated thanks to the https://jruby.org/[JRuby] project, which is a required dependency to run the plugin. The maven plugin provides a default version of the `jruby-complete` artifact to ease its configuration. However, it can be overwritten just adding a custom version in the plugin's dependency section as seen in the following example:
 [source,xml,indent=2]
 ----
 <plugin>
@@ -124,7 +124,7 @@ We also need documentation, automation, design, marketing, communication, advoca
 Here are just a few of the ways you can contribute to the project:
 
 * Reporting bugs (_The easiest way to get started!_)
-* Sharing ideas on http://discuss.asciidoctor.org
+* Sharing ideas on https://asciidoctor.zulipchat.com/ or https://discuss.asciidoctor.org
 * Suggesting new feature or improvements in the issue tracker
 * Speaking about the technology
 * Advocating for the technology
