@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <asciidoctor.maven.plugin.version>2.2.1</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>2.5.2</asciidoctorj.version>
-        <asciidoctorj.diagram.version>2.1.2</asciidoctorj.diagram.version>
+        <asciidoctorj.diagram.version>2.2.0</asciidoctorj.diagram.version>
         <jruby.version>9.2.17.0</jruby.version>
     </properties>
 
@@ -41,6 +41,19 @@
                         <artifactId>asciidoctorj-diagram</artifactId>
                         <version>${asciidoctorj.diagram.version}</version>
                     </dependency>
+                    <!-- Since asciidoctorj-diagram v2.2.0, uncomment to use specific version of plantuml or ditaa -->
+                    <!--
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram-plantuml</artifactId>
+                        <version>1.2021.8</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram-ditaamini</artifactId>
+                        <version>1.0.0</version>
+                    </dependency>
+                    -->
                 </dependencies>
                 <configuration>
                     <sourceDirectory>src/docs/asciidoc</sourceDirectory>
