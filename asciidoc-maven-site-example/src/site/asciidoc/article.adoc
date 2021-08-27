@@ -8,10 +8,10 @@ v1.0, 2014-08-08
 :sectanchors:
 //:compat-mode:
 
-_Zen_ in the *art* of writing `plain text` with http://asciidoc.org[AsciiDoc].
+_Zen_ in the *art* of writing `plain text` with https://asciidoc.org[AsciiDoc].
 
 [TIP]
-Use http://asciidoctor.org[Asciidoctor] for the best AsciiDoc experience.footnote:[Not to mention the best looking output!]
+Use https://asciidoctor.org[Asciidoctor] for the best AsciiDoc experience.footnote:[Not to mention the best looking output!]
 Then icon:twitter[role=aqua] about it!
 
 toc::[]

@@ -19,10 +19,10 @@ public class TwitterMacro extends InlineMacroProcessor {
         String twitterLink;
         String twitterLinkText;
         if (twitterHandle == null || twitterHandle.isEmpty()) {
-            twitterLink = "http://www.twitter.com/";
+            twitterLink = "https://www.twitter.com/";
             twitterLinkText = "Twitter";
         } else {
-            twitterLink = "http://www.twitter.com/" + twitterHandle;
+            twitterLink = "https://www.twitter.com/" + twitterHandle;
             // Prepend twitterHandle with @ as text link:
             twitterLinkText = "@" + twitterHandle;
         }
