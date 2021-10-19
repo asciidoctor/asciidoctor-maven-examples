@@ -1,7 +1,7 @@
 = Asciidoctor Maven Plugin: AsciiDoc to PDF Book Example
 
 An example project that demonstrates how to convert AsciiDoc to PDF using Asciidoctor PDF with the Asciidoctor Maven plugin.
-This example produces a book and make use of a YAML style sheet (defined in `src/theme`).
+This example produces a book and make use of a custom https://github.com/asciidoctor/asciidoctor-pdf/blob/v1.6.x/docs/theming-guide.adoc[Asciidoctor PDF theme] (defined in `src/theme`).
 The same document is rendered twice:
 
 * Without the theme configuration, output is `target/generated-docs-default-theme/example-manual.pdf`
