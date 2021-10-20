@@ -1,20 +1,17 @@
+extends:
+  - default-with-fallback-font
 title-page:
   align: left
   logo:
     image: image:cover.png[align=center]
     top: 0%
 page:
-  layout: portrait
   margin: [0.75in, 1in, 0.75in, 1in]
-  size: A4
 base:
-  font-color: #333333
   line-height-length: 20
-  line-height: $base-line-height-length / $base-font-size
 heading:
   font-color: #FF8000
   font-size: 12
-  font-style: bold
   line-height: 1.2
 link:
   font-color: #009900
