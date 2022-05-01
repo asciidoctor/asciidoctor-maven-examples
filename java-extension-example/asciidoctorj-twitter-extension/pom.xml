@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <asciidoctorj.version>2.5.2</asciidoctorj.version>
+        <asciidoctorj.version>2.5.</asciidoctorj.version>
     </properties>
 
     <dependencies>
