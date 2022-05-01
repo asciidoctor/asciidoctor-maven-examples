@@ -13,7 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <asciidoctor.maven.plugin.version>2.2.1</asciidoctor.maven.plugin.version>
+        <asciidoctor.maven.plugin.version>2.2.2</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>2.5.3</asciidoctorj.version>
         <jruby.version>9.2.20.1</jruby.version>
     </properties>
@@ -23,7 +23,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.9.1</version>
+                <version>3.12.0</version>
                 <configuration>
                     <!-- Disable generateReports if you don't want to include the built-in reports -->
                     <generateReports>true</generateReports>
@@ -69,7 +69,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.3.0</version>
             </plugin>
         </plugins>
     </reporting>
