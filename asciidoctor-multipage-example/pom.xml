@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.asciidoctor.maven</groupId>
+    <artifactId>asciidoctor-multipage-example</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Asciidoctor Multipage Maven example</name>
+    <description>An example project that demonstrates how to integrate convert Asciidoc to multipage with
+        the Asciidoctor Maven plugin.
+    </description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <asciidoctor.maven.plugin.version>2.2.2</asciidoctor.maven.plugin.version>
+        <asciidoctorj.version>2.5.4</asciidoctorj.version>
+        <asciidoctorj-diagram.version>2.2.3</asciidoctorj-diagram.version>
+        <jruby.version>9.2.9.0</jruby.version>
+        <asciidoctor-multipage.version>0.0.15</asciidoctor-multipage.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>rubygems</groupId>
+            <artifactId>asciidoctor-multipage</artifactId>
+            <version>${asciidoctor-multipage.version}</version>
+            <type>gem</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>rubygems</groupId>
+                    <artifactId>asciidoctor</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>process-resources</defaultGoal>
+        <extensions>
+            <extension> <!-- this allows us to download gems -->
+                <groupId>org.torquebox.mojo</groupId>
+                <artifactId>mavengem-wagon</artifactId>
+                <version>1.0.3</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <plugin>
+                <groupId>de.saumya.mojo</groupId>
+                <artifactId>gem-maven-plugin</artifactId>
+                <version>2.0.1</version>
+                <configuration>
+                    <jrubyVersion>${jruby.version}</jrubyVersion>
+                    <gemHome>${project.build.directory}/gems</gemHome>
+                    <gemPath>${project.build.directory}/gems</gemPath>
+                </configuration>
+                <executions>
+                    <!-- Install required gems in target directory -->
+                    <execution>
+                        <id>install-gems</id>
+                        <goals>
+                            <goal>initialize</goal>
+                        </goals>
+                        <phase>initialize</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>${asciidoctor.maven.plugin.version}</version>
+                <dependencies>
+                    <!-- Comment this section to use the default jruby artifact provided by the plugin -->
+                    <dependency>
+                        <groupId>org.jruby</groupId>
+                        <artifactId>jruby-complete</artifactId>
+                        <version>${jruby.version}</version>
+                    </dependency>
+                    <!-- Comment this section to use the default AsciidoctorJ artifact provided by the plugin -->
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj</artifactId>
+                        <version>${asciidoctorj.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram</artifactId>
+                        <version>${asciidoctorj-diagram.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <sourceDirectory>src/docs/asciidoc</sourceDirectory>
+                    <requires>
+                        <require>asciidoctor-diagram</require>
+                    </requires>
+                    <attributes>
+                        <basedir>${project.basedir}</basedir>
+                        <project-version>${project.version}</project-version>
+                        <sourcedir>${project.build.sourceDirectory}</sourcedir>
+                        <source-highlighter>rouge</source-highlighter>
+                        <rouge-linenums-mode>table</rouge-linenums-mode>
+                        <rouge-style>monokai</rouge-style>
+                        <icons>font</icons>
+                        <linkcss>true</linkcss>
+                        <stylesdir>assets/styles</stylesdir>
+                        <toclevels>3</toclevels>
+                        <sectnums>true</sectnums>
+                        <sectnumlevels>3</sectnumlevels>
+                        <sectanchors>true</sectanchors>
+                    </attributes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-multipage</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>multipage_html5</backend>
+                            <doctype>book</doctype>
+
+                            <gemPath>${project.build.directory}/gems</gemPath>
+                            <requires>
+                                <require>asciidoctor-multipage</require>
+                            </requires>
+
+                            <outputDirectory>${project.build.directory}/docs/multipage</outputDirectory>
+
+                            <attributes>
+                                <toc>left</toc>
+                                <docinfo1>true</docinfo1>
+
+                                <!-- can use any pygments/rouge css here -->
+                                <rouge-css>class</rouge-css>
+                                <customcss>assets/styles/monokai.css</customcss>
+                                <source-highlighter>rouge</source-highlighter>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>mavengems</id>
+            <url>mavengem:https://rubygems.org</url>
+        </repository>
+    </repositories>
+</project>

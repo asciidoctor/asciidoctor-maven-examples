@@ -1,0 +1,89 @@
+= Example Manual
+Doc Writer <doc.writer@example.org>
+2014-09-09
+:revnumber: {project-version}
+:example-caption!:
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/java]
+
+[#introduction]
+== Introduction
+
+[%step]
+* This is a user manual for an example project.
+* This project does something.
+* We just haven't decided what that is yet.
+
+[#speaker-notes]
+== Speaker Notes
+
+Press the `*s*` key to access speaker notes.
+
+[NOTE.speaker]
+--
+You've unlocked the super secret notes area.
+Neat huh?
+--
+
+[#source-code]
+== Source Code
+
+[source,java]
+.Java code from project
+----
+include::{sourcedir}/example/StringUtils.java[tags=contains,indent=0]
+----
+
+This page was built by the following command:
+
+ $ mvn
+
+[#blank-screen]
+== Blank screen
+
+You can press `*b*` or `*.*` to blank your current screen.
+
+Hit it again to bring it back.
+
+[#overview]
+== Overview
+
+Press the `*esc*` key to get an overview of your slides.
+
+[#including-documents-from-subdir]
+== Including documents from subdir
+
+.include::subdir/_b.adoc[]
+
+include::subdir/_b.adoc[]
+
+[#images]
+== Images
+
+[.thumb]
+image::sunset.jpg[scaledwidth=75%]
+
+[#images-as-background]
+== Images as background
+
+image::sunset.jpg[background, size=cover]
+
+Try setting an animated GIF.
+
+[#attributes]
+== Attributes
+
+Press the down arrow key to see the next sub-slide.
+
+=== Attributes Part 1
+.Built-in
+asciidoctor-version:: {asciidoctor-version}
+safe-mode-name:: {safe-mode-name}
+docdir:: {docdir}
+docfile:: {docfile}
+imagesdir:: {imagesdir}
+
+=== Attributes Part 2
+.Custom
+project-version:: {project-version}
+sourcedir:: {sourcedir}

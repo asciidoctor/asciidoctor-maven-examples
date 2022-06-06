@@ -1,0 +1,15 @@
+= Asciidoctor Maven Plugin: Asciidoctor Multipage Extension Example
+
+An example project that demonstrates how to convert AsciiDoc to multipeage with the Asciidoctor Maven plugin and https://github.com/owenh000/asciidoctor-multipage[Asciidoctor Multipage Extension^].
+
+The AsciiDoc source of the demo presentation can be found in _src/docs/asciidoc/index.adoc_.
+
+== Usage
+
+Convert the AsciiDoc to multipage by invoking the `process-resources` goal (configured as the default goal):
+
+ $ mvn
+
+Open the folder _target/target/docs/multipage/_ in your browser to see the generated multipage HTML file.
+
+TIP: You can find a one-line server at https://gist.github.com/willurd/5720255[Big list of http static server one-liners^], which can help you to brower the folder _target/target/docs/multipage/_.
