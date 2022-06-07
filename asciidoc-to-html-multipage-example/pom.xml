@@ -121,8 +121,6 @@
 
                             <attributes>
                                 <toc>left</toc>
-                                <docinfo1>true</docinfo1>
-
                                 <!-- can use any pygments/rouge css here -->
                                 <rouge-css>class</rouge-css>
                                 <customcss>assets/styles/monokai.css</customcss>
