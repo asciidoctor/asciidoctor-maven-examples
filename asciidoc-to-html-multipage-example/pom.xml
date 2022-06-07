@@ -16,9 +16,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <asciidoctor.maven.plugin.version>2.2.2</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>2.5.4</asciidoctorj.version>
-        <asciidoctorj-diagram.version>2.2.3</asciidoctorj-diagram.version>
-        <jruby.version>9.2.9.0</jruby.version>
         <asciidoctor-multipage.version>0.0.15</asciidoctor-multipage.version>
+        <jruby.version>9.2.9.0</jruby.version>
     </properties>
 
     <dependencies>
@@ -83,17 +82,9 @@
                         <artifactId>asciidoctorj</artifactId>
                         <version>${asciidoctorj.version}</version>
                     </dependency>
-                    <dependency>
-                        <groupId>org.asciidoctor</groupId>
-                        <artifactId>asciidoctorj-diagram</artifactId>
-                        <version>${asciidoctorj-diagram.version}</version>
-                    </dependency>
                 </dependencies>
                 <configuration>
                     <sourceDirectory>src/docs/asciidoc</sourceDirectory>
-                    <requires>
-                        <require>asciidoctor-diagram</require>
-                    </requires>
                     <attributes>
                         <basedir>${project.basedir}</basedir>
                         <project-version>${project.version}</project-version>
