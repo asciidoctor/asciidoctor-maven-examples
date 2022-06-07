@@ -15,8 +15,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <asciidoctor.maven.plugin.version>2.2.2</asciidoctor.maven.plugin.version>
         <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
-        <asciidoctorj.version>2.5.3</asciidoctorj.version>
-        <asciidoctorj.diagram.version>2.2.1</asciidoctorj.diagram.version>
+        <asciidoctorj.version>2.5.4</asciidoctorj.version>
+        <asciidoctorj.diagram.version>2.2.3</asciidoctorj.diagram.version>
         <asciidoctorj.pdf.version>1.6.2</asciidoctorj.pdf.version>
         <asciidoctorj.epub.version>1.5.1</asciidoctorj.epub.version>
         <jruby.version>9.2.20.1</jruby.version>
@@ -25,6 +25,7 @@
     <modules>
         <module>asciidoc-maven-site-example</module>
         <module>asciidoc-to-html-example</module>
+        <module>asciidoc-to-html-multipage-example</module>
         <module>asciidoc-to-revealjs-example</module>
         <module>asciidoctor-pdf-example</module>
         <module>asciidoctor-epub-example</module>
