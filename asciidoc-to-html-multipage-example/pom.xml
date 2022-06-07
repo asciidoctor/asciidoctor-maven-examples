@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.asciidoctor.maven</groupId>
-    <artifactId>asciidoctor-multipage-example</artifactId>
+    <artifactId>asciidoc-to-html-multipage-example</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>Asciidoctor Multipage Maven example</name>
     <description>An example project that demonstrates how to integrate convert Asciidoc to multipage with

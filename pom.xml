@@ -25,10 +25,10 @@
     <modules>
         <module>asciidoc-maven-site-example</module>
         <module>asciidoc-to-html-example</module>
+        <module>asciidoc-to-html-multipage-example</module>
         <module>asciidoc-to-revealjs-example</module>
         <module>asciidoctor-pdf-example</module>
         <module>asciidoctor-epub-example</module>
-        <module>asciidoctor-multipage-example</module>
         <module>asciidoctor-pdf-cjk-example</module>
         <module>asciidoctor-pdf-with-theme-example</module>
         <module>asciidoctor-diagram-example</module>
