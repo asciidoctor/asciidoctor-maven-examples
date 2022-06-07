@@ -16,6 +16,9 @@ Refer to the README file in each individual project to learn how to run it.
 link:asciidoc-to-html-example/README.adoc[asciidoc-to-html-example] (aka "`The Quickstart`")::
 Demonstrates how to convert AsciiDoc to HTML5 using the Asciidoctor Maven plugin.
 
+link:asciidoc-to-html-multipage-example/README.adoc[asciidoc-to-html-multipage-example]::
+Demonstrates how to convert AsciiDoc to multiple HTML pages with the Asciidoctor Maven plugin and https://github.com/owenh000/asciidoctor-multipage[Asciidoctor Multipage Extension^].
+
 link:docbook-pipeline-docbkx-example/README.adoc[docbook-pipeline-docbkx-example]::
 Demonstrates how to convert AsciiDoc to DocBook and feed it to the DocBook pipeline to generate a PDF using the Asciidoctor and Docbkx Maven plugins.
 
