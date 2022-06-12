@@ -16,9 +16,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <asciidoctor.maven.plugin.version>2.2.2</asciidoctor.maven.plugin.version>
-        <asciidoctorj.version>2.5.3</asciidoctorj.version>
-        <asciidoctorj.pdf.version>1.6.2</asciidoctorj.pdf.version>
-        <jruby.version>9.2.20.1</jruby.version>
+        <asciidoctorj.version>2.5.4</asciidoctorj.version>
+        <asciidoctorj.pdf.version>2.0.6</asciidoctorj.pdf.version>
+        <jruby.version>9.3.4.0</jruby.version>
         <pdf.cjk.version>0.1.3</pdf.cjk.version>
         <pdf.cjk.kaigen.version>0.1.1</pdf.cjk.kaigen.version>
         <pdf.cjk.kaigen.fonts.download.uri>https://github.com/chloerei/asciidoctor-pdf-cjk-kai_gen_gothic/releases/download/v0.1.0-fonts</pdf.cjk.kaigen.fonts.download.uri>
@@ -253,8 +253,8 @@
                                 <!-- Fixes line wraps formatting inserting zero-width spaces (ZWSP) before CJ characters -->
                                 <scripts>cjk</scripts>
                                 <!-- Set KaiGen Gothic Chinese theme -->
-                                <pdf-style>KaiGenGothicCN</pdf-style>
-                                <pdf-stylesdir>${pdf.cjk.kaigen.download.dir}/themes</pdf-stylesdir>
+                                <pdf-theme>KaiGenGothicCN</pdf-theme>
+                                <pdf-themesdir>${pdf.cjk.kaigen.download.dir}/themes</pdf-themesdir>
                                 <pdf-fontsdir>${pdf.cjk.kaigen.download.dir}/fonts</pdf-fontsdir>
                             </attributes>
                         </configuration>
@@ -281,8 +281,8 @@
                                 <!-- Fixes line wraps formatting inserting zero-width spaces (ZWSP) before CJ characters -->
                                 <scripts>cjk</scripts>
                                 <!-- Set KaiGen Gothic Japanese theme -->
-                                <pdf-style>KaiGenGothicJP</pdf-style>
-                                <pdf-stylesdir>${pdf.cjk.kaigen.download.dir}/themes</pdf-stylesdir>
+                                <pdf-theme>KaiGenGothicJP</pdf-theme>
+                                <pdf-themesdir>${pdf.cjk.kaigen.download.dir}/themes</pdf-themesdir>
                                 <pdf-fontsdir>${pdf.cjk.kaigen.download.dir}/fonts</pdf-fontsdir>
                             </attributes>
                         </configuration>
