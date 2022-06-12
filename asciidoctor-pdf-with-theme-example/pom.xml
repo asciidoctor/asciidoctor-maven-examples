@@ -84,8 +84,8 @@
                             <!-- Use `book` docType to enable title page generation -->
                             <doctype>book</doctype>
                             <attributes>
-                                <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
-                                <pdf-style>custom</pdf-style>
+                                <pdf-theme>custom</pdf-theme>
+                                <pdf-themesdir>${project.basedir}/src/theme</pdf-themesdir>
                                 <source-highlighter>coderay</source-highlighter>
                                 <icons>font</icons>
                                 <pagenums/>
