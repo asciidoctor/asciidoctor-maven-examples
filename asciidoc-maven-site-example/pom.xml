@@ -36,8 +36,8 @@
                         <!-- Optional site-wide AsciiDoc attributes -->
                         <attributes>
                             <icons>font</icons>
-                            <source-highlighter>coderay</source-highlighter>
-                            <coderay-css>style</coderay-css>
+                            <!-- Add required rouge styles in '/css/site.css' -->
+                            <source-highlighter>rouge</source-highlighter>
                             <toclevels>2</toclevels>
                         </attributes>
                     </asciidoc>

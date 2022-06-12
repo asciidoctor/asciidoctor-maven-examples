@@ -4,7 +4,7 @@ Doc Writer <doc.writer@example.com>
 v1.0, 2014-08-08
 //:toc:
 :icons: font
-:source-highlighter: coderay
+:source-highlighter: rouge
 :sectanchors:
 //:compat-mode:
 
