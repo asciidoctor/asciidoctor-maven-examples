@@ -63,7 +63,7 @@
                             <outputDirectory>${project.build.directory}/generated-docs-default-theme</outputDirectory>
                             <doctype>book</doctype>
                             <attributes>
-                                <source-highlighter>coderay</source-highlighter>
+                                <source-highlighter>rouge</source-highlighter>
                                 <icons>font</icons>
                                 <pagenums/>
                                 <toc/>
@@ -86,7 +86,7 @@
                             <attributes>
                                 <pdf-theme>custom</pdf-theme>
                                 <pdf-themesdir>${project.basedir}/src/theme</pdf-themesdir>
-                                <source-highlighter>coderay</source-highlighter>
+                                <source-highlighter>rouge</source-highlighter>
                                 <icons>font</icons>
                                 <pagenums/>
                                 <toc/>

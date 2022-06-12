@@ -99,7 +99,7 @@
                             <backend>epub3</backend>
                             <sourceDocumentName>spine.adoc</sourceDocumentName>
                             <attributes>
-                                <source-highlighter>coderay</source-highlighter>
+                                <source-highlighter>rouge</source-highlighter>
                                 <ebook-format>kf8</ebook-format>
                             </attributes>
                         </configuration>

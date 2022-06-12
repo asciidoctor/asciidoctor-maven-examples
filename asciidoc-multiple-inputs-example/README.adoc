@@ -30,10 +30,8 @@ In the example, we define a first execution block as follows:
  <configuration>
      <sourceDirectory>src/docs/asciidoc/user-manual</sourceDirectory> <!--2-->
      <backend>pdf</backend> <!--3-->
-     <!-- Since 1.5.0-alpha.9, PDF back-end can also use 'rouge' which provides more coverage
-     for other languages like scala -->
      <attributes>
-        <source-highlighter>coderay</source-highlighter>
+        <source-highlighter>rouge</source-highlighter>
          <pagenums/>
          <toc/>
          <idprefix/>
@@ -73,7 +71,7 @@ The second execution block defines how to create the technical documentation in 
         <sourceDirectory>src/docs/asciidoc/technical-docs</sourceDirectory> <!--2-->
         <backend>html5</backend> <!--3-->
         <attributes>
-            <source-highlighter>coderay</source-highlighter>
+            <source-highlighter>rouge</source-highlighter>
             <imagesdir>./images</imagesdir>
             <toc>left</toc>
             <icons>font</icons>

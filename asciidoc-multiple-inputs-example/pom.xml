@@ -64,10 +64,8 @@
                         <configuration>
                             <sourceDirectory>src/docs/asciidoc/user-manual</sourceDirectory>
                             <backend>pdf</backend>
-                            <!-- Since 1.5.0-alpha.9, PDF back-end can also use 'rouge' which provides more coverage
-                            for other languages like scala -->
                             <attributes>
-                                <source-highlighter>coderay</source-highlighter>
+                                <source-highlighter>rouge</source-highlighter>
                                 <pagenums/>
                                 <toc/>
                                 <idprefix/>
@@ -85,7 +83,7 @@
                             <sourceDirectory>src/docs/asciidoc/technical-docs</sourceDirectory>
                             <backend>html5</backend>
                             <attributes>
-                                <source-highlighter>coderay</source-highlighter>
+                                <source-highlighter>rouge</source-highlighter>
                                 <imagesdir>./images</imagesdir>
                                 <toc>left</toc>
                                 <icons>font</icons>
