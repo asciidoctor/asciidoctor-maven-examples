@@ -253,8 +253,8 @@
                                 <!-- Fixes line wraps formatting inserting zero-width spaces (ZWSP) before CJ characters -->
                                 <scripts>cjk</scripts>
                                 <!-- Set KaiGen Gothic Chinese theme -->
-                                <pdf-style>KaiGenGothicCN</pdf-style>
-                                <pdf-stylesdir>${pdf.cjk.kaigen.download.dir}/themes</pdf-stylesdir>
+                                <pdf-theme>KaiGenGothicCN</pdf-theme>
+                                <pdf-themesdir>${pdf.cjk.kaigen.download.dir}/themes</pdf-themesdir>
                                 <pdf-fontsdir>${pdf.cjk.kaigen.download.dir}/fonts</pdf-fontsdir>
                             </attributes>
                         </configuration>
@@ -281,8 +281,8 @@
                                 <!-- Fixes line wraps formatting inserting zero-width spaces (ZWSP) before CJ characters -->
                                 <scripts>cjk</scripts>
                                 <!-- Set KaiGen Gothic Japanese theme -->
-                                <pdf-style>KaiGenGothicJP</pdf-style>
-                                <pdf-stylesdir>${pdf.cjk.kaigen.download.dir}/themes</pdf-stylesdir>
+                                <pdf-theme>KaiGenGothicJP</pdf-theme>
+                                <pdf-themesdir>${pdf.cjk.kaigen.download.dir}/themes</pdf-themesdir>
                                 <pdf-fontsdir>${pdf.cjk.kaigen.download.dir}/fonts</pdf-fontsdir>
                             </attributes>
                         </configuration>
