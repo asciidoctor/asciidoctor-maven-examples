@@ -4,7 +4,7 @@ Doc Writer <doc.writer@example.com>
 v1.0, 2014-08-08
 //:toc:
 :icons: font
-:source-highlighter: coderay
+:source-highlighter: rouge
 :sectanchors:
 //:compat-mode:
 
@@ -18,14 +18,17 @@ toc::[]
 
 == Sample Section
 
-[square]
+=== Unordered list
+
 * item 1
 * item 2
 
-[source,ruby]
-----
-puts "Hello, World!"
-----
+=== Ordered list
+
+. item 1
+. item 2
+
+=== Table
 
 [caption=]
 .Ruby platforms
@@ -37,5 +40,21 @@ puts "Hello, World!"
 |Opal |JavaScript
 |Rubinius |Ruby
 |===
+
+=== Code blocks
+
+[source,ruby]
+----
+puts "Hello, World!"
+----
+
+[source,java]
+----
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+----
 
 include::_attributes.adoc[]

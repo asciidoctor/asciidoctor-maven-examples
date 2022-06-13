@@ -107,10 +107,10 @@
                                   <imagesdir>./images</imagesdir>
                               </attributes>
 
-                            IMPORTANT: When you enable image embedding, you must qualify the path the the imagesdir, as shown above.
+                            IMPORTANT: When you enable image embedding, you must qualify the path with imagesdir, as shown above.
                             -->
                             <attributes>
-                                <source-highlighter>coderay</source-highlighter>
+                                <source-highlighter>rouge</source-highlighter>
                                 <imagesdir>./images</imagesdir>
                                 <toc>left</toc>
                                 <icons>font</icons>
