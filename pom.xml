@@ -17,7 +17,7 @@
         <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
         <asciidoctorj.version>2.5.4</asciidoctorj.version>
         <asciidoctorj.diagram.version>2.2.3</asciidoctorj.diagram.version>
-        <asciidoctorj.pdf.version>2.0.6</asciidoctorj.pdf.version>
+        <asciidoctorj.pdf.version>2.1.4</asciidoctorj.pdf.version>
         <asciidoctorj.epub.version>1.5.1</asciidoctorj.epub.version>
         <jruby.version>9.3.4.0</jruby.version>
     </properties>
