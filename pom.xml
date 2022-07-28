@@ -34,7 +34,6 @@
         <module>asciidoctor-diagram-example</module>
         <module>asciidoc-multiple-inputs-example</module>
         <module>docbook-pipeline-docbkx-example</module>
-        <module>docbook-pipeline-jdocbook-example</module>
         <module>java-extension-example</module>
     </modules>
 
