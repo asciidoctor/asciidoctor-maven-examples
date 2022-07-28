@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <asciidoctor.maven.plugin.version>2.2.2</asciidoctor.maven.plugin.version>
         <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
-        <asciidoctorj.version>2.5.4</asciidoctorj.version>
+        <asciidoctorj.version>2.5.5</asciidoctorj.version>
         <asciidoctorj.diagram.version>2.2.3</asciidoctorj.diagram.version>
         <asciidoctorj.pdf.version>2.1.6</asciidoctorj.pdf.version>
         <asciidoctorj.epub.version>1.5.1</asciidoctorj.epub.version>
