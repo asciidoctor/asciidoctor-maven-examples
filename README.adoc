@@ -22,9 +22,6 @@ Demonstrates how to convert AsciiDoc to multiple HTML pages with the Asciidoctor
 link:docbook-pipeline-docbkx-example/README.adoc[docbook-pipeline-docbkx-example]::
 Demonstrates how to convert AsciiDoc to DocBook and feed it to the DocBook pipeline to generate a PDF using the Asciidoctor and Docbkx Maven plugins.
 
-link:docbook-pipeline-jdocbook-example/README.adoc[docbook-pipeline-jdocbook-example]::
-Demonstrates how to convert AsciiDoc to DocBook and feed it to the DocBook pipeline to generate a PDF using the Asciidoctor and jDocBook Maven plugins.
-
 link:asciidoctor-diagram-example/README.adoc[asciidoctor-diagram-example]::
 Demonstrates how to integrate Asciidoctor Diagram with the Asciidoctor Maven plugin.
 
