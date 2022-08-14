@@ -164,6 +164,7 @@ Even when this project does not contain much code, we encourage the following go
 * Follow simples code conventions to improve readability on the web
 ** Use 4 white spaces instead of tabs
 ** Avoid long lines in the Java code (they’re good in AsciiDoc files though)
+* Tests are named after each example name.
 
 To help fixing some style conventions a small script has been included. Currently, it only checks for tabs, which should be replaced by white spaces.
 To see what files contain some inconsistency, run this command from the parent project.
