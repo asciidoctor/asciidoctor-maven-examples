@@ -35,6 +35,7 @@
         <module>asciidoc-multiple-inputs-example</module>
         <module>docbook-pipeline-docbkx-example</module>
         <module>java-extension-example</module>
+        <module>tests</module>
     </modules>
 
     <build>
