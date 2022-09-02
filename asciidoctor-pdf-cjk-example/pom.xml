@@ -32,7 +32,7 @@
             <plugin>
                 <groupId>com.googlecode.maven-download-plugin</groupId>
                 <artifactId>download-maven-plugin</artifactId>
-                <version>1.3.0</version>
+                <version>1.6.8</version>
                 <executions>
                     <!-- Chinese theme & fonts -->
                     <execution>
