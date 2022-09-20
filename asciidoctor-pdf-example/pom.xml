@@ -14,8 +14,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <asciidoctor.maven.plugin.version>2.2.2</asciidoctor.maven.plugin.version>
         <asciidoctorj.pdf.version>2.3.0</asciidoctorj.pdf.version>
-        <asciidoctorj.version>2.5.5</asciidoctorj.version>
-        <jruby.version>9.3.4.0</jruby.version>
+        <asciidoctorj.version>2.5.6</asciidoctorj.version>
+        <jruby.version>9.3.8.0</jruby.version>
     </properties>
 
     <build>
@@ -34,7 +34,7 @@
                     <!-- Comment this section to use the default jruby artifact provided by the plugin -->
                     <dependency>
                         <groupId>org.jruby</groupId>
-                        <artifactId>jruby-complete</artifactId>
+                        <artifactId>jruby</artifactId>
                         <version>${jruby.version}</version>
                     </dependency>
                     <!-- Comment this section to use the default AsciidoctorJ artifact provided by the plugin -->

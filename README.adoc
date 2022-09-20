@@ -69,7 +69,7 @@ Asciidoctor Maven plugin relies on https://github.com/asciidoctor/asciidoctor[as
     <dependencies>
         <dependency>
             <groupId>org.jruby</groupId>
-            <artifactId>jruby-complete</artifactId>
+            <artifactId>jruby</artifactId>
             <version>${jruby.version}</version>
         </dependency>
     <dependencies>
