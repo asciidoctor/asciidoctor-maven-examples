@@ -18,7 +18,7 @@
         <asciidoctor.maven.plugin.version>2.2.2</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>2.5.7</asciidoctorj.version>
         <asciidoctorj.pdf.version>2.3.4</asciidoctorj.pdf.version>
-        <jruby.version>9.3.8.0</jruby.version>
+        <jruby.version>9.4.1.0</jruby.version>
         <pdf.cjk.version>0.1.3</pdf.cjk.version>
         <pdf.cjk.kaigen.version>0.1.1</pdf.cjk.kaigen.version>
         <pdf.cjk.kaigen.fonts.download.uri>https://github.com/chloerei/asciidoctor-pdf-cjk-kai_gen_gothic/releases/download/v0.1.0-fonts</pdf.cjk.kaigen.fonts.download.uri>
