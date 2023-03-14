@@ -20,6 +20,7 @@
         <asciidoctorj.pdf.version>2.3.0</asciidoctorj.pdf.version>
         <asciidoctorj.epub.version>1.5.1</asciidoctorj.epub.version>
         <jruby.version>9.3.8.0</jruby.version>
+        <netty.version>4.1.89.Final</netty.version>
     </properties>
 
     <modules>
