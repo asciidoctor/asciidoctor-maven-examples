@@ -67,7 +67,7 @@
                             <dependency>
                                 <groupId>org.codehaus.groovy</groupId>
                                 <artifactId>groovy-nio</artifactId>
-                                <version>3.0.15</version>
+                                <version>3.0.16</version>
                             </dependency>
                         </dependencies>
                     </plugin>
@@ -98,7 +98,7 @@
                             <dependency>
                                 <groupId>org.codehaus.groovy</groupId>
                                 <artifactId>groovy-nio</artifactId>
-                                <version>3.0.15</version>
+                                <version>3.0.16</version>
                             </dependency>
                         </dependencies>
                     </plugin>
