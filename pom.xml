@@ -31,38 +31,4 @@
         <defaultGoal>compile</defaultGoal>
     </build>
 
-    <profiles>
-        <profile>
-            <id>check-styles</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.gmaven</groupId>
-                        <artifactId>gmaven-plugin</artifactId>
-                        <version>1.5</version>
-                        <inherited>false</inherited>
-                        <executions>
-                            <execution>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>execute</goal>
-                                </goals>
-                                <configuration>
-                                    <source>${pom.basedir}/check_styles.groovy</source>
-                                </configuration>
-                            </execution>
-                        </executions>
-                        <dependencies>
-                            <dependency>
-                                <groupId>org.codehaus.groovy</groupId>
-                                <artifactId>groovy-nio</artifactId>
-                                <version>3.0.16</version>
-                            </dependency>
-                        </dependencies>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
 </project>

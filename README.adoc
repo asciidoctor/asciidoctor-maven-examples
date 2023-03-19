@@ -122,6 +122,7 @@ We want your choice to participate in an Asciidoctor project be the start of an 
 So thanks for showing up!
 
 === Code conventions
+
 Even when this project does not contain much code, we encourage the following good practices to improve accessibility and ease the use of the examples:
 
 * Document relevant details of an example in the appropriate README file
@@ -135,20 +136,9 @@ Even when this project does not contain much code, we encourage the following go
 ** Avoid long lines in the Java code (they’re good in AsciiDoc files though)
 * Tests are named after each example name.
 
-To help fixing some style conventions a small script has been included. Currently, it only checks for tabs, which should be replaced by white spaces.
-To see what files contain some inconsistency, run this command from the parent project.
-
-[source,indent=2]
-----
-$ mvn validate -Pcheck-styles
-----
-
-If you want it to fix the issues for you, just add `-Dfix` to the command.
-
-[source,indent=2]
-----
-$ mvn validate -Pcheck-styles -Dfix
-----
+To help with style conventions https://editorconfig.org/[editorconfig] is provided.
+It only checks for tabs (which should be replaced by white spaces) and line breaks.
+Most populars IDE support it out-of-the-box or via plugins.
 
 == Copyright and Licensing
 
