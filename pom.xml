@@ -11,17 +11,6 @@
     <name>AsciiDoc Maven Examples</name>
     <description>Collection of sample projects that demonstrate numerous ways to use the Asciidoctor Maven plugin in a Maven project.</description>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <asciidoctor.maven.plugin.version>2.2.3</asciidoctor.maven.plugin.version>
-        <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
-        <asciidoctorj.version>2.5.6</asciidoctorj.version>
-        <asciidoctorj.diagram.version>2.2.3</asciidoctorj.diagram.version>
-        <asciidoctorj.pdf.version>2.3.0</asciidoctorj.pdf.version>
-        <asciidoctorj.epub.version>1.5.1</asciidoctorj.epub.version>
-        <jruby.version>9.3.8.0</jruby.version>
-    </properties>
-
     <modules>
         <module>asciidoc-maven-site-example</module>
         <module>asciidoc-to-html-example</module>
@@ -43,37 +32,6 @@
     </build>
 
     <profiles>
-        <profile>
-            <id>update-properties</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.gmaven</groupId>
-                        <artifactId>gmaven-plugin</artifactId>
-                        <version>1.5</version>
-                        <inherited>false</inherited>
-                        <executions>
-                            <execution>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>execute</goal>
-                                </goals>
-                                <configuration>
-                                        <source>${pom.basedir}/update-properties.groovy</source>
-                                </configuration>
-                            </execution>
-                        </executions>
-                        <dependencies>
-                            <dependency>
-                                <groupId>org.codehaus.groovy</groupId>
-                                <artifactId>groovy-nio</artifactId>
-                                <version>3.0.16</version>
-                            </dependency>
-                        </dependencies>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
         <profile>
             <id>check-styles</id>
             <build>
