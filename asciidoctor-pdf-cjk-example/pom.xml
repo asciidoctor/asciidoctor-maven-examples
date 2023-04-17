@@ -16,7 +16,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <asciidoctor.maven.plugin.version>2.2.3</asciidoctor.maven.plugin.version>
-        <asciidoctorj.version>2.5.7</asciidoctorj.version>
+        <asciidoctorj.version>2.5.8</asciidoctorj.version>
         <asciidoctorj.pdf.version>2.3.6</asciidoctorj.pdf.version>
         <jruby.version>9.3.8.0</jruby.version>
         <pdf.cjk.version>0.1.3</pdf.cjk.version>
