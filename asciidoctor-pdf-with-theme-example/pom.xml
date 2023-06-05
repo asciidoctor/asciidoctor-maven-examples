@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <asciidoctor.maven.plugin.version>2.2.3</asciidoctor.maven.plugin.version>
+        <asciidoctor.maven.plugin.version>2.2.4</asciidoctor.maven.plugin.version>
         <asciidoctorj.pdf.version>2.3.7</asciidoctorj.pdf.version>
         <asciidoctorj.version>2.5.10</asciidoctorj.version>
         <jruby.version>9.3.8.0</jruby.version>
