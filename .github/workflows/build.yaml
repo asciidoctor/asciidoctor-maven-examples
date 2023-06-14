@@ -12,10 +12,9 @@ jobs:
     name: Build
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 8
       matrix:
         java:
-          - 8
           - 11
           - 17
         os:
