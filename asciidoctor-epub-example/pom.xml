@@ -18,7 +18,7 @@
         <asciidoctorj.epub.version>1.5.1</asciidoctorj.epub.version>
         <asciidoctorj.version>2.5.10</asciidoctorj.version>
         <!-- for a correct kf8 generation, you'll need at least jRuby >= 9.1.8.0 -->
-        <jruby.version>9.3.8.0</jruby.version>
+        <jruby.version>9.4.2.0</jruby.version>
         <!-- provide full path to kindlegen application if you need the fallback solution -->
         <path.to.kindlegen>/absolute/path/to/kindlegen</path.to.kindlegen>
     </properties>
