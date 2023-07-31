@@ -14,28 +14,33 @@ jobs:
       fail-fast: false
       max-parallel: 8
       matrix:
-        java:
-          - 11
-          - 17
         os:
           - ubuntu-latest
           - windows-latest
           - macos-latest
+        java:
+          - 11
+          - 17
+        maven:
+          - 3.9.3
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - uses: actions/setup-java@v2
+      - uses: s4u/setup-maven-action@v1.8.0
         with:
-          distribution: 'temurin'
-          java-version: ${{ matrix.java }}
+            java-distribution: 'temurin'
+            java-version: ${{ matrix.java }}
+            maven-version: ${{ matrix.maven }}
       - name: Cache dependencies
         uses: actions/cache@v3
+        env:
+            java_version: ${{ matrix.java }}
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-mvn-cache-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-mvn-cache-
+          key: mvn-cache-${{ runner.os }}-${{ env.java_version }}
+          restore-keys: mvn-cache-${{ runner.os }}-${{ env.java_version }}
       - name: Install Graphviz (Linux)
         if: matrix.os == 'ubuntu-latest'
         run: sudo apt install graphviz
@@ -51,3 +56,12 @@ jobs:
         run: mvn -B clean
       - name: Build
         run: mvn -B test -pl tests
+      - name: Upload test output
+        uses: actions/upload-artifact@v3
+        env:
+            os_name: ${{ matrix.os }}
+            java_version: ${{ matrix.java }}
+        if: always()
+        with:
+            name: tests-output-${{ env.os_name }}-${{ env.java_version }}
+            path: tests/target/*

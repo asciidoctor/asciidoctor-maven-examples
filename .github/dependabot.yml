@@ -8,3 +8,4 @@ updates:
       - "dependencies"
     ignore:
       - dependency-name: "org.jruby:jruby"
+      - dependency-name: "com.googlecode.maven-download-plugin:download-maven-plugin"
