@@ -1,5 +1,6 @@
 package org.asciidoctor.maven.examples;
 
+import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -44,8 +45,8 @@ class AsciidoctorPdfWithThemeTest {
     }
 
     private void assertImagesInFirstPage(File pdfWithCustomTheme, int imagesCount) throws IOException {
-        PDPage page = PDDocument
-                .load(pdfWithCustomTheme)
+        PDPage page = Loader
+                .loadPDF(pdfWithCustomTheme)
                 .getPage(0);
         assertThat(getImages(page)).hasSize(imagesCount);
     }
