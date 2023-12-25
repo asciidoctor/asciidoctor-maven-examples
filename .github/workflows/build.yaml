@@ -58,7 +58,7 @@ jobs:
       - name: Build
         run: mvn -B test -pl tests
       - name: Upload test output
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         env:
             os_name: ${{ matrix.os }}
             java_version: ${{ matrix.java }}
