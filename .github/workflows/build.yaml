@@ -25,7 +25,7 @@ jobs:
           - 3.9.3
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 1
       - uses: s4u/setup-maven-action@v1.8.0
