@@ -24,6 +24,7 @@ jobs:
           - 21
         maven:
           - 3.9.6
+          - 4.0.0-alpha-10
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -55,14 +56,15 @@ jobs:
         run: mvn -version
       - name: Clean all modules
         run: mvn -B clean
-      - name: Build
+      - name: Test
         run: mvn -B test -pl tests
       - name: Upload test output
         uses: actions/upload-artifact@v4
         env:
             os_name: ${{ matrix.os }}
             java_version: ${{ matrix.java }}
+            maven_version: ${{ matrix.maven }}
         if: always()
         with:
-            name: tests-output-${{ env.os_name }}-${{ env.java_version }}
+            name: tests-output-${{ env.os_name }}-${{ env.java_version }}-${{ env.maven_version }}
             path: tests/target/*
