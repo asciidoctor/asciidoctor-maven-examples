@@ -36,7 +36,7 @@ jobs:
             java-version: ${{ matrix.java }}
             maven-version: ${{ matrix.maven }}
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         env:
             java_version: ${{ matrix.java }}
         with:
