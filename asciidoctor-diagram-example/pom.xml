@@ -46,12 +46,12 @@
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj-diagram-plantuml</artifactId>
-                        <version>1.2021.8</version>
+                        <version>1.2023.12</version>
                     </dependency>
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj-diagram-ditaamini</artifactId>
-                        <version>1.0.0</version>
+                        <version>1.0.3</version>
                     </dependency>
                     -->
                 </dependencies>
@@ -61,7 +61,8 @@
                         <require>asciidoctor-diagram</require>
                     </requires>
                     <attributes>
-                    <!-- Example below shows how to specify in this pom instead of System's PATH, the location of dot command of Graphviz, required by PlantUML libraries -->
+                    <!-- Example below shows how to specify in this pom instead of System's PATH, the location of dot command of Graphviz.
+                         This is required by PlantUML libraries, unless 'smetana' is used https://plantuml.com/de/smetana02 -->
                     <!-- Windows:
                         <graphvizdot>C:\Program Files (x86)\Graphviz2.38\bin\dot.exe</graphvizdot>
                     -->
