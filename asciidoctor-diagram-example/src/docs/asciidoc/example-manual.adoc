@@ -42,7 +42,7 @@ Alice -> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 ....
 
-[graphviz, dot-example, svg]
+[plantuml, dot-example]
 ----
 digraph g {
     a -> b
