@@ -26,7 +26,8 @@ class AsciidoctorDiagramTest {
                 .isDirectory()
                 .isDirectoryContaining(file -> file.getName().equals("asciidoctor-diagram-process.png"))
                 .isDirectoryContaining(file -> file.getName().equals("auth-protocol.png"))
-                .isDirectoryContaining(file -> file.getName().equals("dot-example.svg"));
+                .isDirectoryContaining(file -> file.getName().equals("dot-example.png"))
+                .isDirectoryContaining(file -> file.getName().equals("aspectj-maven-multi-module.png"));
     }
 
     private String generatedDocs(String filename) {
