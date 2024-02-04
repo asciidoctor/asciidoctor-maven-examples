@@ -42,7 +42,43 @@ Alice -> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 ....
 
-[graphviz, dot-example, svg]
+[plantuml,aspectj-maven-multi-module]
+....
+@startuml
+
+!pragma layout smetana
+
+skinparam component {
+  BackgroundColor<<Using Aspects>> #EEEEFF
+  BorderColor<<Using Aspects>> black
+}
+
+node poms {
+
+    component "rootParentPOM"
+    component "aspectParentPOM"
+
+    [rootParentPOM] <|.. [aspectParentPOM]
+}
+
+node aspect_definition_projects {
+
+    component "validation-api"
+    component "validation-aspect"
+
+    [rootParentPOM] <|... [validation-api]
+    [rootParentPOM] <|.. [validation-aspect]
+    [validation-api] *-- [validation-aspect]
+    [validation-aspect] *-- [aspectParentPOM]
+}
+
+component "mavenProjectWithAspects"<<Using Aspects>>
+[aspectParentPOM] <|.. [mavenProjectWithAspects]
+
+@enduml
+....
+
+[plantuml, dot-example]
 ----
 digraph g {
     a -> b
