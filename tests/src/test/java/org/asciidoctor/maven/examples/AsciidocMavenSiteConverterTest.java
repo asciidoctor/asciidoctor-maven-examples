@@ -8,8 +8,8 @@ import java.io.File;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@MavenTest(projectPath = "../asciidoc-maven-site-example", goal = "site:site")
-class AsciidocMavenSiteTest {
+@MavenTest(projectPath = "../asciidoc-maven-site-converter-example", goal = "site:site")
+class AsciidocMavenSiteConverterTest {
 
     private MavenProject mavenProject;
 
@@ -19,6 +19,7 @@ class AsciidocMavenSiteTest {
         assertThat(index)
                 .isNotEmpty()
                 .content()
+                .contains("<link rel=\"stylesheet\" href=\"./css/site.css\" />")
                 .contains("<h1>AsciiDoc Maven Site Example</h1>")
                 .contains("<li class=\"nav-header\">Asciidoctor Example</li>")
                 .contains("<a href=\"hello.html\" title=\"Hello\"><span class=\"none\"></span>Hello</a>")

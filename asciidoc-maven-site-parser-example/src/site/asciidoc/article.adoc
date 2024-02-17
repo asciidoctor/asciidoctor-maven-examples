@@ -1,0 +1,60 @@
+= AsciiDoc is Writing Zen
+Doc Writer <doc.writer@example.com>
+//Junior Writer <junior.writer@example.com>
+v1.0, 2014-08-08
+//:toc:
+:icons: font
+:source-highlighter: rouge
+:sectanchors:
+//:compat-mode:
+
+_Zen_ in the *art* of writing `plain text` with https://asciidoc.org[AsciiDoc].
+
+[TIP]
+Use https://asciidoctor.org[Asciidoctor] for the best AsciiDoc experience.footnote:[Not to mention the best looking output!]
+Then icon:twitter[role=aqua] about it!
+
+toc::[]
+
+== Sample Section
+
+=== Unordered list
+
+* item 1
+* item 2
+
+=== Ordered list
+
+. item 1
+. item 2
+
+=== Table
+
+[caption=]
+.Ruby platforms
+|===
+|Name |Language
+
+|MRI |C
+|JRuby |Java
+|Opal |JavaScript
+|Rubinius |Ruby
+|===
+
+=== Code blocks
+
+[source,ruby]
+----
+puts "Hello, World!"
+----
+
+[source,java]
+----
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+----
+
+include::_attributes.adoc[]

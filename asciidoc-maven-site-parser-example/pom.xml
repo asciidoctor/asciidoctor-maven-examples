@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.asciidoctor.maven</groupId>
+    <artifactId>asciidoc-maven-site-parser-example</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>AsciiDoc Maven Site Example</name>
+    <description>An example project that demonstrates how to process AsciiDoc in a Maven site using the Asciidoctor Maven plugin.</description>
+
+    <!-- All Maven properties are injected as Asciidoctor attributes.
+         Reference them with the same name replacing dots by dashes (e.g. {jruby-version}). -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <asciidoctor.maven.plugin.version>3.0.0</asciidoctor.maven.plugin.version>
+        <asciidoctorj.version>2.5.11</asciidoctorj.version>
+        <jruby.version>9.4.5.0</jruby.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.12.1</version>
+                <configuration>
+                    <!-- Disable generateReports if you don't want to include the built-in reports -->
+                    <generateReports>true</generateReports>
+                    <generateSitemap>true</generateSitemap>
+                    <relativizeDecorationLinks>false</relativizeDecorationLinks>
+                    <locales>en</locales>
+                    <inputEncoding>UTF-8</inputEncoding>
+                    <outputEncoding>UTF-8</outputEncoding>
+                    <asciidoc>
+                        <!-- Optional site-wide AsciiDoc attributes -->
+                        <attributes>
+                            <icons>font</icons>
+                            <!-- Add required rouge styles in '/css/site.css' -->
+                            <source-highlighter>rouge</source-highlighter>
+                            <toclevels>2</toclevels>
+                        </attributes>
+                    </asciidoc>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctor-parser-doxia-module</artifactId>
+                        <version>${asciidoctor.maven.plugin.version}</version>
+                    </dependency>
+                    <!-- Comment this section to use the default jruby artifact provided by the plugin -->
+                    <dependency>
+                        <groupId>org.jruby</groupId>
+                        <artifactId>jruby</artifactId>
+                        <version>${jruby.version}</version>
+                    </dependency>
+                    <!-- Comment this section to use the default AsciidoctorJ artifact provided by the plugin -->
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj</artifactId>
+                        <version>${asciidoctorj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.5.0</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
+</project>

@@ -12,7 +12,8 @@
     <description>Collection of sample projects that demonstrate numerous ways to use the Asciidoctor Maven plugin in a Maven project.</description>
 
     <modules>
-        <module>asciidoc-maven-site-example</module>
+        <module>asciidoc-maven-site-converter-example</module>
+        <module>asciidoc-maven-site-parser-example</module>
         <module>asciidoc-to-html-example</module>
         <module>asciidoc-to-html-multipage-example</module>
         <module>asciidoc-to-revealjs-example</module>
