@@ -1,6 +1,6 @@
-= Asciidoctor Maven Plugin: AsciiDoc Site Example
+= Asciidoctor Maven Plugin (Converter Module): AsciiDoc Site Example
 
-An example project that demonstrates how to process AsciiDoc in a Maven site using the Asciidoctor Maven plugin.
+An example project that demonstrates how to process AsciiDoc in a Maven site using the Asciidoctor Converter Doxia Module.
 
 == Usage
 

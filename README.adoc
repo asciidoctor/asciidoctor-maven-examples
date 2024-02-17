@@ -31,8 +31,11 @@ Demonstrates how to convert AsciiDoc to PDF using Asciidoctor PDF with the Ascii
 link:asciidoctor-epub-example/README.adoc[asciidoctor-epub-example]::
 Demonstrates how to convert AsciiDoc to epub using Asciidoctor EPUB with the Asciidoctor Maven plugin. (contains also an example for .mobi (Kindle) output)
 
-link:asciidoc-maven-site-example/README.adoc[asciidoc-maven-site-example]::
-Demonstrates how to process AsciiDoc in a Maven site using the Asciidoctor Maven plugin.
+link:asciidoc-maven-site-converter-example/README.adoc[asciidoc-maven-site-converter-example]::
+Demonstrates how to process AsciiDoc in a Maven site using the Asciidoctor Converter Doxia Module.
+
+link:asciidoc-maven-site-parser-example/README.adoc[asciidoc-maven-site-parser-example]::
+Demonstrates how to process AsciiDoc in a Maven site using the Asciidoctor Parser Doxia Module.
 
 link:asciidoc-multiple-inputs-example/README.adoc[asciidoc-multiple-inputs-example]::
 An example project that demonstrates how to convert multiple input AsciiDoc documents to HTML5 and PDF using the

@@ -1,0 +1,14 @@
+= Asciidoctor Maven Plugin (Parser Module): AsciiDoc Site Example
+
+An example project that demonstrates how to process AsciiDoc in a Maven site using the Asciidoctor Parser Doxia Module.
+
+== Usage
+
+Build the site by invoking the `site:site` goal:
+
+ $ mvn site:site
+
+Open the file _target/site/hello.html_ to see the output generated from the AsciiDoc source _src/site/asciidoc/hello.adoc_.
+
+Open the file _target/site/index.html_ to see the output generated for the entire site including the link to the `hello` document.
+

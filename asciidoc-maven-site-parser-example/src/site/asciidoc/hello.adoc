@@ -1,0 +1,16 @@
+= Hello, AsciiDoc!
+//:icons: font
+
+This file was converted from AsciiDoc to HTML by the Maven Site module of the Asciidoctor Maven Plugin.
+
+image::images/tiger.png[Ghostscript Tiger]
+_By Ghostscript authors (GPL Ghostscript SVN: tiger.eps) [GPL (https://www.gnu.org/licenses/gpl.html)], via Wikimedia Commons_
+
+[TIP]
+====
+Use the include directive to keep your content DRY!
+
+include::_include.adoc[]
+====
+
+include::_attributes.adoc[]
