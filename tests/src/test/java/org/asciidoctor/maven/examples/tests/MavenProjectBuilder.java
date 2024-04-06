@@ -41,7 +41,8 @@ public class MavenProjectBuilder {
             throw new RuntimeException("repository does not exists: " + repository);
         }
         return new ProcessRunner(path.getAbsoluteFile(), buildCommand())
-                .run();
+                .run()
+                .getStatus();
     }
 
     private List<String> buildCommand() {
