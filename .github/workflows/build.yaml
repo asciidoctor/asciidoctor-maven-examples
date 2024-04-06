@@ -24,7 +24,7 @@ jobs:
           - 21
         maven:
           - 3.9.6
-          - 4.0.0-alpha-12
+          - 4.0.0-alpha-13
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
