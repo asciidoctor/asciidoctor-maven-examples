@@ -26,6 +26,8 @@ public class MavenLocator {
     private void setupMavenHome() {
 
         String candidateJavaHome = System.getProperty("maven.home");
+        logger.info(() -> "System.getProperty(\"maven.home\"): " + System.getProperty("maven.home"));
+        logger.info(() -> "System.getenv(\"MAVEN_HOME\"): " + System.getenv("MAVEN_HOME"));
         if (candidateJavaHome == null) {
             candidateJavaHome = System.getenv("MAVEN_HOME");
         }
