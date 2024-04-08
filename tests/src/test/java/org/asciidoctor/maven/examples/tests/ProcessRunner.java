@@ -17,19 +17,19 @@ public class ProcessRunner {
     }
 
     public ProcessResult run() {
-        final Path errFile = createTempFile("mvn-error-", ".err");
-        final Path outputRedirect = createTempFile("mvn-output-", ".out");
+        final Path output = createTempFile("mvn-error-", ".err");
+        final File file = output.toFile();
 
         final ProcessBuilder processBuilder = new ProcessBuilder()
                 .directory(workingDir)
                 .command(command)
-                .redirectError(errFile.toFile())
-                .redirectOutput(ProcessBuilder.Redirect.INHERIT);
+                .redirectError(file)
+                .redirectOutput(file);
 
         try {
             int status = processBuilder.start().waitFor();
-            throwIfError(status, errFile);
-            return new ProcessResult(status, Files.readString(outputRedirect).trim());
+            throwIfError(status, output);
+            return new ProcessResult(status, Files.readString(file.toPath()).trim());
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
