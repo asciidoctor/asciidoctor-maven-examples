@@ -45,7 +45,7 @@
                     <baseDir>${project.basedir}</baseDir>
                     -->
                     <attributes>
-                        <endpoint-url>http://example.org</endpoint-url>
+                        <endpoint-url>https://example.org</endpoint-url>
                         <sourcedir>${project.build.sourceDirectory}</sourcedir>
                     </attributes>
                 </configuration>

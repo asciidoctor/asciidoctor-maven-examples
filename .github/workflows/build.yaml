@@ -56,8 +56,18 @@ jobs:
         run: mvn -version
       - name: Clean all modules
         run: mvn -B clean
-      - name: Test
-        run: mvn -B test -pl tests
+      - name: Set MAVEN_HOME and Test (Windows)
+        if: matrix.os == 'windows-latest'
+        run: |
+          set MAVEN_HOME="$(which mvn)"
+          echo "MAVEN_HOME: $MAVEN_HOME"
+          mvn -B test -pl tests
+      - name: Set MAVEN_HOME and Test
+        if: matrix.os != 'windows-latest'
+        run: |
+          export MAVEN_HOME="$(which mvn)"
+          echo "MAVEN_HOME: $MAVEN_HOME"
+          mvn -B test -pl tests
       - name: Upload test output
         uses: actions/upload-artifact@v4
         env:
