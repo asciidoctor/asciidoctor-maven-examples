@@ -60,10 +60,10 @@ jobs:
         run: env
       - name: which
         run: which mvn
-      - name: Custom build
-        run: |
-          cd asciidoc-to-html-multipage-example
-          mvn
+#      - name: Custom build
+#        run: |
+#          cd asciidoc-to-html-multipage-example
+#          mvn
       - name: Set MAVEN_HOME and Test (Windows)
         if: matrix.os == 'windows-latest'
         run: |

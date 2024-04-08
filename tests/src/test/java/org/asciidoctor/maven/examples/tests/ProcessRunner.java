@@ -24,7 +24,7 @@ public class ProcessRunner {
                 .directory(workingDir)
                 .command(command)
                 .redirectError(file)
-                .redirectOutput(file);
+                .redirectOutput(ProcessBuilder.Redirect.INHERIT);
 
         try {
             int status = processBuilder.start().waitFor();
