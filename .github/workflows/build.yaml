@@ -20,11 +20,11 @@ jobs:
           - macos-latest
         java:
           - 11
-#          - 17
-#          - 21
+          - 17
+          - 21
         maven:
           - 3.9.6
-#          - 4.0.0-alpha-12
+          - 4.0.0-alpha-12
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -56,14 +56,6 @@ jobs:
         run: mvn -version
       - name: Clean all modules
         run: mvn -B clean
-      - name: env
-        run: env
-      - name: which
-        run: which mvn
-#      - name: Custom build
-#        run: |
-#          cd asciidoc-to-html-multipage-example
-#          mvn
       - name: Set MAVEN_HOME and Test (Windows)
         if: matrix.os == 'windows-latest'
         run: |

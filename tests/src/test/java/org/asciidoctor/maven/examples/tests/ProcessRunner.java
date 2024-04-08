@@ -24,7 +24,7 @@ public class ProcessRunner {
                 .directory(workingDir)
                 .command(command)
                 .redirectError(file)
-                .redirectOutput(ProcessBuilder.Redirect.INHERIT);
+                .redirectOutput(file);
 
         try {
             int status = processBuilder.start().waitFor();
@@ -39,7 +39,7 @@ public class ProcessRunner {
         if (value != 0) {
             String joinedCommand = String.join(" ", command);
             final String errorOutput = Files.readString(errFile);
-            throw new RuntimeException(String.format("Command: [%s]", joinedCommand + "\n" + errorOutput));
+            throw new RuntimeException(String.format("Command: [%s];\n%s", joinedCommand, errorOutput));
         }
         errFile.toFile().deleteOnExit();
     }
