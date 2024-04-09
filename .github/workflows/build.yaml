@@ -26,6 +26,7 @@ jobs:
           - 3.9.6
           - 4.0.0-alpha-13
     runs-on: ${{ matrix.os }}
+    if: startsWith(matrix.maven, '3.9') || ( startsWith(matrix.maven, '4.0') && matrix.java > 11 )
     steps:
       - uses: actions/checkout@v4
         with:
