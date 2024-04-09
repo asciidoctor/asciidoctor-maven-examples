@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Build Maven 3
+    name: Build Maven 4
     strategy:
       fail-fast: false
       max-parallel: 16
@@ -19,11 +19,10 @@ jobs:
           - windows-latest
           - macos-latest
         java:
-          - 11
           - 17
           - 21
         maven:
-          - 3.9.6
+          - 4.0.0-alpha-13
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
