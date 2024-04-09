@@ -49,9 +49,9 @@
         <defaultGoal>process-resources</defaultGoal>
         <extensions>
             <extension> <!-- this allows us to download gems -->
-                <groupId>org.torquebox.mojo</groupId>
+                <groupId>org.jruby.maven</groupId>
                 <artifactId>mavengem-wagon</artifactId>
-                <version>1.0.3</version>
+                <version>2.0.2</version>
             </extension>
         </extensions>
         <plugins>
@@ -76,9 +76,9 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>de.saumya.mojo</groupId>
+                <groupId>org.jruby.maven</groupId>
                 <artifactId>gem-maven-plugin</artifactId>
-                <version>2.0.1</version>
+                <version>3.0.2</version>
                 <configuration>
                     <jrubyVersion>${jruby.version}</jrubyVersion>
                     <gemHome>${project.build.directory}/gems</gemHome>
