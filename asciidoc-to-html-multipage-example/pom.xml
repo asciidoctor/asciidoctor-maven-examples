@@ -111,6 +111,8 @@
                             <backend>multipage_html5</backend>
                             <doctype>book</doctype>
 
+                            <!-- Configure location of gems to match the one in gem-maven-plugin,
+                            and require them to make them available to Asciidoctor -->
                             <gemPath>${project.build.directory}/gems</gemPath>
                             <requires>
                                 <require>asciidoctor-multipage</require>

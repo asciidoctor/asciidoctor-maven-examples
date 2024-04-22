@@ -10,6 +10,14 @@ Convert the AsciiDoc to HTML5 by invoking the `process-resources` goal (configur
 
 Open the file _target/generated-docs/example-manual.html_ in your browser to see the generated HTML file containing the generated diagram images.
 
+== AsciidoctorJ Diagram integration
+
+https://github.com/asciidoctor/asciidoctorj-diagram[AsciidoctorJ Diagram] bundles the https://github.com/asciidoctor/asciidoctor-diagram[Asciidoctor Diagram] Ruby Gem to ease integration in Java.
+The example shows how to add it to a Maven build:
+
+. Add `asciidoctorj-diagram` dependency to the Maven Plugin dependencies.
+. Import the Gem adding the `<require>asciidoctor-diagram</require>` to Maven Plugin configuration (note the lack of `j` here).
+
 == Graphviz configuration
 Asciidoctor Diagram bundles both the ditaa and PlantUML libraries and will use them to generate diagrams.
 In order to generate diagrams using Graphviz, you must install it separately.

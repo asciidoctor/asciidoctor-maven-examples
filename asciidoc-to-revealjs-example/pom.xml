@@ -124,7 +124,8 @@
                             <goal>process-asciidoc</goal>
                         </goals>
                         <configuration>
-                            <!-- include the asciidoctor-revealjs gem -->
+                            <!-- Configure location of gems to match the one in gem-maven-plugin,
+                            and require them to make them available to Asciidoctor -->
                             <gemPath>${project.build.directory}/gems</gemPath>
                             <requires>
                                 <require>asciidoctor-revealjs</require>
