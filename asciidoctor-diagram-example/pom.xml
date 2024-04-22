@@ -46,7 +46,7 @@
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj-diagram-plantuml</artifactId>
-                        <version>1.2023.12</version>
+                        <version>1.2024.3</version>
                     </dependency>
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
@@ -57,6 +57,7 @@
                 </dependencies>
                 <configuration>
                     <sourceDirectory>src/docs/asciidoc</sourceDirectory>
+                    <!-- Require the Ruby gem bundled in asciidoctorj-diagram JAR to make them available to Asciidoctor -->
                     <requires>
                         <require>asciidoctor-diagram</require>
                     </requires>
