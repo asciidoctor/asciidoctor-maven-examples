@@ -39,7 +39,8 @@ class AsciidocMultipleInputsTest {
                 .startsWith("%PDF-1.4")
                 .contains("/Title (Example Manual)")
                 .contains("/Author (Doc Writer)")
-                .contains("/Creator (Asciidoctor PDF");
+                .contains("/Creator (Doc Writer)")
+                .contains("/Producer (Asciidoctor PDF");
     }
 
     private String generatedDoc(String filename) {
