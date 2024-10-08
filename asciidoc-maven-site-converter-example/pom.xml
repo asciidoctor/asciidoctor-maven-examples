@@ -32,6 +32,10 @@
                     <locales>en</locales>
                     <inputEncoding>UTF-8</inputEncoding>
                     <outputEncoding>UTF-8</outputEncoding>
+                    <!-- Ignore files prefixed with underscore -->
+                    <moduleExcludes>
+                        <asciidoc>**/_*.adoc,**/_*/</asciidoc>
+                    </moduleExcludes>
                     <asciidoc>
                         <!-- Optional site-wide AsciiDoc attributes -->
                         <attributes>
