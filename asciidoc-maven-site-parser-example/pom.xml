@@ -28,8 +28,6 @@
                     <!-- Disable generateReports if you don't want to include the built-in reports -->
                     <generateReports>true</generateReports>
                     <generateSitemap>true</generateSitemap>
-                    <relativizeDecorationLinks>false</relativizeDecorationLinks>
-                    <locales>en</locales>
                     <inputEncoding>UTF-8</inputEncoding>
                     <outputEncoding>UTF-8</outputEncoding>
                     <!-- Ignore files prefixed with underscore -->
