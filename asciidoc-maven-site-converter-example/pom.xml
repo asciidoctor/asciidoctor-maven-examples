@@ -31,6 +31,7 @@
                     <generateSitemap>true</generateSitemap>
                     <inputEncoding>UTF-8</inputEncoding>
                     <outputEncoding>UTF-8</outputEncoding>
+                    <relativizeSiteLinks>false</relativizeSiteLinks>
                     <asciidoc>
                         <!-- Optional site-wide AsciiDoc attributes -->
                         <attributes>
