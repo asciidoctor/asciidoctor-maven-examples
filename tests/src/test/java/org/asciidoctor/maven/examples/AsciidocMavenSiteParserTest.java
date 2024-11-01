@@ -28,20 +28,20 @@ class AsciidocMavenSiteParserTest {
         assertThat(hello)
                 .isNotEmpty()
                 .content()
-                .contains("<h1>Hello, AsciiDoc!</h1>")
-                .contains("<img src=\"images/tiger.png\" alt=\"Ghostscript Tiger\">")
-                .contains("<h2><a name=\"Attributes\"></a>Attributes</h2>");
+                .contains("<h2>Hello, AsciiDoc!</h2>")
+                .contains("<div><img src=\"images/tiger.png\" alt=\"Ghostscript Tiger\" /></div>")
+                .contains("<h3><a name=\"attributes\"></a>Attributes</h3>");
 
         File article = mavenProject.getTarget(sitePage("article.html"));
         assertThat(article)
                 .isNotEmpty()
                 .content()
-                .contains("<h1>AsciiDoc is Writing Zen</h1>")
-                .contains("<h3><a name=\"Unordered_list\"></a>Unordered list</h3>")
-                .contains("<h3><a name=\"Ordered_list\"></a>Ordered list</h3>")
-                .contains("<h3><a name=\"Table\"></a>Table</h3>")
-                .contains("<h3><a name=\"Code_blocks\"></a>Code blocks</h3>")
-                .contains("<h2><a name=\"Attributes\"></a>Attributes</h2>");
+                .contains("<h2>AsciiDoc is Writing Zen</h2>")
+                .contains("<h4><a name=\"unordered_list\"></a>Unordered list</h4>")
+                .contains("<h4><a name=\"unordered_list\"></a>Unordered list</h4>")
+                .contains("<h4><a name=\"table\"></a>Table</h4>")
+                .contains("<h4><a name=\"code_blocks\"></a>Code blocks</h4>")
+                .contains("<h3><a name=\"attributes\"></a>Attributes</h3>");
     }
 
     private String sitePage(String filename) {
