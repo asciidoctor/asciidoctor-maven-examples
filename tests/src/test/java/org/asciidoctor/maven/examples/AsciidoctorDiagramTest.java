@@ -17,17 +17,17 @@ class AsciidoctorDiagramTest {
     void shouldGenerateHtmlWithDiagrams() {
         File htmlExampleManual = mavenProject.getTarget(generatedDocs("example-manual.html"));
         assertThat(htmlExampleManual)
-                .isNotEmpty()
-                .content()
-                .contains("<meta name=\"generator\" content=\"Asciidoctor");
+            .isNotEmpty()
+            .content()
+            .contains("<meta name=\"generator\" content=\"Asciidoctor");
 
         File revealJsDistribution = mavenProject.getTarget(generatedDocs("images"));
         assertThat(revealJsDistribution)
-                .isDirectory()
-                .isDirectoryContaining(file -> file.getName().equals("asciidoctor-diagram-process.png"))
-                .isDirectoryContaining(file -> file.getName().equals("auth-protocol.png"))
-                .isDirectoryContaining(file -> file.getName().equals("dot-example.png"))
-                .isDirectoryContaining(file -> file.getName().equals("aspectj-maven-multi-module.png"));
+            .isDirectory()
+            .isDirectoryContaining(file -> file.getName().equals("asciidoctor-diagram-process.png"))
+            .isDirectoryContaining(file -> file.getName().equals("auth-protocol.png"))
+            .isDirectoryContaining(file -> file.getName().equals("dot-example.png"))
+            .isDirectoryContaining(file -> file.getName().equals("aspectj-maven-multi-module.png"));
     }
 
     private String generatedDocs(String filename) {

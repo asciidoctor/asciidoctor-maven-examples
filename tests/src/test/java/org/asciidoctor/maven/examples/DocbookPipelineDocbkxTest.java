@@ -1,8 +1,8 @@
 package org.asciidoctor.maven.examples;
 
+import org.asciidoctor.maven.examples.common.CustomAsserter;
 import org.asciidoctor.maven.examples.tests.MavenProject;
 import org.asciidoctor.maven.examples.tests.MavenTest;
-import org.asciidoctor.maven.examples.common.CustomAsserter;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -19,20 +19,20 @@ class DocbookPipelineDocbkxTest {
     void shouldGenerateDocbook() {
         File docbookFile = mavenProject.getTarget(generatedDocs("example-manual.xml"));
         assertThat(docbookFile)
-                .isNotEmpty()
-                .content()
-                .startsWith(lines(
-                        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
-                        "<?asciidoc-toc?>",
-                        "<?asciidoc-numbered?>",
-                        "<book xmlns=\"http://docbook.org/ns/docbook\" xmlns:xl=\"http://www.w3.org/1999/xlink\" version=\"5.0\" xml:lang=\"en\">"));
+            .isNotEmpty()
+            .content()
+            .startsWith(lines(
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+                "<?asciidoc-toc?>",
+                "<?asciidoc-numbered?>",
+                "<book xmlns=\"http://docbook.org/ns/docbook\" xmlns:xl=\"http://www.w3.org/1999/xlink\" version=\"5.0\" xml:lang=\"en\">"));
     }
 
     @Test
     void shouldGeneratePdf() {
         File pdfFile = mavenProject.getTarget(generatedDocs("example-manual.pdf"));
         CustomAsserter.assertFile(pdfFile)
-                .isPdf();
+            .isPdf();
     }
 
     private String generatedDocs(String filename) {

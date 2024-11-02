@@ -30,9 +30,9 @@ public class JUnitMavenRunnerExtension implements TestInstancePostProcessor {
         final File projectPath = new File(pathname);
 
         int run = new MavenProjectBuilder()
-                .path(projectPath)
-                .goal(extractAnnotation(testInstance).goal())
-                .run();
+            .path(projectPath)
+            .goal(extractAnnotation(testInstance).goal())
+            .run();
 
         if (run == 0) {
             final MavenProject target = new MavenProject(projectPath);
@@ -50,12 +50,12 @@ public class JUnitMavenRunnerExtension implements TestInstancePostProcessor {
 
     private String extractProjectPath(Object testInstance) {
         return extractAnnotation(testInstance)
-                .projectPath();
+            .projectPath();
     }
 
     private MavenTest extractAnnotation(Object testInstance) {
         return testInstance
-                .getClass()
-                .getAnnotation(MavenTest.class);
+            .getClass()
+            .getAnnotation(MavenTest.class);
     }
 }

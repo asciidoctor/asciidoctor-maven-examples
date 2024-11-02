@@ -17,8 +17,8 @@ class AsciidoctorPdfTest {
     void shouldGeneratePdf() {
         File readmeJP = mavenProject.getTarget(generatedDocs("example-manual.pdf"));
         assertFile(readmeJP)
-                .isPdf()
-                .hasTitle("Example Manual");
+            .isPdf()
+            .hasTitle("Example Manual");
     }
 
     private String generatedDocs(String filename) {

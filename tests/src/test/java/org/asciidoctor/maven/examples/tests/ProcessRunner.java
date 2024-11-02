@@ -21,10 +21,10 @@ public class ProcessRunner {
         final File file = output.toFile();
 
         final ProcessBuilder processBuilder = new ProcessBuilder()
-                .directory(workingDir)
-                .command(command)
-                .redirectError(file)
-                .redirectOutput(file);
+            .directory(workingDir)
+            .command(command)
+            .redirectError(file)
+            .redirectOutput(file);
 
         try {
             int status = processBuilder.start().waitFor();

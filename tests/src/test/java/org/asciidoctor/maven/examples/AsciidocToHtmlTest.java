@@ -1,7 +1,6 @@
 package org.asciidoctor.maven.examples;
 
 
-
 import org.asciidoctor.maven.examples.tests.MavenProject;
 import org.asciidoctor.maven.examples.tests.MavenTest;
 import org.junit.jupiter.api.Test;
@@ -21,20 +20,20 @@ class AsciidocToHtmlTest {
 
     @Test
     void shouldGenerateHtml() {
-        logger.info(()-> "logging from test");
-        logger.info(()-> "logging from test");
-        logger.info(()-> "logging from test");
-        logger.info(()-> "logging from test");
-        logger.info(()-> "logging from test");
-        logger.info(()-> "logging from test");
+        logger.info(() -> "logging from test");
+        logger.info(() -> "logging from test");
+        logger.info(() -> "logging from test");
+        logger.info(() -> "logging from test");
+        logger.info(() -> "logging from test");
+        logger.info(() -> "logging from test");
 
         File generatedDoc = mavenProject.getTarget("generated-docs/example-manual.html");
 
         assertThat(generatedDoc)
-                .isNotEmpty()
-                .content()
-                .contains("<meta name=\"generator\" content=\"Asciidoctor")
-                .contains("<pre class=\"rouge highlight\">")
-                .contains("<em>src/docs/asciidoc/subdir/c.adoc</em>");
+            .isNotEmpty()
+            .content()
+            .contains("<meta name=\"generator\" content=\"Asciidoctor")
+            .contains("<pre class=\"rouge highlight\">")
+            .contains("<em>src/docs/asciidoc/subdir/c.adoc</em>");
     }
 }
