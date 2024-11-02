@@ -2,7 +2,6 @@ package org.asciidoctor.maven.examples;
 
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDResources;
 import org.apache.pdfbox.pdmodel.graphics.PDXObject;
@@ -30,8 +29,8 @@ class AsciidoctorPdfWithThemeTest {
     void shouldGeneratePdfWithCustomTheme() throws IOException {
         File pdfWithCustomTheme = mavenProject.getTarget(generatedDocsWithCustomTheme(OUTPUT_PDF_FILE));
         assertFile(pdfWithCustomTheme)
-                .isPdf()
-                .hasTitle("Example Manual");
+            .isPdf()
+            .hasTitle("Example Manual");
         assertImagesInFirstPage(pdfWithCustomTheme, 1);
     }
 
@@ -39,15 +38,15 @@ class AsciidoctorPdfWithThemeTest {
     void shouldGeneratePdfWithDefaultTheme() throws IOException {
         File pdfWithDefaultTheme = mavenProject.getTarget(generatedDocsWithDefaultTheme(OUTPUT_PDF_FILE));
         assertFile(pdfWithDefaultTheme)
-                .isPdf()
-                .hasTitle("Example Manual");
+            .isPdf()
+            .hasTitle("Example Manual");
         assertImagesInFirstPage(pdfWithDefaultTheme, 0);
     }
 
     private void assertImagesInFirstPage(File pdfWithCustomTheme, int imagesCount) throws IOException {
         PDPage page = Loader
-                .loadPDF(pdfWithCustomTheme)
-                .getPage(0);
+            .loadPDF(pdfWithCustomTheme)
+            .getPage(0);
         assertThat(getImages(page)).hasSize(imagesCount);
     }
 

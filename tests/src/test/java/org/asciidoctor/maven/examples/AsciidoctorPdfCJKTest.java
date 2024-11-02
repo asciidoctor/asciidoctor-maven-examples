@@ -5,11 +5,10 @@ import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.fdf.FDFDocument;
 import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.asciidoctor.maven.examples.common.CustomAsserter;
 import org.asciidoctor.maven.examples.tests.MavenProject;
 import org.asciidoctor.maven.examples.tests.MavenTest;
-import org.asciidoctor.maven.examples.common.CustomAsserter;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -38,10 +37,10 @@ class AsciidoctorPdfCJKTest {
 
     private void assertIsPdfAndContainsFont(File readmeJP, String fontName) throws IOException {
         CustomAsserter.assertFile(readmeJP)
-                .isPdf()
-                .hasTitle("Asciidoctor");
+            .isPdf()
+            .hasTitle("Asciidoctor");
         assertThat(extractFonts(Loader.loadPDF(readmeJP)))
-                .contains(fontName);
+            .contains(fontName);
     }
 
     private Set<String> extractFonts(PDDocument pdf) throws IOException {

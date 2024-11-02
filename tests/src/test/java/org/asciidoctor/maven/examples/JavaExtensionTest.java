@@ -18,13 +18,13 @@ class JavaExtensionTest {
     @Test
     void shouldGeneratePdfWithCustomTheme() {
         File outputDirectory = new File(
-                new File(PROJECT_PATH, "asciidoctor-with-extension-example"),
-                "target/generated-docs");
+            new File(PROJECT_PATH, "asciidoctor-with-extension-example"),
+            "target/generated-docs");
 
         File htmlWithExtension = new File(outputDirectory, "example-manual.html");
         assertThat(htmlWithExtension)
-                .isNotEmpty()
-                .content()
-                .contains("<a href=\"https://www.twitter.com/mrhaki\">@mrhaki</a>");
+            .isNotEmpty()
+            .content()
+            .contains("<a href=\"https://www.twitter.com/mrhaki\">@mrhaki</a>");
     }
 }

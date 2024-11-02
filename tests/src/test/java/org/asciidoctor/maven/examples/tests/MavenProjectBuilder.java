@@ -41,15 +41,15 @@ public class MavenProjectBuilder {
             throw new RuntimeException("repository does not exists: " + repository);
         }
         return new ProcessRunner(path.getAbsoluteFile(), buildCommand())
-                .run()
-                .getStatus();
+            .run()
+            .getStatus();
     }
 
     private List<String> buildCommand() {
         final List<String> parts = new ArrayList<>();
         File executable = new MavenLocator()
-                .baseDirectory(path.getAbsolutePath())
-                .findExecutable();
+            .baseDirectory(path.getAbsolutePath())
+            .findExecutable();
         parts.add(executable.isAbsolute() ? executable.getAbsolutePath() : executable.getName());
         parts.add("-B");
         parts.add("--file");

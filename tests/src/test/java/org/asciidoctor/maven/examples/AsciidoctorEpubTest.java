@@ -19,11 +19,11 @@ class AsciidoctorEpubTest {
     void shouldGenerateEpubFiles() {
         File epub = mavenProject.getTarget(generatedDocs("spine.epub"));
         assertThat(epub)
-                .isNotEmpty();
+            .isNotEmpty();
 
         File epubKf8 = mavenProject.getTarget(generatedDocs("spine-kf8.epub"));
         assertThat(epubKf8)
-                .isNotEmpty();
+            .isNotEmpty();
     }
 
     private String generatedDocs(String filename) {
