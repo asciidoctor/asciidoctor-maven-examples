@@ -1,7 +1,7 @@
 package org.asciidoctorj.twitter.extension;
 
-import org.asciidoctor.ast.ContentNode;
 import org.asciidoctor.ast.PhraseNode;
+import org.asciidoctor.ast.StructuralNode;
 import org.asciidoctor.extension.InlineMacroProcessor;
 
 import java.util.HashMap;
@@ -14,17 +14,16 @@ public class TwitterMacro extends InlineMacroProcessor {
     }
 
     @Override
-    public Object process(ContentNode contentNode, String twitterHandle, Map<String, Object> attributes) {
-
+    public PhraseNode process(StructuralNode parent, String target, Map<String, Object> attributes) {
         String twitterLink;
         String twitterLinkText;
-        if (twitterHandle == null || twitterHandle.isEmpty()) {
+        if (target == null || target.isEmpty()) {
             twitterLink = "https://www.twitter.com/";
             twitterLinkText = "Twitter";
         } else {
-            twitterLink = "https://www.twitter.com/" + twitterHandle;
+            twitterLink = "https://www.twitter.com/" + target;
             // Prepend twitterHandle with @ as text link:
-            twitterLinkText = "@" + twitterHandle;
+            twitterLinkText = "@" + target;
         }
 
         // Define options for an 'anchor' element:
@@ -33,9 +32,6 @@ public class TwitterMacro extends InlineMacroProcessor {
         options.put("target", twitterLink);
 
         // Create the 'anchor' node:
-        PhraseNode inlineTwitterLink = createPhraseNode(contentNode, "anchor", twitterLinkText, attributes, options);
-
-        // Convert to String value:
-        return inlineTwitterLink.convert();
+        return createPhraseNode(parent, "anchor", twitterLinkText, attributes, options);
     }
 }
