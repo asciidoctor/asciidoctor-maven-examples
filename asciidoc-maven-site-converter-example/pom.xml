@@ -25,7 +25,6 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.20.0</version>
                 <configuration>
-                    <locales>en</locales>
                     <!-- Disable generateReports if you don't want to include the built-in reports -->
                     <generateReports>true</generateReports>
                     <generateSitemap>true</generateSitemap>

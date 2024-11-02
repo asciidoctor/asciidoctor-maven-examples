@@ -15,17 +15,18 @@ class AsciidocMavenSiteConverterTest {
 
     @Test
     void shouldGenerateSitePages() {
-        File index = mavenProject.getTarget(sitePage("index.html"));
+        File index = mavenProject.getTarget(sitePage("index.html",""));
+        // Since maven-site v3.20.0 'About' is added to title
         assertThat(index)
                 .isNotEmpty()
                 .content()
                 .contains("<link rel=\"stylesheet\" href=\"./css/site.css\" />")
-                .contains("<h1>AsciiDoc Maven Site Example</h1>")
+                .contains("<h1>About AsciiDoc Maven Site Example</h1>")
                 .contains("<li class=\"nav-header\">Asciidoctor Example</li>")
-                .contains("<a href=\"hello.html\" title=\"Hello\"><span class=\"none\"></span>Hello</a>")
-                .contains("<a href=\"article.html\" title=\"Article\"><span class=\"none\"></span>Article</a>");
+                .contains("<li><a href=\"hello.html\">Hello</a></li>")
+                .contains("<li><a href=\"article.html\">Article</a></li>");
 
-        File hello = mavenProject.getTarget(sitePage("hello.html"));
+        File hello = mavenProject.getTarget(sitePage("hello.html",""));
         assertThat(hello)
                 .isNotEmpty()
                 .content()
@@ -33,7 +34,7 @@ class AsciidocMavenSiteConverterTest {
                 .contains("<img src=\"images/tiger.png\" alt=\"Ghostscript Tiger\"/>")
                 .contains("<h2 id=\"attributes\">Attributes</h2>");
 
-        File article = mavenProject.getTarget(sitePage("article.html"));
+        File article = mavenProject.getTarget(sitePage("article.html", ""));
         assertThat(article)
                 .isNotEmpty()
                 .content()
@@ -45,7 +46,7 @@ class AsciidocMavenSiteConverterTest {
                 .contains("<h2 id=\"attributes\"><a class=\"anchor\" href=\"#attributes\"></a>Attributes</h2>");
     }
 
-    private String sitePage(String filename) {
-        return "site/" + filename;
+    private static String sitePage(String filename, String locale) {
+        return String.format("site/%s/%s", locale, filename);
     }
 }
