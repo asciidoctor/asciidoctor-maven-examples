@@ -26,9 +26,6 @@ jobs:
           - 3.9.9
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
       - uses: s4u/setup-maven-action@v1.15.0
         with:
             java-distribution: 'temurin'
