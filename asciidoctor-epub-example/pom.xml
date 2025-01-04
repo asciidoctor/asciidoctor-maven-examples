@@ -50,10 +50,12 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <sourceDirectory>src/docs/asciidoc</sourceDirectory>
-                    <attributes>
-                        <sourcedir>${project.build.sourceDirectory}</sourcedir>
-                    </attributes>
+                    <backend>epub3</backend>
+                    <sourceDocumentName>spine.adoc</sourceDocumentName>
+<!--                    <sourceDirectory>src/docs/asciidoc</sourceDirectory>-->
+<!--                    <attributes>-->
+<!--                        <sourcedir>${project.build.sourceDirectory}</sourcedir>-->
+<!--                    </attributes>-->
                     <resources>
                         <resource>
                             <directory>.</directory>
@@ -71,67 +73,21 @@
                         <goals>
                             <goal>process-asciidoc</goal>
                         </goals>
-                        <configuration>
-                            <backend>epub3</backend>
-                            <sourceDocumentName>spine.adoc</sourceDocumentName>
-                        </configuration>
                     </execution>
-
-
-                    <!-- for converting asciidoc to a mobi format, asciidoc performs 2 steps. -->
-                    <!-- first, it generates a xxxx-kf8.epub file, which is then, in the second step, processed in order
-                         to create xxxx.mobi file. -->
-
-                    <!-- general information: epub and mobi generation differs only in the attribute 'ebook-format',
-                         which is set to 'epub3' for epub and to kf8 in order to generate a special annotated epub3
-                         document which is suitable for kindlegen -->
-
-                    <!-- per default, this attribute is set to 'epub3'. -->
-                    <!-- you can set this attribute either in the corresponding .adoc file, or provide it like showed
-                         in this execution block below -->
+                    <!-- For testing and troubleshooting you can see the
+                     contained resources in an extracted structure -->
                     <execution>
-                        <id>generate-spine-kf8</id>
+                        <id>generate-extracted-epub</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>process-asciidoc</goal>
                         </goals>
                         <configuration>
-                            <backend>epub3</backend>
-                            <sourceDocumentName>spine.adoc</sourceDocumentName>
                             <attributes>
-                                <source-highlighter>rouge</source-highlighter>
-                                <ebook-format>kf8</ebook-format>
+                                <ebook-extract/>
                             </attributes>
                         </configuration>
                     </execution>
-
-
-                    <!-- attention: if there are problems calling kindlegen (see discussion here https://github.com/asciidoctor/asciidoctor-maven-examples/pull/68) -->
-                    <!-- then you can call kindlegen directly via maven like showed below -->
-                    <!---
-
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
-                <executions>
-                    <execution>
-                        <id>generate-mobi-file</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <workingDirectory>${project.build.directory}/generated-docs/</workingDirectory>
-                            <executable>${path.to.kindlegen}</executable>
-                            <arguments>
-                                <argument>spine.epub</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                    -->
                 </executions>
             </plugin>
         </plugins>
