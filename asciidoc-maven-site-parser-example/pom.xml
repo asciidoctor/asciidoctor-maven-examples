@@ -15,7 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <asciidoctor.maven.plugin.version>3.2.0</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>3.0.0</asciidoctorj.version>
-        <jruby.version>9.4.12.0</jruby.version>
+        <jruby.version>9.4.12.1</jruby.version>
     </properties>
 
     <build>
