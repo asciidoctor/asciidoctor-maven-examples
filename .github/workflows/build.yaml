@@ -65,7 +65,7 @@ jobs:
           echo "MAVEN_HOME: $MAVEN_HOME"
           mvn -B test -pl tests
       - name: Upload test output
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         env:
             os_name: ${{ matrix.os }}
             java_version: ${{ matrix.java }}
