@@ -1,16 +1,28 @@
 version: 2
 updates:
   - package-ecosystem: "maven"
-    directory: "/"
+    directories:
+      - "/"
+      - "/*-example"
+      - "/java-extension-example/*"
+      - "/tests"
+    open-pull-requests-limit: 10
     schedule:
       interval: "weekly"
     labels:
       - "dependencies"
+    groups:
+      jruby:
+        patterns:
+          - "org.jruby:jruby"
+      maven-plugins:
+        patterns:
+          - "org.apache.maven.plugins:*"
     ignore:
       - dependency-name: "com.googlecode.maven-download-plugin:download-maven-plugin"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-        interval: "weekly"
+      interval: "weekly"
     labels:
-        - "dependencies"
+      - "dependencies"
